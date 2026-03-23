@@ -18,6 +18,8 @@ All URIs are relative to *https://postboost.co/app/api*
 
 Create user
 
+Creates a new user account on the platform. Admin only.
+
 ### Example
 ```java
 // Import classes:
@@ -75,8 +77,9 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Created user |  -  |
+| **201** | Created user |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **422** |  |  -  |
 
 <a id="deleteUser"></a>
@@ -84,6 +87,8 @@ public class Example {
 > Object deleteUser(userId)
 
 Delete user
+
+Permanently deletes a user account. Returns 400 if you attempt to delete your own account. Admin only.
 
 ### Example
 ```java
@@ -145,12 +150,15 @@ public class Example {
 | **200** |  |  -  |
 | **400** | Cannot delete own account |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 
 <a id="deleteUsersBulk"></a>
 # **deleteUsersBulk**
 > Object deleteUsersBulk(deleteUsersBulkRequest)
 
 Delete users (bulk)
+
+Permanently deletes one or more user accounts. You cannot delete your own account. Admin only.
 
 ### Example
 ```java
@@ -211,12 +219,15 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 
 <a id="getUser"></a>
 # **getUser**
 > User getUser(userId)
 
 Get user
+
+Returns a single user account by ID. Admin only.
 
 ### Example
 ```java
@@ -277,13 +288,16 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | User details |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 
 <a id="listUsers"></a>
 # **listUsers**
-> ListUsers200Response listUsers(keyword)
+> ListUsers200Response listUsers(keyword, page)
 
 List users
+
+Returns a paginated list of all users on the platform. Optionally filter by name or email. Admin only.
 
 ### Example
 ```java
@@ -306,8 +320,9 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String keyword = "keyword_example"; // String | Search by name or email.
+    Integer page = 1; // Integer | Page number (15 items per page).
     try {
-      ListUsers200Response result = apiInstance.listUsers(keyword);
+      ListUsers200Response result = apiInstance.listUsers(keyword, page);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#listUsers");
@@ -325,6 +340,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **keyword** | **String**| Search by name or email. | [optional] |
+| **page** | **Integer**| Page number (15 items per page). | [optional] [default to 1] |
 
 ### Return type
 
@@ -351,6 +367,8 @@ public class Example {
 > Object updateUser(userId, userUpdateInput)
 
 Update user
+
+Updates a user&#39;s name, email, admin status, or password. Admin only.
 
 ### Example
 ```java
@@ -413,5 +431,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **422** |  |  -  |
 

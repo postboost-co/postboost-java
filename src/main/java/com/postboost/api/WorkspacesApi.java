@@ -88,8 +88,9 @@ public class WorkspacesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -157,7 +158,7 @@ public class WorkspacesApi {
 
     /**
      * Add user to workspace
-     * 
+     * Adds an existing user to the workspace with a specified role. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param workspaceUserInput  (required)
      * @return Object
@@ -165,8 +166,9 @@ public class WorkspacesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -177,7 +179,7 @@ public class WorkspacesApi {
 
     /**
      * Add user to workspace
-     * 
+     * Adds an existing user to the workspace with a specified role. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param workspaceUserInput  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -185,8 +187,9 @@ public class WorkspacesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -198,7 +201,7 @@ public class WorkspacesApi {
 
     /**
      * Add user to workspace (asynchronously)
-     * 
+     * Adds an existing user to the workspace with a specified role. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param workspaceUserInput  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -207,8 +210,9 @@ public class WorkspacesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -228,7 +232,7 @@ public class WorkspacesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created workspace </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created workspace </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
@@ -299,7 +303,7 @@ public class WorkspacesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created workspace </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created workspace </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
@@ -319,7 +323,7 @@ public class WorkspacesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created workspace </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created workspace </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
@@ -341,7 +345,7 @@ public class WorkspacesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created workspace </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created workspace </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
@@ -365,6 +369,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -426,7 +431,7 @@ public class WorkspacesApi {
 
     /**
      * Delete workspace
-     * 
+     * Permanently deletes a single workspace and all its associated data. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -435,6 +440,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -445,7 +451,7 @@ public class WorkspacesApi {
 
     /**
      * Delete workspace
-     * 
+     * Permanently deletes a single workspace and all its associated data. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -454,6 +460,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -465,7 +472,7 @@ public class WorkspacesApi {
 
     /**
      * Delete workspace (asynchronously)
-     * 
+     * Permanently deletes a single workspace and all its associated data. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -475,6 +482,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -557,7 +565,7 @@ public class WorkspacesApi {
 
     /**
      * Delete workspaces (bulk)
-     * 
+     * Permanently deletes one or more workspaces and all their associated data. Admin only.
      * @param deleteWorkspacesBulkRequest  (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -576,7 +584,7 @@ public class WorkspacesApi {
 
     /**
      * Delete workspaces (bulk)
-     * 
+     * Permanently deletes one or more workspaces and all their associated data. Admin only.
      * @param deleteWorkspacesBulkRequest  (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -596,7 +604,7 @@ public class WorkspacesApi {
 
     /**
      * Delete workspaces (bulk) (asynchronously)
-     * 
+     * Permanently deletes one or more workspaces and all their associated data. Admin only.
      * @param deleteWorkspacesBulkRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -627,6 +635,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workspace details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -688,7 +697,7 @@ public class WorkspacesApi {
 
     /**
      * Get workspace
-     * 
+     * Returns a single workspace by UUID including its subscription status. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return Workspace
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -697,6 +706,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workspace details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -707,7 +717,7 @@ public class WorkspacesApi {
 
     /**
      * Get workspace
-     * 
+     * Returns a single workspace by UUID including its subscription status. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return ApiResponse&lt;Workspace&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -716,6 +726,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workspace details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -727,7 +738,7 @@ public class WorkspacesApi {
 
     /**
      * Get workspace (asynchronously)
-     * 
+     * Returns a single workspace by UUID including its subscription status. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -737,6 +748,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workspace details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -752,6 +764,7 @@ public class WorkspacesApi {
      * @param keyword  (optional)
      * @param subscriptionStatus  (optional)
      * @param accessStatus  (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -763,7 +776,7 @@ public class WorkspacesApi {
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkspacesCall(String keyword, String subscriptionStatus, String accessStatus, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWorkspacesCall(String keyword, String subscriptionStatus, String accessStatus, Integer page, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -800,6 +813,10 @@ public class WorkspacesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("access_status", accessStatus));
         }
 
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -820,8 +837,8 @@ public class WorkspacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWorkspacesValidateBeforeCall(String keyword, String subscriptionStatus, String accessStatus, final ApiCallback _callback) throws ApiException {
-        return listWorkspacesCall(keyword, subscriptionStatus, accessStatus, _callback);
+    private okhttp3.Call listWorkspacesValidateBeforeCall(String keyword, String subscriptionStatus, String accessStatus, Integer page, final ApiCallback _callback) throws ApiException {
+        return listWorkspacesCall(keyword, subscriptionStatus, accessStatus, page, _callback);
 
     }
 
@@ -831,6 +848,7 @@ public class WorkspacesApi {
      * @param keyword  (optional)
      * @param subscriptionStatus  (optional)
      * @param accessStatus  (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @return ListWorkspaces200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -841,8 +859,8 @@ public class WorkspacesApi {
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListWorkspaces200Response listWorkspaces(String keyword, String subscriptionStatus, String accessStatus) throws ApiException {
-        ApiResponse<ListWorkspaces200Response> localVarResp = listWorkspacesWithHttpInfo(keyword, subscriptionStatus, accessStatus);
+    public ListWorkspaces200Response listWorkspaces(String keyword, String subscriptionStatus, String accessStatus, Integer page) throws ApiException {
+        ApiResponse<ListWorkspaces200Response> localVarResp = listWorkspacesWithHttpInfo(keyword, subscriptionStatus, accessStatus, page);
         return localVarResp.getData();
     }
 
@@ -852,6 +870,7 @@ public class WorkspacesApi {
      * @param keyword  (optional)
      * @param subscriptionStatus  (optional)
      * @param accessStatus  (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @return ApiResponse&lt;ListWorkspaces200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -862,8 +881,8 @@ public class WorkspacesApi {
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListWorkspaces200Response> listWorkspacesWithHttpInfo(String keyword, String subscriptionStatus, String accessStatus) throws ApiException {
-        okhttp3.Call localVarCall = listWorkspacesValidateBeforeCall(keyword, subscriptionStatus, accessStatus, null);
+    public ApiResponse<ListWorkspaces200Response> listWorkspacesWithHttpInfo(String keyword, String subscriptionStatus, String accessStatus, Integer page) throws ApiException {
+        okhttp3.Call localVarCall = listWorkspacesValidateBeforeCall(keyword, subscriptionStatus, accessStatus, page, null);
         Type localVarReturnType = new TypeToken<ListWorkspaces200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -874,6 +893,7 @@ public class WorkspacesApi {
      * @param keyword  (optional)
      * @param subscriptionStatus  (optional)
      * @param accessStatus  (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -885,9 +905,9 @@ public class WorkspacesApi {
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkspacesAsync(String keyword, String subscriptionStatus, String accessStatus, final ApiCallback<ListWorkspaces200Response> _callback) throws ApiException {
+    public okhttp3.Call listWorkspacesAsync(String keyword, String subscriptionStatus, String accessStatus, Integer page, final ApiCallback<ListWorkspaces200Response> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listWorkspacesValidateBeforeCall(keyword, subscriptionStatus, accessStatus, _callback);
+        okhttp3.Call localVarCall = listWorkspacesValidateBeforeCall(keyword, subscriptionStatus, accessStatus, page, _callback);
         Type localVarReturnType = new TypeToken<ListWorkspaces200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -904,6 +924,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeUserFromWorkspaceCall(UUID workspaceUuid, RemoveUserFromWorkspaceRequest removeUserFromWorkspaceRequest, final ApiCallback _callback) throws ApiException {
@@ -970,7 +991,7 @@ public class WorkspacesApi {
 
     /**
      * Remove user from workspace
-     * 
+     * Removes a user&#39;s access to the workspace. The user account is not deleted. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param removeUserFromWorkspaceRequest  (required)
      * @return Object
@@ -980,6 +1001,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object removeUserFromWorkspace(UUID workspaceUuid, RemoveUserFromWorkspaceRequest removeUserFromWorkspaceRequest) throws ApiException {
@@ -989,7 +1011,7 @@ public class WorkspacesApi {
 
     /**
      * Remove user from workspace
-     * 
+     * Removes a user&#39;s access to the workspace. The user account is not deleted. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param removeUserFromWorkspaceRequest  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -999,6 +1021,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> removeUserFromWorkspaceWithHttpInfo(UUID workspaceUuid, RemoveUserFromWorkspaceRequest removeUserFromWorkspaceRequest) throws ApiException {
@@ -1009,7 +1032,7 @@ public class WorkspacesApi {
 
     /**
      * Remove user from workspace (asynchronously)
-     * 
+     * Removes a user&#39;s access to the workspace. The user account is not deleted. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param removeUserFromWorkspaceRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1020,6 +1043,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeUserFromWorkspaceAsync(UUID workspaceUuid, RemoveUserFromWorkspaceRequest removeUserFromWorkspaceRequest, final ApiCallback<Object> _callback) throws ApiException {
@@ -1041,6 +1065,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -1108,7 +1133,7 @@ public class WorkspacesApi {
 
     /**
      * Update workspace
-     * 
+     * Updates a workspace&#39;s name, color, or access status. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param workspaceInput  (required)
      * @return Object
@@ -1118,6 +1143,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -1128,7 +1154,7 @@ public class WorkspacesApi {
 
     /**
      * Update workspace
-     * 
+     * Updates a workspace&#39;s name, color, or access status. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param workspaceInput  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -1138,6 +1164,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -1149,7 +1176,7 @@ public class WorkspacesApi {
 
     /**
      * Update workspace (asynchronously)
-     * 
+     * Updates a workspace&#39;s name, color, or access status. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param workspaceInput  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1160,6 +1187,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -1182,6 +1210,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateWorkspaceUserCall(UUID workspaceUuid, WorkspaceUserInput workspaceUserInput, final ApiCallback _callback) throws ApiException {
@@ -1248,7 +1277,7 @@ public class WorkspacesApi {
 
     /**
      * Update user role in workspace
-     * 
+     * Changes a user&#39;s role or permissions within the workspace. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param workspaceUserInput  (required)
      * @return Object
@@ -1258,6 +1287,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object updateWorkspaceUser(UUID workspaceUuid, WorkspaceUserInput workspaceUserInput) throws ApiException {
@@ -1267,7 +1297,7 @@ public class WorkspacesApi {
 
     /**
      * Update user role in workspace
-     * 
+     * Changes a user&#39;s role or permissions within the workspace. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param workspaceUserInput  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -1277,6 +1307,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> updateWorkspaceUserWithHttpInfo(UUID workspaceUuid, WorkspaceUserInput workspaceUserInput) throws ApiException {
@@ -1287,7 +1318,7 @@ public class WorkspacesApi {
 
     /**
      * Update user role in workspace (asynchronously)
-     * 
+     * Changes a user&#39;s role or permissions within the workspace. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param workspaceUserInput  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1298,6 +1329,7 @@ public class WorkspacesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateWorkspaceUserAsync(UUID workspaceUuid, WorkspaceUserInput workspaceUserInput, final ApiCallback<Object> _callback) throws ApiException {

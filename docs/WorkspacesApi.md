@@ -21,6 +21,8 @@ All URIs are relative to *https://postboost.co/app/api*
 
 Add user to workspace
 
+Adds an existing user to the workspace with a specified role. Admin only.
+
 ### Example
 ```java
 // Import classes:
@@ -80,8 +82,9 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **201** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **422** |  |  -  |
 
 <a id="createWorkspace"></a>
@@ -149,7 +152,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Created workspace |  -  |
+| **201** | Created workspace |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |
 | **422** |  |  -  |
@@ -159,6 +162,8 @@ public class Example {
 > Object deleteWorkspace(workspaceUuid)
 
 Delete workspace
+
+Permanently deletes a single workspace and all its associated data. Admin only.
 
 ### Example
 ```java
@@ -219,6 +224,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 
 <a id="deleteWorkspacesBulk"></a>
@@ -226,6 +232,8 @@ public class Example {
 > Object deleteWorkspacesBulk(deleteWorkspacesBulkRequest)
 
 Delete workspaces (bulk)
+
+Permanently deletes one or more workspaces and all their associated data. Admin only.
 
 ### Example
 ```java
@@ -294,6 +302,8 @@ public class Example {
 
 Get workspace
 
+Returns a single workspace by UUID including its subscription status. Admin only.
+
 ### Example
 ```java
 // Import classes:
@@ -353,11 +363,12 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Workspace details |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 
 <a id="listWorkspaces"></a>
 # **listWorkspaces**
-> ListWorkspaces200Response listWorkspaces(keyword, subscriptionStatus, accessStatus)
+> ListWorkspaces200Response listWorkspaces(keyword, subscriptionStatus, accessStatus, page)
 
 List workspaces
 
@@ -386,8 +397,9 @@ public class Example {
     String keyword = "keyword_example"; // String | 
     String subscriptionStatus = "active"; // String | 
     String accessStatus = "subscription"; // String | 
+    Integer page = 1; // Integer | Page number (15 items per page).
     try {
-      ListWorkspaces200Response result = apiInstance.listWorkspaces(keyword, subscriptionStatus, accessStatus);
+      ListWorkspaces200Response result = apiInstance.listWorkspaces(keyword, subscriptionStatus, accessStatus, page);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorkspacesApi#listWorkspaces");
@@ -407,6 +419,7 @@ public class Example {
 | **keyword** | **String**|  | [optional] |
 | **subscriptionStatus** | **String**|  | [optional] [enum: active, trialing, past_due, paused, canceled, incomplete] |
 | **accessStatus** | **String**|  | [optional] [enum: subscription, unlimited, locked] |
+| **page** | **Integer**| Page number (15 items per page). | [optional] [default to 1] |
 
 ### Return type
 
@@ -433,6 +446,8 @@ public class Example {
 > Object removeUserFromWorkspace(workspaceUuid, removeUserFromWorkspaceRequest)
 
 Remove user from workspace
+
+Removes a user&#39;s access to the workspace. The user account is not deleted. Admin only.
 
 ### Example
 ```java
@@ -495,12 +510,15 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 
 <a id="updateWorkspace"></a>
 # **updateWorkspace**
 > Object updateWorkspace(workspaceUuid, workspaceInput)
 
 Update workspace
+
+Updates a workspace&#39;s name, color, or access status. Admin only.
 
 ### Example
 ```java
@@ -563,6 +581,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 
 <a id="updateWorkspaceUser"></a>
@@ -570,6 +589,8 @@ public class Example {
 > Object updateWorkspaceUser(workspaceUuid, workspaceUserInput)
 
 Update user role in workspace
+
+Changes a user&#39;s role or permissions within the workspace. Admin only.
 
 ### Example
 ```java
@@ -632,4 +653,5 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 

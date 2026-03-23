@@ -153,7 +153,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Completed media object |  -  |
+| **201** | Completed media object |  -  |
 | **401** |  |  -  |
 | **422** |  |  -  |
 
@@ -370,7 +370,7 @@ public class Example {
 
 <a id="initiateChunkedUpload"></a>
 # **initiateChunkedUpload**
-> InitiateChunkedUpload200Response initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest)
+> InitiateChunkedUpload201Response initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest)
 
 Initiate chunked upload
 
@@ -399,7 +399,7 @@ public class Example {
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
     InitiateChunkedUploadRequest initiateChunkedUploadRequest = new InitiateChunkedUploadRequest(); // InitiateChunkedUploadRequest | 
     try {
-      InitiateChunkedUpload200Response result = apiInstance.initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest);
+      InitiateChunkedUpload201Response result = apiInstance.initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MediaApi#initiateChunkedUpload");
@@ -421,7 +421,7 @@ public class Example {
 
 ### Return type
 
-[**InitiateChunkedUpload200Response**](InitiateChunkedUpload200Response.md)
+[**InitiateChunkedUpload201Response**](InitiateChunkedUpload201Response.md)
 
 ### Authorization
 
@@ -435,13 +435,13 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Chunked upload session details |  -  |
+| **201** | Chunked upload session details |  -  |
 | **401** |  |  -  |
 | **422** |  |  -  |
 
 <a id="initiateRemoteUpload"></a>
 # **initiateRemoteUpload**
-> InitiateRemoteUpload200Response initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest)
+> InitiateRemoteUpload201Response initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest)
 
 Initiate remote upload
 
@@ -470,7 +470,7 @@ public class Example {
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
     InitiateRemoteUploadRequest initiateRemoteUploadRequest = new InitiateRemoteUploadRequest(); // InitiateRemoteUploadRequest | 
     try {
-      InitiateRemoteUpload200Response result = apiInstance.initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest);
+      InitiateRemoteUpload201Response result = apiInstance.initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MediaApi#initiateRemoteUpload");
@@ -492,7 +492,7 @@ public class Example {
 
 ### Return type
 
-[**InitiateRemoteUpload200Response**](InitiateRemoteUpload200Response.md)
+[**InitiateRemoteUpload201Response**](InitiateRemoteUpload201Response.md)
 
 ### Authorization
 
@@ -506,7 +506,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Media object or download job |  -  |
+| **201** | Media object or download job |  -  |
 | **401** |  |  -  |
 | **422** |  |  -  |
 
@@ -655,7 +655,7 @@ public class Example {
 
 <a id="uploadChunk"></a>
 # **uploadChunk**
-> UploadChunk200Response uploadChunk(workspaceUuid, uploadUuid, chunk, chunkIndex)
+> UploadChunk201Response uploadChunk(workspaceUuid, uploadUuid, chunk, chunkIndex)
 
 Upload a chunk
 
@@ -686,7 +686,7 @@ public class Example {
     File chunk = new File("/path/to/file"); // File | 
     Integer chunkIndex = 56; // Integer | Zero-based index of this chunk.
     try {
-      UploadChunk200Response result = apiInstance.uploadChunk(workspaceUuid, uploadUuid, chunk, chunkIndex);
+      UploadChunk201Response result = apiInstance.uploadChunk(workspaceUuid, uploadUuid, chunk, chunkIndex);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MediaApi#uploadChunk");
@@ -710,7 +710,7 @@ public class Example {
 
 ### Return type
 
-[**UploadChunk200Response**](UploadChunk200Response.md)
+[**UploadChunk201Response**](UploadChunk201Response.md)
 
 ### Authorization
 
@@ -724,7 +724,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Chunk received |  -  |
+| **201** | Chunk received |  -  |
 | **401** |  |  -  |
 | **422** |  |  -  |
 
@@ -797,7 +797,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Uploaded media object |  -  |
+| **201** | Uploaded media object |  -  |
 | **401** |  |  -  |
 | **422** |  |  -  |
 

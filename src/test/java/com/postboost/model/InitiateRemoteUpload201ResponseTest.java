@@ -18,7 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.postboost.model.InitiateRemoteUpload200ResponseOneOf;
+import com.postboost.model.InitiateRemoteUpload201ResponseOneOf;
 import com.postboost.model.Media;
 import java.io.IOException;
 import java.net.URI;
@@ -29,17 +29,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for InitiateRemoteUpload200Response
+ * Model tests for InitiateRemoteUpload201Response
  */
-public class InitiateRemoteUpload200ResponseTest {
-    private final InitiateRemoteUpload200Response model = new InitiateRemoteUpload200Response();
+public class InitiateRemoteUpload201ResponseTest {
+    private final InitiateRemoteUpload201Response model = new InitiateRemoteUpload201Response();
 
     /**
-     * Model tests for InitiateRemoteUpload200Response
+     * Model tests for InitiateRemoteUpload201Response
      */
     @Test
-    public void testInitiateRemoteUpload200Response() {
-        // TODO: test InitiateRemoteUpload200Response
+    public void testInitiateRemoteUpload201Response() {
+        // TODO: test InitiateRemoteUpload201Response
     }
 
     /**

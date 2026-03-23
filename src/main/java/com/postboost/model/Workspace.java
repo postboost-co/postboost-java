@@ -51,7 +51,7 @@ import com.postboost.JSON;
 /**
  * Workspace
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class Workspace {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
@@ -143,7 +143,7 @@ public class Workspace {
    * Get uuid
    * @return uuid
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getUuid() {
     return uuid;
   }
@@ -162,7 +162,7 @@ public class Workspace {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -181,7 +181,7 @@ public class Workspace {
    * Get hexColor
    * @return hexColor
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getHexColor() {
     return hexColor;
   }
@@ -219,7 +219,7 @@ public class Workspace {
    * Get accessStatus
    * @return accessStatus
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public AccessStatusEnum getAccessStatus() {
     return accessStatus;
   }
@@ -238,7 +238,7 @@ public class Workspace {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -312,6 +312,11 @@ public class Workspace {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("uuid");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("hex_color");
+    openapiRequiredFields.add("access_status");
+    openapiRequiredFields.add("created_at");
   }
 
   /**
@@ -334,27 +339,32 @@ public class Workspace {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Workspace` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Workspace.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+      if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("hex_color") != null && !jsonObj.get("hex_color").isJsonNull()) && !jsonObj.get("hex_color").isJsonPrimitive()) {
+      if (!jsonObj.get("hex_color").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `hex_color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hex_color").toString()));
       }
       // validate the optional field `owner`
       if (jsonObj.get("owner") != null && !jsonObj.get("owner").isJsonNull()) {
         User.validateJsonElement(jsonObj.get("owner"));
       }
-      if ((jsonObj.get("access_status") != null && !jsonObj.get("access_status").isJsonNull()) && !jsonObj.get("access_status").isJsonPrimitive()) {
+      if (!jsonObj.get("access_status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `access_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("access_status").toString()));
       }
-      // validate the optional field `access_status`
-      if (jsonObj.get("access_status") != null && !jsonObj.get("access_status").isJsonNull()) {
-        AccessStatusEnum.validateJsonElement(jsonObj.get("access_status"));
-      }
+      // validate the required field `access_status`
+      AccessStatusEnum.validateJsonElement(jsonObj.get("access_status"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

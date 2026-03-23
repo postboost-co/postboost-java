@@ -37,6 +37,8 @@ public class TagsApiTest {
     /**
      * Create tag
      *
+     * Creates a new color-coded tag in the workspace for organizing posts.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -49,6 +51,8 @@ public class TagsApiTest {
 
     /**
      * Delete tag
+     *
+     * Permanently deletes a tag. Posts that had this tag attached are unaffected.
      *
      * @throws ApiException if the Api call fails
      */
@@ -63,6 +67,8 @@ public class TagsApiTest {
     /**
      * Get tag
      *
+     * Returns a single tag by UUID.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -76,6 +82,8 @@ public class TagsApiTest {
     /**
      * List tags
      *
+     * Returns all tags defined in the workspace.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -87,6 +95,8 @@ public class TagsApiTest {
 
     /**
      * Update tag
+     *
+     * Updates a tag&#39;s name or color.
      *
      * @throws ApiException if the Api call fails
      */

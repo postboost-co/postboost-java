@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.postboost.model.InitiateRemoteUpload200ResponseOneOf;
+import com.postboost.model.InitiateRemoteUpload201ResponseOneOf;
 import com.postboost.model.Media;
 import java.io.IOException;
 import java.net.URI;
@@ -62,24 +62,24 @@ import com.google.gson.JsonParseException;
 
 import com.postboost.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
-public class InitiateRemoteUpload200Response extends AbstractOpenApiSchema {
-    private static final Logger log = Logger.getLogger(InitiateRemoteUpload200Response.class.getName());
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+public class InitiateRemoteUpload201Response extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(InitiateRemoteUpload201Response.class.getName());
 
     public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
         @SuppressWarnings("unchecked")
         @Override
         public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!InitiateRemoteUpload200Response.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'InitiateRemoteUpload200Response' and its subtypes
+            if (!InitiateRemoteUpload201Response.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'InitiateRemoteUpload201Response' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<Media> adapterMedia = gson.getDelegateAdapter(this, TypeToken.get(Media.class));
-            final TypeAdapter<InitiateRemoteUpload200ResponseOneOf> adapterInitiateRemoteUpload200ResponseOneOf = gson.getDelegateAdapter(this, TypeToken.get(InitiateRemoteUpload200ResponseOneOf.class));
+            final TypeAdapter<InitiateRemoteUpload201ResponseOneOf> adapterInitiateRemoteUpload201ResponseOneOf = gson.getDelegateAdapter(this, TypeToken.get(InitiateRemoteUpload201ResponseOneOf.class));
 
-            return (TypeAdapter<T>) new TypeAdapter<InitiateRemoteUpload200Response>() {
+            return (TypeAdapter<T>) new TypeAdapter<InitiateRemoteUpload201Response>() {
                 @Override
-                public void write(JsonWriter out, InitiateRemoteUpload200Response value) throws IOException {
+                public void write(JsonWriter out, InitiateRemoteUpload201Response value) throws IOException {
                     if (value == null || value.getActualInstance() == null) {
                         elementAdapter.write(out, null);
                         return;
@@ -91,17 +91,17 @@ public class InitiateRemoteUpload200Response extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `InitiateRemoteUpload200ResponseOneOf`
-                    if (value.getActualInstance() instanceof InitiateRemoteUpload200ResponseOneOf) {
-                        JsonElement element = adapterInitiateRemoteUpload200ResponseOneOf.toJsonTree((InitiateRemoteUpload200ResponseOneOf)value.getActualInstance());
+                    // check if the actual instance is of the type `InitiateRemoteUpload201ResponseOneOf`
+                    if (value.getActualInstance() instanceof InitiateRemoteUpload201ResponseOneOf) {
+                        JsonElement element = adapterInitiateRemoteUpload201ResponseOneOf.toJsonTree((InitiateRemoteUpload201ResponseOneOf)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: InitiateRemoteUpload200ResponseOneOf, Media");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: InitiateRemoteUpload201ResponseOneOf, Media");
                 }
 
                 @Override
-                public InitiateRemoteUpload200Response read(JsonReader in) throws IOException {
+                public InitiateRemoteUpload201Response read(JsonReader in) throws IOException {
                     Object deserialized = null;
                     JsonElement jsonElement = elementAdapter.read(in);
 
@@ -121,26 +121,26 @@ public class InitiateRemoteUpload200Response extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for Media failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Media'", e);
                     }
-                    // deserialize InitiateRemoteUpload200ResponseOneOf
+                    // deserialize InitiateRemoteUpload201ResponseOneOf
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        InitiateRemoteUpload200ResponseOneOf.validateJsonElement(jsonElement);
-                        actualAdapter = adapterInitiateRemoteUpload200ResponseOneOf;
+                        InitiateRemoteUpload201ResponseOneOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterInitiateRemoteUpload201ResponseOneOf;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'InitiateRemoteUpload200ResponseOneOf'");
+                        log.log(Level.FINER, "Input data matches schema 'InitiateRemoteUpload201ResponseOneOf'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for InitiateRemoteUpload200ResponseOneOf failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'InitiateRemoteUpload200ResponseOneOf'", e);
+                        errorMessages.add(String.format("Deserialization for InitiateRemoteUpload201ResponseOneOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'InitiateRemoteUpload201ResponseOneOf'", e);
                     }
 
                     if (match == 1) {
-                        InitiateRemoteUpload200Response ret = new InitiateRemoteUpload200Response();
+                        InitiateRemoteUpload201Response ret = new InitiateRemoteUpload201Response();
                         ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for InitiateRemoteUpload200Response: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format("Failed deserialization for InitiateRemoteUpload201Response: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -149,29 +149,29 @@ public class InitiateRemoteUpload200Response extends AbstractOpenApiSchema {
     // store a list of schema names defined in oneOf
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
-    public InitiateRemoteUpload200Response() {
+    public InitiateRemoteUpload201Response() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public InitiateRemoteUpload200Response(Object o) {
+    public InitiateRemoteUpload201Response(Object o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
         schemas.put("Media", Media.class);
-        schemas.put("InitiateRemoteUpload200ResponseOneOf", InitiateRemoteUpload200ResponseOneOf.class);
+        schemas.put("InitiateRemoteUpload201ResponseOneOf", InitiateRemoteUpload201ResponseOneOf.class);
     }
 
     @Override
     public Map<String, Class<?>> getSchemas() {
-        return InitiateRemoteUpload200Response.schemas;
+        return InitiateRemoteUpload201Response.schemas;
     }
 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * InitiateRemoteUpload200ResponseOneOf, Media
+     * InitiateRemoteUpload201ResponseOneOf, Media
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -182,19 +182,19 @@ public class InitiateRemoteUpload200Response extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof InitiateRemoteUpload200ResponseOneOf) {
+        if (instance instanceof InitiateRemoteUpload201ResponseOneOf) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be InitiateRemoteUpload200ResponseOneOf, Media");
+        throw new RuntimeException("Invalid instance type. Must be InitiateRemoteUpload201ResponseOneOf, Media");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * InitiateRemoteUpload200ResponseOneOf, Media
+     * InitiateRemoteUpload201ResponseOneOf, Media
      *
-     * @return The actual instance (InitiateRemoteUpload200ResponseOneOf, Media)
+     * @return The actual instance (InitiateRemoteUpload201ResponseOneOf, Media)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -213,21 +213,21 @@ public class InitiateRemoteUpload200Response extends AbstractOpenApiSchema {
         return (Media)super.getActualInstance();
     }
     /**
-     * Get the actual instance of `InitiateRemoteUpload200ResponseOneOf`. If the actual instance is not `InitiateRemoteUpload200ResponseOneOf`,
+     * Get the actual instance of `InitiateRemoteUpload201ResponseOneOf`. If the actual instance is not `InitiateRemoteUpload201ResponseOneOf`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `InitiateRemoteUpload200ResponseOneOf`
-     * @throws ClassCastException if the instance is not `InitiateRemoteUpload200ResponseOneOf`
+     * @return The actual instance of `InitiateRemoteUpload201ResponseOneOf`
+     * @throws ClassCastException if the instance is not `InitiateRemoteUpload201ResponseOneOf`
      */
-    public InitiateRemoteUpload200ResponseOneOf getInitiateRemoteUpload200ResponseOneOf() throws ClassCastException {
-        return (InitiateRemoteUpload200ResponseOneOf)super.getActualInstance();
+    public InitiateRemoteUpload201ResponseOneOf getInitiateRemoteUpload201ResponseOneOf() throws ClassCastException {
+        return (InitiateRemoteUpload201ResponseOneOf)super.getActualInstance();
     }
 
     /**
      * Validates the JSON Element and throws an exception if issues found
      *
      * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to InitiateRemoteUpload200Response
+     * @throws IOException if the JSON Element is invalid with respect to InitiateRemoteUpload201Response
      */
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
         // validate oneOf schemas one by one
@@ -241,32 +241,32 @@ public class InitiateRemoteUpload200Response extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for Media failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with InitiateRemoteUpload200ResponseOneOf
+        // validate the json string with InitiateRemoteUpload201ResponseOneOf
         try {
-            InitiateRemoteUpload200ResponseOneOf.validateJsonElement(jsonElement);
+            InitiateRemoteUpload201ResponseOneOf.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for InitiateRemoteUpload200ResponseOneOf failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for InitiateRemoteUpload201ResponseOneOf failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for InitiateRemoteUpload200Response with oneOf schemas: InitiateRemoteUpload200ResponseOneOf, Media. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for InitiateRemoteUpload201Response with oneOf schemas: InitiateRemoteUpload201ResponseOneOf, Media. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 
     /**
-     * Create an instance of InitiateRemoteUpload200Response given an JSON string
+     * Create an instance of InitiateRemoteUpload201Response given an JSON string
      *
      * @param jsonString JSON string
-     * @return An instance of InitiateRemoteUpload200Response
-     * @throws IOException if the JSON string is invalid with respect to InitiateRemoteUpload200Response
+     * @return An instance of InitiateRemoteUpload201Response
+     * @throws IOException if the JSON string is invalid with respect to InitiateRemoteUpload201Response
      */
-    public static InitiateRemoteUpload200Response fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, InitiateRemoteUpload200Response.class);
+    public static InitiateRemoteUpload201Response fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, InitiateRemoteUpload201Response.class);
     }
 
     /**
-     * Convert an instance of InitiateRemoteUpload200Response to an JSON string
+     * Convert an instance of InitiateRemoteUpload201Response to an JSON string
      *
      * @return JSON string
      */

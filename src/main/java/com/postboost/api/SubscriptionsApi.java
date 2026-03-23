@@ -89,8 +89,9 @@ public class SubscriptionsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addGenericSubscriptionCall(UUID workspaceUuid, AddGenericSubscriptionRequest addGenericSubscriptionRequest, final ApiCallback _callback) throws ApiException {
@@ -157,7 +158,7 @@ public class SubscriptionsApi {
 
     /**
      * Add generic subscription
-     * 
+     * Assigns a non-Stripe (generic) subscription plan to the workspace, optionally granting a trial period. Used for AppSumo-style lifetime deals. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param addGenericSubscriptionRequest  (required)
      * @return Object
@@ -165,8 +166,9 @@ public class SubscriptionsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object addGenericSubscription(UUID workspaceUuid, AddGenericSubscriptionRequest addGenericSubscriptionRequest) throws ApiException {
@@ -176,7 +178,7 @@ public class SubscriptionsApi {
 
     /**
      * Add generic subscription
-     * 
+     * Assigns a non-Stripe (generic) subscription plan to the workspace, optionally granting a trial period. Used for AppSumo-style lifetime deals. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param addGenericSubscriptionRequest  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -184,8 +186,9 @@ public class SubscriptionsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> addGenericSubscriptionWithHttpInfo(UUID workspaceUuid, AddGenericSubscriptionRequest addGenericSubscriptionRequest) throws ApiException {
@@ -196,7 +199,7 @@ public class SubscriptionsApi {
 
     /**
      * Add generic subscription (asynchronously)
-     * 
+     * Assigns a non-Stripe (generic) subscription plan to the workspace, optionally granting a trial period. Used for AppSumo-style lifetime deals. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param addGenericSubscriptionRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -205,8 +208,9 @@ public class SubscriptionsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addGenericSubscriptionAsync(UUID workspaceUuid, AddGenericSubscriptionRequest addGenericSubscriptionRequest, final ApiCallback<Object> _callback) throws ApiException {
@@ -227,6 +231,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call cancelSubscriptionCall(UUID workspaceUuid, final ApiCallback _callback) throws ApiException {
@@ -287,7 +292,7 @@ public class SubscriptionsApi {
 
     /**
      * Cancel subscription
-     * 
+     * Cancels the workspace&#39;s Stripe subscription at the end of the current billing period. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -296,6 +301,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object cancelSubscription(UUID workspaceUuid) throws ApiException {
@@ -305,7 +311,7 @@ public class SubscriptionsApi {
 
     /**
      * Cancel subscription
-     * 
+     * Cancels the workspace&#39;s Stripe subscription at the end of the current billing period. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -314,6 +320,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> cancelSubscriptionWithHttpInfo(UUID workspaceUuid) throws ApiException {
@@ -324,7 +331,7 @@ public class SubscriptionsApi {
 
     /**
      * Cancel subscription (asynchronously)
-     * 
+     * Cancels the workspace&#39;s Stripe subscription at the end of the current billing period. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -334,6 +341,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call cancelSubscriptionAsync(UUID workspaceUuid, final ApiCallback<Object> _callback) throws ApiException {
@@ -355,6 +363,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call changeSubscriptionPlanCall(UUID workspaceUuid, ChangeSubscriptionPlanRequest changeSubscriptionPlanRequest, final ApiCallback _callback) throws ApiException {
@@ -421,7 +430,7 @@ public class SubscriptionsApi {
 
     /**
      * Change subscription plan
-     * 
+     * Switches the workspace to a different Stripe plan. Optionally prorates the change and bills immediately. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param changeSubscriptionPlanRequest  (required)
      * @return Object
@@ -431,6 +440,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object changeSubscriptionPlan(UUID workspaceUuid, ChangeSubscriptionPlanRequest changeSubscriptionPlanRequest) throws ApiException {
@@ -440,7 +450,7 @@ public class SubscriptionsApi {
 
     /**
      * Change subscription plan
-     * 
+     * Switches the workspace to a different Stripe plan. Optionally prorates the change and bills immediately. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param changeSubscriptionPlanRequest  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -450,6 +460,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> changeSubscriptionPlanWithHttpInfo(UUID workspaceUuid, ChangeSubscriptionPlanRequest changeSubscriptionPlanRequest) throws ApiException {
@@ -460,7 +471,7 @@ public class SubscriptionsApi {
 
     /**
      * Change subscription plan (asynchronously)
-     * 
+     * Switches the workspace to a different Stripe plan. Optionally prorates the change and bills immediately. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param changeSubscriptionPlanRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -471,6 +482,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call changeSubscriptionPlanAsync(UUID workspaceUuid, ChangeSubscriptionPlanRequest changeSubscriptionPlanRequest, final ApiCallback<Object> _callback) throws ApiException {
@@ -492,6 +504,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Checkout URL </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call checkoutSubscriptionCall(UUID workspaceUuid, CheckoutSubscriptionRequest checkoutSubscriptionRequest, final ApiCallback _callback) throws ApiException {
@@ -568,6 +581,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Checkout URL </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public CheckoutSubscription200Response checkoutSubscription(UUID workspaceUuid, CheckoutSubscriptionRequest checkoutSubscriptionRequest) throws ApiException {
@@ -587,6 +601,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Checkout URL </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CheckoutSubscription200Response> checkoutSubscriptionWithHttpInfo(UUID workspaceUuid, CheckoutSubscriptionRequest checkoutSubscriptionRequest) throws ApiException {
@@ -608,6 +623,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Checkout URL </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call checkoutSubscriptionAsync(UUID workspaceUuid, CheckoutSubscriptionRequest checkoutSubscriptionRequest, final ApiCallback<CheckoutSubscription200Response> _callback) throws ApiException {
@@ -629,6 +645,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -696,7 +713,7 @@ public class SubscriptionsApi {
 
     /**
      * Create subscription
-     * 
+     * Manually creates a subscription record for the workspace (for external billing integrations). Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param subscriptionInput  (required)
      * @return Object
@@ -706,6 +723,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -716,7 +734,7 @@ public class SubscriptionsApi {
 
     /**
      * Create subscription
-     * 
+     * Manually creates a subscription record for the workspace (for external billing integrations). Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param subscriptionInput  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -726,6 +744,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -737,7 +756,7 @@ public class SubscriptionsApi {
 
     /**
      * Create subscription (asynchronously)
-     * 
+     * Manually creates a subscription record for the workspace (for external billing integrations). Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param subscriptionInput  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -748,6 +767,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -769,6 +789,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteSubscriptionCall(UUID workspaceUuid, final ApiCallback _callback) throws ApiException {
@@ -829,7 +850,7 @@ public class SubscriptionsApi {
 
     /**
      * Delete subscription
-     * 
+     * Removes the subscription record from the workspace. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -838,6 +859,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object deleteSubscription(UUID workspaceUuid) throws ApiException {
@@ -847,7 +869,7 @@ public class SubscriptionsApi {
 
     /**
      * Delete subscription
-     * 
+     * Removes the subscription record from the workspace. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -856,6 +878,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> deleteSubscriptionWithHttpInfo(UUID workspaceUuid) throws ApiException {
@@ -866,7 +889,7 @@ public class SubscriptionsApi {
 
     /**
      * Delete subscription (asynchronously)
-     * 
+     * Removes the subscription record from the workspace. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -876,6 +899,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteSubscriptionAsync(UUID workspaceUuid, final ApiCallback<Object> _callback) throws ApiException {
@@ -896,6 +920,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscription details or null </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSubscriptionCall(UUID workspaceUuid, final ApiCallback _callback) throws ApiException {
@@ -956,7 +981,7 @@ public class SubscriptionsApi {
 
     /**
      * Get subscription
-     * 
+     * Returns the active subscription for the workspace, or &#x60;null&#x60; if none exists. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return Subscription
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -965,6 +990,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscription details or null </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Subscription getSubscription(UUID workspaceUuid) throws ApiException {
@@ -974,7 +1000,7 @@ public class SubscriptionsApi {
 
     /**
      * Get subscription
-     * 
+     * Returns the active subscription for the workspace, or &#x60;null&#x60; if none exists. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return ApiResponse&lt;Subscription&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -983,6 +1009,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscription details or null </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Subscription> getSubscriptionWithHttpInfo(UUID workspaceUuid) throws ApiException {
@@ -993,7 +1020,7 @@ public class SubscriptionsApi {
 
     /**
      * Get subscription (asynchronously)
-     * 
+     * Returns the active subscription for the workspace, or &#x60;null&#x60; if none exists. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1003,6 +1030,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscription details or null </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSubscriptionAsync(UUID workspaceUuid, final ApiCallback<Subscription> _callback) throws ApiException {
@@ -1023,6 +1051,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeGenericSubscriptionCall(UUID workspaceUuid, final ApiCallback _callback) throws ApiException {
@@ -1083,7 +1112,7 @@ public class SubscriptionsApi {
 
     /**
      * Remove generic subscription
-     * 
+     * Removes the generic (non-Stripe) subscription from the workspace. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1092,6 +1121,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object removeGenericSubscription(UUID workspaceUuid) throws ApiException {
@@ -1101,7 +1131,7 @@ public class SubscriptionsApi {
 
     /**
      * Remove generic subscription
-     * 
+     * Removes the generic (non-Stripe) subscription from the workspace. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1110,6 +1140,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> removeGenericSubscriptionWithHttpInfo(UUID workspaceUuid) throws ApiException {
@@ -1120,7 +1151,7 @@ public class SubscriptionsApi {
 
     /**
      * Remove generic subscription (asynchronously)
-     * 
+     * Removes the generic (non-Stripe) subscription from the workspace. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1130,6 +1161,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeGenericSubscriptionAsync(UUID workspaceUuid, final ApiCallback<Object> _callback) throws ApiException {
@@ -1150,6 +1182,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call resumeSubscriptionCall(UUID workspaceUuid, final ApiCallback _callback) throws ApiException {
@@ -1210,7 +1243,7 @@ public class SubscriptionsApi {
 
     /**
      * Resume subscription
-     * 
+     * Resumes a previously canceled subscription before it expires. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1219,6 +1252,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object resumeSubscription(UUID workspaceUuid) throws ApiException {
@@ -1228,7 +1262,7 @@ public class SubscriptionsApi {
 
     /**
      * Resume subscription
-     * 
+     * Resumes a previously canceled subscription before it expires. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1237,6 +1271,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> resumeSubscriptionWithHttpInfo(UUID workspaceUuid) throws ApiException {
@@ -1247,7 +1282,7 @@ public class SubscriptionsApi {
 
     /**
      * Resume subscription (asynchronously)
-     * 
+     * Resumes a previously canceled subscription before it expires. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1257,6 +1292,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call resumeSubscriptionAsync(UUID workspaceUuid, final ApiCallback<Object> _callback) throws ApiException {
@@ -1278,6 +1314,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateSubscriptionCall(UUID workspaceUuid, SubscriptionUpdateInput subscriptionUpdateInput, final ApiCallback _callback) throws ApiException {
@@ -1344,7 +1381,7 @@ public class SubscriptionsApi {
 
     /**
      * Update subscription
-     * 
+     * Updates the plan ID, status, or trial/pause dates of an existing subscription. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param subscriptionUpdateInput  (required)
      * @return Object
@@ -1354,6 +1391,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object updateSubscription(UUID workspaceUuid, SubscriptionUpdateInput subscriptionUpdateInput) throws ApiException {
@@ -1363,7 +1401,7 @@ public class SubscriptionsApi {
 
     /**
      * Update subscription
-     * 
+     * Updates the plan ID, status, or trial/pause dates of an existing subscription. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param subscriptionUpdateInput  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -1373,6 +1411,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> updateSubscriptionWithHttpInfo(UUID workspaceUuid, SubscriptionUpdateInput subscriptionUpdateInput) throws ApiException {
@@ -1383,7 +1422,7 @@ public class SubscriptionsApi {
 
     /**
      * Update subscription (asynchronously)
-     * 
+     * Updates the plan ID, status, or trial/pause dates of an existing subscription. Admin only.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param subscriptionUpdateInput  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1394,6 +1433,7 @@ public class SubscriptionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateSubscriptionAsync(UUID workspaceUuid, SubscriptionUpdateInput subscriptionUpdateInput, final ApiCallback<Object> _callback) throws ApiException {

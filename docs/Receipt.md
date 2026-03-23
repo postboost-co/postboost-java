@@ -7,16 +7,16 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**uuid** | **UUID** |  |  [optional] |
-|**transactionId** | **String** |  |  [optional] |
-|**invoiceNumber** | **String** |  |  [optional] |
-|**amount** | **BigDecimal** |  |  [optional] |
-|**tax** | **BigDecimal** |  |  [optional] |
-|**currency** | **String** |  |  [optional] |
+|**uuid** | **UUID** |  |  |
+|**transactionId** | **String** |  |  |
+|**invoiceNumber** | **String** |  |  |
+|**amount** | **BigDecimal** |  |  |
+|**tax** | **BigDecimal** |  |  |
+|**currency** | **String** |  |  |
 |**receiptUrl** | **URI** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**paidAt** | **OffsetDateTime** |  |  [optional] |
-|**createdAt** | **OffsetDateTime** |  |  [optional] |
+|**paidAt** | **OffsetDateTime** |  |  |
+|**createdAt** | **OffsetDateTime** |  |  |
 
 
 

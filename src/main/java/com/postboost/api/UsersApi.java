@@ -86,8 +86,9 @@ public class UsersApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created user </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -149,15 +150,16 @@ public class UsersApi {
 
     /**
      * Create user
-     * 
+     * Creates a new user account on the platform. Admin only.
      * @param userInput  (required)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created user </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -168,15 +170,16 @@ public class UsersApi {
 
     /**
      * Create user
-     * 
+     * Creates a new user account on the platform. Admin only.
      * @param userInput  (required)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created user </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -188,7 +191,7 @@ public class UsersApi {
 
     /**
      * Create user (asynchronously)
-     * 
+     * Creates a new user account on the platform. Admin only.
      * @param userInput  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -196,8 +199,9 @@ public class UsersApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created user </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -220,6 +224,7 @@ public class UsersApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Cannot delete own account </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteUserCall(Integer userId, final ApiCallback _callback) throws ApiException {
@@ -280,7 +285,7 @@ public class UsersApi {
 
     /**
      * Delete user
-     * 
+     * Permanently deletes a user account. Returns 400 if you attempt to delete your own account. Admin only.
      * @param userId ID of the user. (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -290,6 +295,7 @@ public class UsersApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Cannot delete own account </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object deleteUser(Integer userId) throws ApiException {
@@ -299,7 +305,7 @@ public class UsersApi {
 
     /**
      * Delete user
-     * 
+     * Permanently deletes a user account. Returns 400 if you attempt to delete your own account. Admin only.
      * @param userId ID of the user. (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -309,6 +315,7 @@ public class UsersApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Cannot delete own account </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> deleteUserWithHttpInfo(Integer userId) throws ApiException {
@@ -319,7 +326,7 @@ public class UsersApi {
 
     /**
      * Delete user (asynchronously)
-     * 
+     * Permanently deletes a user account. Returns 400 if you attempt to delete your own account. Admin only.
      * @param userId ID of the user. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -330,6 +337,7 @@ public class UsersApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Cannot delete own account </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteUserAsync(Integer userId, final ApiCallback<Object> _callback) throws ApiException {
@@ -350,6 +358,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteUsersBulkCall(DeleteUsersBulkRequest deleteUsersBulkRequest, final ApiCallback _callback) throws ApiException {
@@ -410,7 +419,7 @@ public class UsersApi {
 
     /**
      * Delete users (bulk)
-     * 
+     * Permanently deletes one or more user accounts. You cannot delete your own account. Admin only.
      * @param deleteUsersBulkRequest  (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -419,6 +428,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object deleteUsersBulk(DeleteUsersBulkRequest deleteUsersBulkRequest) throws ApiException {
@@ -428,7 +438,7 @@ public class UsersApi {
 
     /**
      * Delete users (bulk)
-     * 
+     * Permanently deletes one or more user accounts. You cannot delete your own account. Admin only.
      * @param deleteUsersBulkRequest  (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -437,6 +447,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> deleteUsersBulkWithHttpInfo(DeleteUsersBulkRequest deleteUsersBulkRequest) throws ApiException {
@@ -447,7 +458,7 @@ public class UsersApi {
 
     /**
      * Delete users (bulk) (asynchronously)
-     * 
+     * Permanently deletes one or more user accounts. You cannot delete your own account. Admin only.
      * @param deleteUsersBulkRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -457,6 +468,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteUsersBulkAsync(DeleteUsersBulkRequest deleteUsersBulkRequest, final ApiCallback<Object> _callback) throws ApiException {
@@ -477,6 +489,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -538,7 +551,7 @@ public class UsersApi {
 
     /**
      * Get user
-     * 
+     * Returns a single user account by ID. Admin only.
      * @param userId ID of the user. (required)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -547,6 +560,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -557,7 +571,7 @@ public class UsersApi {
 
     /**
      * Get user
-     * 
+     * Returns a single user account by ID. Admin only.
      * @param userId ID of the user. (required)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -566,6 +580,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -577,7 +592,7 @@ public class UsersApi {
 
     /**
      * Get user (asynchronously)
-     * 
+     * Returns a single user account by ID. Admin only.
      * @param userId ID of the user. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -587,6 +602,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -600,6 +616,7 @@ public class UsersApi {
     /**
      * Build call for listUsers
      * @param keyword Search by name or email. (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -611,7 +628,7 @@ public class UsersApi {
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUsersCall(String keyword, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listUsersCall(String keyword, Integer page, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -640,6 +657,10 @@ public class UsersApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("keyword", keyword));
         }
 
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -660,15 +681,16 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listUsersValidateBeforeCall(String keyword, final ApiCallback _callback) throws ApiException {
-        return listUsersCall(keyword, _callback);
+    private okhttp3.Call listUsersValidateBeforeCall(String keyword, Integer page, final ApiCallback _callback) throws ApiException {
+        return listUsersCall(keyword, page, _callback);
 
     }
 
     /**
      * List users
-     * 
+     * Returns a paginated list of all users on the platform. Optionally filter by name or email. Admin only.
      * @param keyword Search by name or email. (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @return ListUsers200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -679,15 +701,16 @@ public class UsersApi {
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListUsers200Response listUsers(String keyword) throws ApiException {
-        ApiResponse<ListUsers200Response> localVarResp = listUsersWithHttpInfo(keyword);
+    public ListUsers200Response listUsers(String keyword, Integer page) throws ApiException {
+        ApiResponse<ListUsers200Response> localVarResp = listUsersWithHttpInfo(keyword, page);
         return localVarResp.getData();
     }
 
     /**
      * List users
-     * 
+     * Returns a paginated list of all users on the platform. Optionally filter by name or email. Admin only.
      * @param keyword Search by name or email. (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @return ApiResponse&lt;ListUsers200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -698,16 +721,17 @@ public class UsersApi {
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListUsers200Response> listUsersWithHttpInfo(String keyword) throws ApiException {
-        okhttp3.Call localVarCall = listUsersValidateBeforeCall(keyword, null);
+    public ApiResponse<ListUsers200Response> listUsersWithHttpInfo(String keyword, Integer page) throws ApiException {
+        okhttp3.Call localVarCall = listUsersValidateBeforeCall(keyword, page, null);
         Type localVarReturnType = new TypeToken<ListUsers200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * List users (asynchronously)
-     * 
+     * Returns a paginated list of all users on the platform. Optionally filter by name or email. Admin only.
      * @param keyword Search by name or email. (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -719,9 +743,9 @@ public class UsersApi {
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUsersAsync(String keyword, final ApiCallback<ListUsers200Response> _callback) throws ApiException {
+    public okhttp3.Call listUsersAsync(String keyword, Integer page, final ApiCallback<ListUsers200Response> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listUsersValidateBeforeCall(keyword, _callback);
+        okhttp3.Call localVarCall = listUsersValidateBeforeCall(keyword, page, _callback);
         Type localVarReturnType = new TypeToken<ListUsers200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -738,6 +762,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -805,7 +830,7 @@ public class UsersApi {
 
     /**
      * Update user
-     * 
+     * Updates a user&#39;s name, email, admin status, or password. Admin only.
      * @param userId ID of the user. (required)
      * @param userUpdateInput  (required)
      * @return Object
@@ -815,6 +840,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -825,7 +851,7 @@ public class UsersApi {
 
     /**
      * Update user
-     * 
+     * Updates a user&#39;s name, email, admin status, or password. Admin only.
      * @param userId ID of the user. (required)
      * @param userUpdateInput  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -835,6 +861,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -846,7 +873,7 @@ public class UsersApi {
 
     /**
      * Update user (asynchronously)
-     * 
+     * Updates a user&#39;s name, email, admin status, or password. Admin only.
      * @param userId ID of the user. (required)
      * @param userUpdateInput  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -857,6 +884,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */

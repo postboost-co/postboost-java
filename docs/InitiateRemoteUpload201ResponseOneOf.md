@@ -1,6 +1,6 @@
 
 
-# InitiateRemoteUpload200ResponseOneOf
+# InitiateRemoteUpload201ResponseOneOf
 
 
 ## Properties

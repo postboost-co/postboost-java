@@ -7,15 +7,15 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **Integer** |  |  [optional] |
-|**uuid** | **UUID** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
-|**mimeType** | **String** |  |  [optional] |
-|**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-|**url** | **URI** |  |  [optional] |
+|**id** | **Integer** |  |  |
+|**uuid** | **UUID** |  |  |
+|**name** | **String** |  |  |
+|**mimeType** | **String** |  |  |
+|**type** | [**TypeEnum**](#TypeEnum) |  |  |
+|**url** | **URI** |  |  |
 |**thumbUrl** | **URI** |  |  [optional] |
-|**isVideo** | **Boolean** |  |  [optional] |
-|**createdAt** | **OffsetDateTime** |  |  [optional] |
+|**isVideo** | **Boolean** |  |  |
+|**createdAt** | **OffsetDateTime** |  |  |
 
 
 

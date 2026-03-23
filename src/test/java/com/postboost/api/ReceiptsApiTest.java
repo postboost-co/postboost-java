@@ -39,6 +39,8 @@ public class ReceiptsApiTest {
     /**
      * Create receipt
      *
+     * Creates a billing receipt record for a workspace. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -50,6 +52,8 @@ public class ReceiptsApiTest {
 
     /**
      * Delete receipt
+     *
+     * Permanently deletes a single receipt. Admin only.
      *
      * @throws ApiException if the Api call fails
      */
@@ -63,6 +67,8 @@ public class ReceiptsApiTest {
     /**
      * Delete receipts (bulk)
      *
+     * Permanently deletes one or more receipt records. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -74,6 +80,8 @@ public class ReceiptsApiTest {
 
     /**
      * Get receipt
+     *
+     * Returns a single receipt by UUID. Admin only.
      *
      * @throws ApiException if the Api call fails
      */
@@ -87,18 +95,23 @@ public class ReceiptsApiTest {
     /**
      * List receipts
      *
+     * Returns a paginated list of billing receipts. Filter by workspace UUID or invoice number. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void listReceiptsTest() throws ApiException {
         UUID workspaceUuid = null;
         String invoiceNumber = null;
-        ListReceipts200Response response = api.listReceipts(workspaceUuid, invoiceNumber);
+        Integer page = null;
+        ListReceipts200Response response = api.listReceipts(workspaceUuid, invoiceNumber, page);
         // TODO: test validations
     }
 
     /**
      * Update receipt
+     *
+     * Updates a receipt&#39;s transaction details, amount, or payment date. Admin only.
      *
      * @throws ApiException if the Api call fails
      */

@@ -47,10 +47,10 @@ import java.util.Set;
 import com.postboost.JSON;
 
 /**
- * InitiateChunkedUpload200Response
+ * InitiateChunkedUpload201Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
-public class InitiateChunkedUpload200Response {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+public class InitiateChunkedUpload201Response {
   public static final String SERIALIZED_NAME_UPLOAD_UUID = "upload_uuid";
   @SerializedName(SERIALIZED_NAME_UPLOAD_UUID)
   private UUID uploadUuid;
@@ -63,10 +63,10 @@ public class InitiateChunkedUpload200Response {
   @SerializedName(SERIALIZED_NAME_TOTAL_CHUNKS)
   private Integer totalChunks;
 
-  public InitiateChunkedUpload200Response() {
+  public InitiateChunkedUpload201Response() {
   }
 
-  public InitiateChunkedUpload200Response uploadUuid(UUID uploadUuid) {
+  public InitiateChunkedUpload201Response uploadUuid(UUID uploadUuid) {
     this.uploadUuid = uploadUuid;
     return this;
   }
@@ -85,7 +85,7 @@ public class InitiateChunkedUpload200Response {
   }
 
 
-  public InitiateChunkedUpload200Response chunkSize(Integer chunkSize) {
+  public InitiateChunkedUpload201Response chunkSize(Integer chunkSize) {
     this.chunkSize = chunkSize;
     return this;
   }
@@ -104,7 +104,7 @@ public class InitiateChunkedUpload200Response {
   }
 
 
-  public InitiateChunkedUpload200Response totalChunks(Integer totalChunks) {
+  public InitiateChunkedUpload201Response totalChunks(Integer totalChunks) {
     this.totalChunks = totalChunks;
     return this;
   }
@@ -132,10 +132,10 @@ public class InitiateChunkedUpload200Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InitiateChunkedUpload200Response initiateChunkedUpload200Response = (InitiateChunkedUpload200Response) o;
-    return Objects.equals(this.uploadUuid, initiateChunkedUpload200Response.uploadUuid) &&
-        Objects.equals(this.chunkSize, initiateChunkedUpload200Response.chunkSize) &&
-        Objects.equals(this.totalChunks, initiateChunkedUpload200Response.totalChunks);
+    InitiateChunkedUpload201Response initiateChunkedUpload201Response = (InitiateChunkedUpload201Response) o;
+    return Objects.equals(this.uploadUuid, initiateChunkedUpload201Response.uploadUuid) &&
+        Objects.equals(this.chunkSize, initiateChunkedUpload201Response.chunkSize) &&
+        Objects.equals(this.totalChunks, initiateChunkedUpload201Response.totalChunks);
   }
 
   @Override
@@ -146,7 +146,7 @@ public class InitiateChunkedUpload200Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InitiateChunkedUpload200Response {\n");
+    sb.append("class InitiateChunkedUpload201Response {\n");
     sb.append("    uploadUuid: ").append(toIndentedString(uploadUuid)).append("\n");
     sb.append("    chunkSize: ").append(toIndentedString(chunkSize)).append("\n");
     sb.append("    totalChunks: ").append(toIndentedString(totalChunks)).append("\n");
@@ -184,20 +184,20 @@ public class InitiateChunkedUpload200Response {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to InitiateChunkedUpload200Response
+   * @throws IOException if the JSON Element is invalid with respect to InitiateChunkedUpload201Response
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!InitiateChunkedUpload200Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InitiateChunkedUpload200Response is not found in the empty JSON string", InitiateChunkedUpload200Response.openapiRequiredFields.toString()));
+        if (!InitiateChunkedUpload201Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in InitiateChunkedUpload201Response is not found in the empty JSON string", InitiateChunkedUpload201Response.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!InitiateChunkedUpload200Response.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InitiateChunkedUpload200Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!InitiateChunkedUpload201Response.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InitiateChunkedUpload201Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -210,22 +210,22 @@ public class InitiateChunkedUpload200Response {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!InitiateChunkedUpload200Response.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'InitiateChunkedUpload200Response' and its subtypes
+       if (!InitiateChunkedUpload201Response.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'InitiateChunkedUpload201Response' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<InitiateChunkedUpload200Response> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(InitiateChunkedUpload200Response.class));
+       final TypeAdapter<InitiateChunkedUpload201Response> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(InitiateChunkedUpload201Response.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<InitiateChunkedUpload200Response>() {
+       return (TypeAdapter<T>) new TypeAdapter<InitiateChunkedUpload201Response>() {
            @Override
-           public void write(JsonWriter out, InitiateChunkedUpload200Response value) throws IOException {
+           public void write(JsonWriter out, InitiateChunkedUpload201Response value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public InitiateChunkedUpload200Response read(JsonReader in) throws IOException {
+           public InitiateChunkedUpload201Response read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -236,18 +236,18 @@ public class InitiateChunkedUpload200Response {
   }
 
   /**
-   * Create an instance of InitiateChunkedUpload200Response given an JSON string
+   * Create an instance of InitiateChunkedUpload201Response given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of InitiateChunkedUpload200Response
-   * @throws IOException if the JSON string is invalid with respect to InitiateChunkedUpload200Response
+   * @return An instance of InitiateChunkedUpload201Response
+   * @throws IOException if the JSON string is invalid with respect to InitiateChunkedUpload201Response
    */
-  public static InitiateChunkedUpload200Response fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, InitiateChunkedUpload200Response.class);
+  public static InitiateChunkedUpload201Response fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, InitiateChunkedUpload201Response.class);
   }
 
   /**
-   * Convert an instance of InitiateChunkedUpload200Response to an JSON string
+   * Convert an instance of InitiateChunkedUpload201Response to an JSON string
    *
    * @return JSON string
    */

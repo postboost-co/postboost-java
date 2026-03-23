@@ -51,7 +51,7 @@ import com.postboost.JSON;
 /**
  * Account
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class Account {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -165,7 +165,7 @@ public class Account {
    * Get id
    * @return id
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getId() {
     return id;
   }
@@ -184,7 +184,7 @@ public class Account {
    * Get uuid
    * @return uuid
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getUuid() {
     return uuid;
   }
@@ -203,7 +203,7 @@ public class Account {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -222,7 +222,7 @@ public class Account {
    * Get username
    * @return username
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getUsername() {
     return username;
   }
@@ -260,7 +260,7 @@ public class Account {
    * Get provider
    * @return provider
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ProviderEnum getProvider() {
     return provider;
   }
@@ -279,7 +279,7 @@ public class Account {
    * Provider-specific metadata.
    * @return data
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Object getData() {
     return data;
   }
@@ -298,7 +298,7 @@ public class Account {
    * Get authorized
    * @return authorized
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getAuthorized() {
     return authorized;
   }
@@ -317,7 +317,7 @@ public class Account {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -400,6 +400,14 @@ public class Account {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("uuid");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("username");
+    openapiRequiredFields.add("provider");
+    openapiRequiredFields.add("data");
+    openapiRequiredFields.add("authorized");
+    openapiRequiredFields.add("created_at");
   }
 
   /**
@@ -422,26 +430,31 @@ public class Account {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Account` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Account.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+      if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
+      if (!jsonObj.get("username").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
       }
       if ((jsonObj.get("image") != null && !jsonObj.get("image").isJsonNull()) && !jsonObj.get("image").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `image` to be a primitive type in the JSON string but got `%s`", jsonObj.get("image").toString()));
       }
-      if ((jsonObj.get("provider") != null && !jsonObj.get("provider").isJsonNull()) && !jsonObj.get("provider").isJsonPrimitive()) {
+      if (!jsonObj.get("provider").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `provider` to be a primitive type in the JSON string but got `%s`", jsonObj.get("provider").toString()));
       }
-      // validate the optional field `provider`
-      if (jsonObj.get("provider") != null && !jsonObj.get("provider").isJsonNull()) {
-        ProviderEnum.validateJsonElement(jsonObj.get("provider"));
-      }
+      // validate the required field `provider`
+      ProviderEnum.validateJsonElement(jsonObj.get("provider"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

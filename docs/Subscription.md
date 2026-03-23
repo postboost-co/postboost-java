@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  [optional] |
-|**platformSubscriptionId** | **String** |  |  [optional] |
-|**platformPlanId** | **String** |  |  [optional] |
-|**status** | **SubscriptionStatus** |  |  [optional] |
-|**recurring** | **Boolean** |  |  [optional] |
+|**name** | **String** |  |  |
+|**platformSubscriptionId** | **String** |  |  |
+|**platformPlanId** | **String** |  |  |
+|**status** | **SubscriptionStatus** |  |  |
+|**recurring** | **Boolean** |  |  |
 |**trialEndsAt** | **OffsetDateTime** |  |  [optional] |
 |**pausedFrom** | **OffsetDateTime** |  |  [optional] |
 |**endsAt** | **OffsetDateTime** |  |  [optional] |

@@ -30,15 +30,15 @@ import java.io.IOException;
 import com.postboost.model.DeleteMediaBulkRequest;
 import java.io.File;
 import com.postboost.model.GetRemoteUploadStatus200Response;
-import com.postboost.model.InitiateChunkedUpload200Response;
+import com.postboost.model.InitiateChunkedUpload201Response;
 import com.postboost.model.InitiateChunkedUploadRequest;
-import com.postboost.model.InitiateRemoteUpload200Response;
+import com.postboost.model.InitiateRemoteUpload201Response;
 import com.postboost.model.InitiateRemoteUploadRequest;
 import com.postboost.model.ListMedia200Response;
 import com.postboost.model.Media;
 import java.util.UUID;
 import com.postboost.model.UpdateMediaRequest;
-import com.postboost.model.UploadChunk200Response;
+import com.postboost.model.UploadChunk201Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -226,7 +226,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Completed media object </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Completed media object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -303,7 +303,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Completed media object </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Completed media object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -323,7 +323,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Completed media object </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Completed media object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -345,7 +345,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Completed media object </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Completed media object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -782,7 +782,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Chunked upload session details </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Chunked upload session details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -854,18 +854,18 @@ public class MediaApi {
      * Start a chunked upload session for large files. Returns an &#x60;upload_uuid&#x60;, &#x60;chunk_size&#x60;, and &#x60;total_chunks&#x60; to use for subsequent chunk requests. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param initiateChunkedUploadRequest  (required)
-     * @return InitiateChunkedUpload200Response
+     * @return InitiateChunkedUpload201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Chunked upload session details </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Chunked upload session details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public InitiateChunkedUpload200Response initiateChunkedUpload(UUID workspaceUuid, InitiateChunkedUploadRequest initiateChunkedUploadRequest) throws ApiException {
-        ApiResponse<InitiateChunkedUpload200Response> localVarResp = initiateChunkedUploadWithHttpInfo(workspaceUuid, initiateChunkedUploadRequest);
+    public InitiateChunkedUpload201Response initiateChunkedUpload(UUID workspaceUuid, InitiateChunkedUploadRequest initiateChunkedUploadRequest) throws ApiException {
+        ApiResponse<InitiateChunkedUpload201Response> localVarResp = initiateChunkedUploadWithHttpInfo(workspaceUuid, initiateChunkedUploadRequest);
         return localVarResp.getData();
     }
 
@@ -874,19 +874,19 @@ public class MediaApi {
      * Start a chunked upload session for large files. Returns an &#x60;upload_uuid&#x60;, &#x60;chunk_size&#x60;, and &#x60;total_chunks&#x60; to use for subsequent chunk requests. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param initiateChunkedUploadRequest  (required)
-     * @return ApiResponse&lt;InitiateChunkedUpload200Response&gt;
+     * @return ApiResponse&lt;InitiateChunkedUpload201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Chunked upload session details </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Chunked upload session details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InitiateChunkedUpload200Response> initiateChunkedUploadWithHttpInfo(UUID workspaceUuid, InitiateChunkedUploadRequest initiateChunkedUploadRequest) throws ApiException {
+    public ApiResponse<InitiateChunkedUpload201Response> initiateChunkedUploadWithHttpInfo(UUID workspaceUuid, InitiateChunkedUploadRequest initiateChunkedUploadRequest) throws ApiException {
         okhttp3.Call localVarCall = initiateChunkedUploadValidateBeforeCall(workspaceUuid, initiateChunkedUploadRequest, null);
-        Type localVarReturnType = new TypeToken<InitiateChunkedUpload200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InitiateChunkedUpload201Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -901,15 +901,15 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Chunked upload session details </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Chunked upload session details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call initiateChunkedUploadAsync(UUID workspaceUuid, InitiateChunkedUploadRequest initiateChunkedUploadRequest, final ApiCallback<InitiateChunkedUpload200Response> _callback) throws ApiException {
+    public okhttp3.Call initiateChunkedUploadAsync(UUID workspaceUuid, InitiateChunkedUploadRequest initiateChunkedUploadRequest, final ApiCallback<InitiateChunkedUpload201Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = initiateChunkedUploadValidateBeforeCall(workspaceUuid, initiateChunkedUploadRequest, _callback);
-        Type localVarReturnType = new TypeToken<InitiateChunkedUpload200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InitiateChunkedUpload201Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -923,7 +923,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Media object or download job </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Media object or download job </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -995,18 +995,18 @@ public class MediaApi {
      * Download a file from a remote URL into the media library. For small files the media object is returned immediately. For large files a &#x60;download_id&#x60; is returned — poll the status endpoint. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param initiateRemoteUploadRequest  (required)
-     * @return InitiateRemoteUpload200Response
+     * @return InitiateRemoteUpload201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Media object or download job </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Media object or download job </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public InitiateRemoteUpload200Response initiateRemoteUpload(UUID workspaceUuid, InitiateRemoteUploadRequest initiateRemoteUploadRequest) throws ApiException {
-        ApiResponse<InitiateRemoteUpload200Response> localVarResp = initiateRemoteUploadWithHttpInfo(workspaceUuid, initiateRemoteUploadRequest);
+    public InitiateRemoteUpload201Response initiateRemoteUpload(UUID workspaceUuid, InitiateRemoteUploadRequest initiateRemoteUploadRequest) throws ApiException {
+        ApiResponse<InitiateRemoteUpload201Response> localVarResp = initiateRemoteUploadWithHttpInfo(workspaceUuid, initiateRemoteUploadRequest);
         return localVarResp.getData();
     }
 
@@ -1015,19 +1015,19 @@ public class MediaApi {
      * Download a file from a remote URL into the media library. For small files the media object is returned immediately. For large files a &#x60;download_id&#x60; is returned — poll the status endpoint. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param initiateRemoteUploadRequest  (required)
-     * @return ApiResponse&lt;InitiateRemoteUpload200Response&gt;
+     * @return ApiResponse&lt;InitiateRemoteUpload201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Media object or download job </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Media object or download job </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InitiateRemoteUpload200Response> initiateRemoteUploadWithHttpInfo(UUID workspaceUuid, InitiateRemoteUploadRequest initiateRemoteUploadRequest) throws ApiException {
+    public ApiResponse<InitiateRemoteUpload201Response> initiateRemoteUploadWithHttpInfo(UUID workspaceUuid, InitiateRemoteUploadRequest initiateRemoteUploadRequest) throws ApiException {
         okhttp3.Call localVarCall = initiateRemoteUploadValidateBeforeCall(workspaceUuid, initiateRemoteUploadRequest, null);
-        Type localVarReturnType = new TypeToken<InitiateRemoteUpload200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InitiateRemoteUpload201Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1042,15 +1042,15 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Media object or download job </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Media object or download job </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call initiateRemoteUploadAsync(UUID workspaceUuid, InitiateRemoteUploadRequest initiateRemoteUploadRequest, final ApiCallback<InitiateRemoteUpload200Response> _callback) throws ApiException {
+    public okhttp3.Call initiateRemoteUploadAsync(UUID workspaceUuid, InitiateRemoteUploadRequest initiateRemoteUploadRequest, final ApiCallback<InitiateRemoteUpload201Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = initiateRemoteUploadValidateBeforeCall(workspaceUuid, initiateRemoteUploadRequest, _callback);
-        Type localVarReturnType = new TypeToken<InitiateRemoteUpload200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InitiateRemoteUpload201Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1352,7 +1352,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Chunk received </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Chunk received </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -1445,18 +1445,18 @@ public class MediaApi {
      * @param uploadUuid  (required)
      * @param chunk  (required)
      * @param chunkIndex Zero-based index of this chunk. (required)
-     * @return UploadChunk200Response
+     * @return UploadChunk201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Chunk received </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Chunk received </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public UploadChunk200Response uploadChunk(UUID workspaceUuid, UUID uploadUuid, File chunk, Integer chunkIndex) throws ApiException {
-        ApiResponse<UploadChunk200Response> localVarResp = uploadChunkWithHttpInfo(workspaceUuid, uploadUuid, chunk, chunkIndex);
+    public UploadChunk201Response uploadChunk(UUID workspaceUuid, UUID uploadUuid, File chunk, Integer chunkIndex) throws ApiException {
+        ApiResponse<UploadChunk201Response> localVarResp = uploadChunkWithHttpInfo(workspaceUuid, uploadUuid, chunk, chunkIndex);
         return localVarResp.getData();
     }
 
@@ -1467,19 +1467,19 @@ public class MediaApi {
      * @param uploadUuid  (required)
      * @param chunk  (required)
      * @param chunkIndex Zero-based index of this chunk. (required)
-     * @return ApiResponse&lt;UploadChunk200Response&gt;
+     * @return ApiResponse&lt;UploadChunk201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Chunk received </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Chunk received </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UploadChunk200Response> uploadChunkWithHttpInfo(UUID workspaceUuid, UUID uploadUuid, File chunk, Integer chunkIndex) throws ApiException {
+    public ApiResponse<UploadChunk201Response> uploadChunkWithHttpInfo(UUID workspaceUuid, UUID uploadUuid, File chunk, Integer chunkIndex) throws ApiException {
         okhttp3.Call localVarCall = uploadChunkValidateBeforeCall(workspaceUuid, uploadUuid, chunk, chunkIndex, null);
-        Type localVarReturnType = new TypeToken<UploadChunk200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<UploadChunk201Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1496,15 +1496,15 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Chunk received </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Chunk received </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadChunkAsync(UUID workspaceUuid, UUID uploadUuid, File chunk, Integer chunkIndex, final ApiCallback<UploadChunk200Response> _callback) throws ApiException {
+    public okhttp3.Call uploadChunkAsync(UUID workspaceUuid, UUID uploadUuid, File chunk, Integer chunkIndex, final ApiCallback<UploadChunk201Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadChunkValidateBeforeCall(workspaceUuid, uploadUuid, chunk, chunkIndex, _callback);
-        Type localVarReturnType = new TypeToken<UploadChunk200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<UploadChunk201Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1519,7 +1519,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Uploaded media object </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Uploaded media object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -1605,7 +1605,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Uploaded media object </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Uploaded media object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -1626,7 +1626,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Uploaded media object </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Uploaded media object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -1649,7 +1649,7 @@ public class MediaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Uploaded media object </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Uploaded media object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>

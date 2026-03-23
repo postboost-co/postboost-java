@@ -49,7 +49,7 @@ import com.postboost.JSON;
 /**
  * ScheduleResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class ScheduleResult {
   public static final String SERIALIZED_NAME_SUCCESS = "success";
   @SerializedName(SERIALIZED_NAME_SUCCESS)
@@ -71,7 +71,7 @@ public class ScheduleResult {
    * Get success
    * @return success
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getSuccess() {
     return success;
   }
@@ -152,6 +152,7 @@ public class ScheduleResult {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("success");
   }
 
   /**
@@ -172,6 +173,13 @@ public class ScheduleResult {
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ScheduleResult.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ScheduleResult` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ScheduleResult.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();

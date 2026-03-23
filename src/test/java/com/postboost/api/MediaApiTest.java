@@ -17,15 +17,15 @@ import com.postboost.ApiException;
 import com.postboost.model.DeleteMediaBulkRequest;
 import java.io.File;
 import com.postboost.model.GetRemoteUploadStatus200Response;
-import com.postboost.model.InitiateChunkedUpload200Response;
+import com.postboost.model.InitiateChunkedUpload201Response;
 import com.postboost.model.InitiateChunkedUploadRequest;
-import com.postboost.model.InitiateRemoteUpload200Response;
+import com.postboost.model.InitiateRemoteUpload201Response;
 import com.postboost.model.InitiateRemoteUploadRequest;
 import com.postboost.model.ListMedia200Response;
 import com.postboost.model.Media;
 import java.util.UUID;
 import com.postboost.model.UpdateMediaRequest;
-import com.postboost.model.UploadChunk200Response;
+import com.postboost.model.UploadChunk201Response;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -128,7 +128,7 @@ public class MediaApiTest {
     public void initiateChunkedUploadTest() throws ApiException {
         UUID workspaceUuid = null;
         InitiateChunkedUploadRequest initiateChunkedUploadRequest = null;
-        InitiateChunkedUpload200Response response = api.initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest);
+        InitiateChunkedUpload201Response response = api.initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest);
         // TODO: test validations
     }
 
@@ -143,7 +143,7 @@ public class MediaApiTest {
     public void initiateRemoteUploadTest() throws ApiException {
         UUID workspaceUuid = null;
         InitiateRemoteUploadRequest initiateRemoteUploadRequest = null;
-        InitiateRemoteUpload200Response response = api.initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest);
+        InitiateRemoteUpload201Response response = api.initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest);
         // TODO: test validations
     }
 
@@ -191,7 +191,7 @@ public class MediaApiTest {
         UUID uploadUuid = null;
         File chunk = null;
         Integer chunkIndex = null;
-        UploadChunk200Response response = api.uploadChunk(workspaceUuid, uploadUuid, chunk, chunkIndex);
+        UploadChunk201Response response = api.uploadChunk(workspaceUuid, uploadUuid, chunk, chunkIndex);
         // TODO: test validations
     }
 

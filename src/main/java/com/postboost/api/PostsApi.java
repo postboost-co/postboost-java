@@ -90,7 +90,7 @@ public class PostsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Queue confirmation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Queue confirmation </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -167,7 +167,7 @@ public class PostsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Queue confirmation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Queue confirmation </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -187,7 +187,7 @@ public class PostsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Queue confirmation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Queue confirmation </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -209,7 +209,7 @@ public class PostsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Queue confirmation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Queue confirmation </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -376,7 +376,7 @@ public class PostsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created post </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created post </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -453,7 +453,7 @@ public class PostsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created post </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created post </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -473,7 +473,7 @@ public class PostsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created post </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created post </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -495,7 +495,7 @@ public class PostsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created post </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created post </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -588,7 +588,7 @@ public class PostsApi {
 
     /**
      * Delete post
-     * 
+     * Deletes a post. Use &#x60;delete_mode&#x60; to control whether to also remove the published content from social platforms.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param deletePostRequest  (optional)
@@ -609,7 +609,7 @@ public class PostsApi {
 
     /**
      * Delete post
-     * 
+     * Deletes a post. Use &#x60;delete_mode&#x60; to control whether to also remove the published content from social platforms.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param deletePostRequest  (optional)
@@ -631,7 +631,7 @@ public class PostsApi {
 
     /**
      * Delete post (asynchronously)
-     * 
+     * Deletes a post. Use &#x60;delete_mode&#x60; to control whether to also remove the published content from social platforms.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param deletePostRequest  (optional)
@@ -869,7 +869,7 @@ public class PostsApi {
 
     /**
      * Get post
-     * 
+     * Returns a single post with all its versions and associated accounts.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @return Post
@@ -889,7 +889,7 @@ public class PostsApi {
 
     /**
      * Get post
-     * 
+     * Returns a single post with all its versions and associated accounts.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @return ApiResponse&lt;Post&gt;
@@ -910,7 +910,7 @@ public class PostsApi {
 
     /**
      * Get post (asynchronously)
-     * 
+     * Returns a single post with all its versions and associated accounts.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1304,7 +1304,7 @@ public class PostsApi {
 
     /**
      * Update post
-     * 
+     * Replaces a post&#39;s versions, accounts, tags, and scheduling options. The post must not be in a published state.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param postInput  (required)
@@ -1326,7 +1326,7 @@ public class PostsApi {
 
     /**
      * Update post
-     * 
+     * Replaces a post&#39;s versions, accounts, tags, and scheduling options. The post must not be in a published state.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param postInput  (required)
@@ -1349,7 +1349,7 @@ public class PostsApi {
 
     /**
      * Update post (asynchronously)
-     * 
+     * Replaces a post&#39;s versions, accounts, tags, and scheduling options. The post must not be in a published state.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param postInput  (required)

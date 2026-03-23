@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**deleted** | **Boolean** |  |  [optional] |
-|**deletedFromApp** | **Boolean** |  |  [optional] |
-|**toTrash** | **Boolean** |  |  [optional] |
+|**deleted** | **Boolean** |  |  |
+|**deletedFromApp** | **Boolean** |  |  |
+|**toTrash** | **Boolean** |  |  |
 
 
 

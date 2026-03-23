@@ -46,18 +46,18 @@ import java.util.Set;
 import com.postboost.JSON;
 
 /**
- * InitiateRemoteUpload200ResponseOneOf
+ * InitiateRemoteUpload201ResponseOneOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
-public class InitiateRemoteUpload200ResponseOneOf {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+public class InitiateRemoteUpload201ResponseOneOf {
   public static final String SERIALIZED_NAME_DOWNLOAD_ID = "download_id";
   @SerializedName(SERIALIZED_NAME_DOWNLOAD_ID)
   private String downloadId;
 
-  public InitiateRemoteUpload200ResponseOneOf() {
+  public InitiateRemoteUpload201ResponseOneOf() {
   }
 
-  public InitiateRemoteUpload200ResponseOneOf downloadId(String downloadId) {
+  public InitiateRemoteUpload201ResponseOneOf downloadId(String downloadId) {
     this.downloadId = downloadId;
     return this;
   }
@@ -85,8 +85,8 @@ public class InitiateRemoteUpload200ResponseOneOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InitiateRemoteUpload200ResponseOneOf initiateRemoteUpload200ResponseOneOf = (InitiateRemoteUpload200ResponseOneOf) o;
-    return Objects.equals(this.downloadId, initiateRemoteUpload200ResponseOneOf.downloadId);
+    InitiateRemoteUpload201ResponseOneOf initiateRemoteUpload201ResponseOneOf = (InitiateRemoteUpload201ResponseOneOf) o;
+    return Objects.equals(this.downloadId, initiateRemoteUpload201ResponseOneOf.downloadId);
   }
 
   @Override
@@ -97,7 +97,7 @@ public class InitiateRemoteUpload200ResponseOneOf {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InitiateRemoteUpload200ResponseOneOf {\n");
+    sb.append("class InitiateRemoteUpload201ResponseOneOf {\n");
     sb.append("    downloadId: ").append(toIndentedString(downloadId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -131,20 +131,20 @@ public class InitiateRemoteUpload200ResponseOneOf {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to InitiateRemoteUpload200ResponseOneOf
+   * @throws IOException if the JSON Element is invalid with respect to InitiateRemoteUpload201ResponseOneOf
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!InitiateRemoteUpload200ResponseOneOf.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InitiateRemoteUpload200ResponseOneOf is not found in the empty JSON string", InitiateRemoteUpload200ResponseOneOf.openapiRequiredFields.toString()));
+        if (!InitiateRemoteUpload201ResponseOneOf.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in InitiateRemoteUpload201ResponseOneOf is not found in the empty JSON string", InitiateRemoteUpload201ResponseOneOf.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!InitiateRemoteUpload200ResponseOneOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InitiateRemoteUpload200ResponseOneOf` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!InitiateRemoteUpload201ResponseOneOf.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InitiateRemoteUpload201ResponseOneOf` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -157,22 +157,22 @@ public class InitiateRemoteUpload200ResponseOneOf {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!InitiateRemoteUpload200ResponseOneOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'InitiateRemoteUpload200ResponseOneOf' and its subtypes
+       if (!InitiateRemoteUpload201ResponseOneOf.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'InitiateRemoteUpload201ResponseOneOf' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<InitiateRemoteUpload200ResponseOneOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(InitiateRemoteUpload200ResponseOneOf.class));
+       final TypeAdapter<InitiateRemoteUpload201ResponseOneOf> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(InitiateRemoteUpload201ResponseOneOf.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<InitiateRemoteUpload200ResponseOneOf>() {
+       return (TypeAdapter<T>) new TypeAdapter<InitiateRemoteUpload201ResponseOneOf>() {
            @Override
-           public void write(JsonWriter out, InitiateRemoteUpload200ResponseOneOf value) throws IOException {
+           public void write(JsonWriter out, InitiateRemoteUpload201ResponseOneOf value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public InitiateRemoteUpload200ResponseOneOf read(JsonReader in) throws IOException {
+           public InitiateRemoteUpload201ResponseOneOf read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -183,18 +183,18 @@ public class InitiateRemoteUpload200ResponseOneOf {
   }
 
   /**
-   * Create an instance of InitiateRemoteUpload200ResponseOneOf given an JSON string
+   * Create an instance of InitiateRemoteUpload201ResponseOneOf given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of InitiateRemoteUpload200ResponseOneOf
-   * @throws IOException if the JSON string is invalid with respect to InitiateRemoteUpload200ResponseOneOf
+   * @return An instance of InitiateRemoteUpload201ResponseOneOf
+   * @throws IOException if the JSON string is invalid with respect to InitiateRemoteUpload201ResponseOneOf
    */
-  public static InitiateRemoteUpload200ResponseOneOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, InitiateRemoteUpload200ResponseOneOf.class);
+  public static InitiateRemoteUpload201ResponseOneOf fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, InitiateRemoteUpload201ResponseOneOf.class);
   }
 
   /**
-   * Convert an instance of InitiateRemoteUpload200ResponseOneOf to an JSON string
+   * Convert an instance of InitiateRemoteUpload201ResponseOneOf to an JSON string
    *
    * @return JSON string
    */

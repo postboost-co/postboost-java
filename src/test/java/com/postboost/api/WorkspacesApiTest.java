@@ -40,6 +40,8 @@ public class WorkspacesApiTest {
     /**
      * Add user to workspace
      *
+     * Adds an existing user to the workspace with a specified role. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -67,6 +69,8 @@ public class WorkspacesApiTest {
     /**
      * Delete workspace
      *
+     * Permanently deletes a single workspace and all its associated data. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -79,6 +83,8 @@ public class WorkspacesApiTest {
     /**
      * Delete workspaces (bulk)
      *
+     * Permanently deletes one or more workspaces and all their associated data. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -90,6 +96,8 @@ public class WorkspacesApiTest {
 
     /**
      * Get workspace
+     *
+     * Returns a single workspace by UUID including its subscription status. Admin only.
      *
      * @throws ApiException if the Api call fails
      */
@@ -112,12 +120,15 @@ public class WorkspacesApiTest {
         String keyword = null;
         String subscriptionStatus = null;
         String accessStatus = null;
-        ListWorkspaces200Response response = api.listWorkspaces(keyword, subscriptionStatus, accessStatus);
+        Integer page = null;
+        ListWorkspaces200Response response = api.listWorkspaces(keyword, subscriptionStatus, accessStatus, page);
         // TODO: test validations
     }
 
     /**
      * Remove user from workspace
+     *
+     * Removes a user&#39;s access to the workspace. The user account is not deleted. Admin only.
      *
      * @throws ApiException if the Api call fails
      */
@@ -132,6 +143,8 @@ public class WorkspacesApiTest {
     /**
      * Update workspace
      *
+     * Updates a workspace&#39;s name, color, or access status. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -144,6 +157,8 @@ public class WorkspacesApiTest {
 
     /**
      * Update user role in workspace
+     *
+     * Changes a user&#39;s role or permissions within the workspace. Admin only.
      *
      * @throws ApiException if the Api call fails
      */

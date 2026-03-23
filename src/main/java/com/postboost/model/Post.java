@@ -56,7 +56,7 @@ import com.postboost.JSON;
 /**
  * Post
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class Post {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -110,7 +110,7 @@ public class Post {
    * Get id
    * @return id
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getId() {
     return id;
   }
@@ -129,7 +129,7 @@ public class Post {
    * Get uuid
    * @return uuid
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getUuid() {
     return uuid;
   }
@@ -148,7 +148,7 @@ public class Post {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public PostStatus getStatus() {
     return status;
   }
@@ -175,7 +175,7 @@ public class Post {
    * Get accounts
    * @return accounts
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<Account> getAccounts() {
     return accounts;
   }
@@ -202,7 +202,7 @@ public class Post {
    * Get versions
    * @return versions
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<PostVersion> getVersions() {
     return versions;
   }
@@ -229,7 +229,7 @@ public class Post {
    * Get tags
    * @return tags
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<Tag> getTags() {
     return tags;
   }
@@ -286,7 +286,7 @@ public class Post {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -305,7 +305,7 @@ public class Post {
    * Get trashed
    * @return trashed
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getTrashed() {
     return trashed;
   }
@@ -391,6 +391,14 @@ public class Post {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("uuid");
+    openapiRequiredFields.add("status");
+    openapiRequiredFields.add("accounts");
+    openapiRequiredFields.add("versions");
+    openapiRequiredFields.add("tags");
+    openapiRequiredFields.add("created_at");
+    openapiRequiredFields.add("trashed");
   }
 
   /**
@@ -413,56 +421,49 @@ public class Post {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Post` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Post.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+      if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
-      // validate the optional field `status`
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        PostStatus.validateJsonElement(jsonObj.get("status"));
+      // validate the required field `status`
+      PostStatus.validateJsonElement(jsonObj.get("status"));
+      // ensure the json data is an array
+      if (!jsonObj.get("accounts").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `accounts` to be an array in the JSON string but got `%s`", jsonObj.get("accounts").toString()));
       }
-      if (jsonObj.get("accounts") != null && !jsonObj.get("accounts").isJsonNull()) {
-        JsonArray jsonArrayaccounts = jsonObj.getAsJsonArray("accounts");
-        if (jsonArrayaccounts != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("accounts").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `accounts` to be an array in the JSON string but got `%s`", jsonObj.get("accounts").toString()));
-          }
 
-          // validate the optional field `accounts` (array)
-          for (int i = 0; i < jsonArrayaccounts.size(); i++) {
-            Account.validateJsonElement(jsonArrayaccounts.get(i));
-          };
-        }
+      JsonArray jsonArrayaccounts = jsonObj.getAsJsonArray("accounts");
+      // validate the required field `accounts` (array)
+      for (int i = 0; i < jsonArrayaccounts.size(); i++) {
+        Account.validateJsonElement(jsonArrayaccounts.get(i));
+      };
+      // ensure the json data is an array
+      if (!jsonObj.get("versions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `versions` to be an array in the JSON string but got `%s`", jsonObj.get("versions").toString()));
       }
-      if (jsonObj.get("versions") != null && !jsonObj.get("versions").isJsonNull()) {
-        JsonArray jsonArrayversions = jsonObj.getAsJsonArray("versions");
-        if (jsonArrayversions != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("versions").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `versions` to be an array in the JSON string but got `%s`", jsonObj.get("versions").toString()));
-          }
 
-          // validate the optional field `versions` (array)
-          for (int i = 0; i < jsonArrayversions.size(); i++) {
-            PostVersion.validateJsonElement(jsonArrayversions.get(i));
-          };
-        }
+      JsonArray jsonArrayversions = jsonObj.getAsJsonArray("versions");
+      // validate the required field `versions` (array)
+      for (int i = 0; i < jsonArrayversions.size(); i++) {
+        PostVersion.validateJsonElement(jsonArrayversions.get(i));
+      };
+      // ensure the json data is an array
+      if (!jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
-      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull()) {
-        JsonArray jsonArraytags = jsonObj.getAsJsonArray("tags");
-        if (jsonArraytags != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("tags").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-          }
 
-          // validate the optional field `tags` (array)
-          for (int i = 0; i < jsonArraytags.size(); i++) {
-            Tag.validateJsonElement(jsonArraytags.get(i));
-          };
-        }
-      }
+      JsonArray jsonArraytags = jsonObj.getAsJsonArray("tags");
+      // validate the required field `tags` (array)
+      for (int i = 0; i < jsonArraytags.size(); i++) {
+        Tag.validateJsonElement(jsonArraytags.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -85,7 +85,7 @@ public class TagsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created tag </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created tag </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -154,7 +154,7 @@ public class TagsApi {
 
     /**
      * Create tag
-     * 
+     * Creates a new color-coded tag in the workspace for organizing posts.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagInput  (required)
      * @return Tag
@@ -162,7 +162,7 @@ public class TagsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created tag </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created tag </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -174,7 +174,7 @@ public class TagsApi {
 
     /**
      * Create tag
-     * 
+     * Creates a new color-coded tag in the workspace for organizing posts.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagInput  (required)
      * @return ApiResponse&lt;Tag&gt;
@@ -182,7 +182,7 @@ public class TagsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created tag </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created tag </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -195,7 +195,7 @@ public class TagsApi {
 
     /**
      * Create tag (asynchronously)
-     * 
+     * Creates a new color-coded tag in the workspace for organizing posts.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagInput  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -204,7 +204,7 @@ public class TagsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created tag </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created tag </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
@@ -295,7 +295,7 @@ public class TagsApi {
 
     /**
      * Delete tag
-     * 
+     * Permanently deletes a tag. Posts that had this tag attached are unaffected.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagUuid UUID of the tag. (required)
      * @return Object
@@ -315,7 +315,7 @@ public class TagsApi {
 
     /**
      * Delete tag
-     * 
+     * Permanently deletes a tag. Posts that had this tag attached are unaffected.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagUuid UUID of the tag. (required)
      * @return ApiResponse&lt;Object&gt;
@@ -336,7 +336,7 @@ public class TagsApi {
 
     /**
      * Delete tag (asynchronously)
-     * 
+     * Permanently deletes a tag. Posts that had this tag attached are unaffected.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagUuid UUID of the tag. (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -436,7 +436,7 @@ public class TagsApi {
 
     /**
      * Get tag
-     * 
+     * Returns a single tag by UUID.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagUuid UUID of the tag. (required)
      * @return Tag
@@ -456,7 +456,7 @@ public class TagsApi {
 
     /**
      * Get tag
-     * 
+     * Returns a single tag by UUID.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagUuid UUID of the tag. (required)
      * @return ApiResponse&lt;Tag&gt;
@@ -477,7 +477,7 @@ public class TagsApi {
 
     /**
      * Get tag (asynchronously)
-     * 
+     * Returns a single tag by UUID.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagUuid UUID of the tag. (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -569,7 +569,7 @@ public class TagsApi {
 
     /**
      * List tags
-     * 
+     * Returns all tags defined in the workspace.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return ListTags200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -587,7 +587,7 @@ public class TagsApi {
 
     /**
      * List tags
-     * 
+     * Returns all tags defined in the workspace.
      * @param workspaceUuid UUID of the workspace. (required)
      * @return ApiResponse&lt;ListTags200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -606,7 +606,7 @@ public class TagsApi {
 
     /**
      * List tags (asynchronously)
-     * 
+     * Returns all tags defined in the workspace.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -712,7 +712,7 @@ public class TagsApi {
 
     /**
      * Update tag
-     * 
+     * Updates a tag&#39;s name or color.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagUuid UUID of the tag. (required)
      * @param tagInput  (required)
@@ -734,7 +734,7 @@ public class TagsApi {
 
     /**
      * Update tag
-     * 
+     * Updates a tag&#39;s name or color.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagUuid UUID of the tag. (required)
      * @param tagInput  (required)
@@ -757,7 +757,7 @@ public class TagsApi {
 
     /**
      * Update tag (asynchronously)
-     * 
+     * Updates a tag&#39;s name or color.
      * @param workspaceUuid UUID of the workspace. (required)
      * @param tagUuid UUID of the tag. (required)
      * @param tagInput  (required)

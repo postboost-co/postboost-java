@@ -7,15 +7,15 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **Integer** |  |  [optional] |
-|**uuid** | **UUID** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
-|**username** | **String** |  |  [optional] |
+|**id** | **Integer** |  |  |
+|**uuid** | **UUID** |  |  |
+|**name** | **String** |  |  |
+|**username** | **String** |  |  |
 |**image** | **URI** |  |  [optional] |
-|**provider** | [**ProviderEnum**](#ProviderEnum) |  |  [optional] |
-|**data** | **Object** | Provider-specific metadata. |  [optional] |
-|**authorized** | **Boolean** |  |  [optional] |
-|**createdAt** | **OffsetDateTime** |  |  [optional] |
+|**provider** | [**ProviderEnum**](#ProviderEnum) |  |  |
+|**data** | **Object** | Provider-specific metadata. |  |
+|**authorized** | **Boolean** |  |  |
+|**createdAt** | **OffsetDateTime** |  |  |
 
 
 

@@ -82,7 +82,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Queue confirmation |  -  |
+| **201** | Queue confirmation |  -  |
 | **401** |  |  -  |
 | **404** |  |  -  |
 
@@ -225,7 +225,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Created post |  -  |
+| **201** | Created post |  -  |
 | **401** |  |  -  |
 | **422** |  |  -  |
 
@@ -234,6 +234,8 @@ public class Example {
 > DeleteResult deletePost(workspaceUuid, postUuid, deletePostRequest)
 
 Delete post
+
+Deletes a post. Use &#x60;delete_mode&#x60; to control whether to also remove the published content from social platforms.
 
 ### Example
 ```java
@@ -375,6 +377,8 @@ public class Example {
 > Post getPost(workspaceUuid, postUuid)
 
 Get post
+
+Returns a single post with all its versions and associated accounts.
 
 ### Example
 ```java
@@ -587,6 +591,8 @@ public class Example {
 > Object updatePost(workspaceUuid, postUuid, postInput)
 
 Update post
+
+Replaces a post&#39;s versions, accounts, tags, and scheduling options. The post must not be in a published state.
 
 ### Example
 ```java

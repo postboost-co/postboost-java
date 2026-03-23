@@ -52,7 +52,7 @@ import com.postboost.JSON;
 /**
  * Receipt
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class Receipt {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
@@ -106,7 +106,7 @@ public class Receipt {
    * Get uuid
    * @return uuid
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getUuid() {
     return uuid;
   }
@@ -125,7 +125,7 @@ public class Receipt {
    * Get transactionId
    * @return transactionId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getTransactionId() {
     return transactionId;
   }
@@ -144,7 +144,7 @@ public class Receipt {
    * Get invoiceNumber
    * @return invoiceNumber
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getInvoiceNumber() {
     return invoiceNumber;
   }
@@ -163,7 +163,7 @@ public class Receipt {
    * Get amount
    * @return amount
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public BigDecimal getAmount() {
     return amount;
   }
@@ -182,7 +182,7 @@ public class Receipt {
    * Get tax
    * @return tax
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public BigDecimal getTax() {
     return tax;
   }
@@ -201,7 +201,7 @@ public class Receipt {
    * Get currency
    * @return currency
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getCurrency() {
     return currency;
   }
@@ -258,7 +258,7 @@ public class Receipt {
    * Get paidAt
    * @return paidAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getPaidAt() {
     return paidAt;
   }
@@ -277,7 +277,7 @@ public class Receipt {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -363,6 +363,14 @@ public class Receipt {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("uuid");
+    openapiRequiredFields.add("transaction_id");
+    openapiRequiredFields.add("invoice_number");
+    openapiRequiredFields.add("amount");
+    openapiRequiredFields.add("tax");
+    openapiRequiredFields.add("currency");
+    openapiRequiredFields.add("paid_at");
+    openapiRequiredFields.add("created_at");
   }
 
   /**
@@ -385,17 +393,24 @@ public class Receipt {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Receipt` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Receipt.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+      if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
-      if ((jsonObj.get("transaction_id") != null && !jsonObj.get("transaction_id").isJsonNull()) && !jsonObj.get("transaction_id").isJsonPrimitive()) {
+      if (!jsonObj.get("transaction_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `transaction_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transaction_id").toString()));
       }
-      if ((jsonObj.get("invoice_number") != null && !jsonObj.get("invoice_number").isJsonNull()) && !jsonObj.get("invoice_number").isJsonPrimitive()) {
+      if (!jsonObj.get("invoice_number").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `invoice_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("invoice_number").toString()));
       }
-      if ((jsonObj.get("currency") != null && !jsonObj.get("currency").isJsonNull()) && !jsonObj.get("currency").isJsonPrimitive()) {
+      if (!jsonObj.get("currency").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currency").toString()));
       }
       if ((jsonObj.get("receipt_url") != null && !jsonObj.get("receipt_url").isJsonNull()) && !jsonObj.get("receipt_url").isJsonPrimitive()) {

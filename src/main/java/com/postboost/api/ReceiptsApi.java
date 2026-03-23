@@ -86,8 +86,9 @@ public class ReceiptsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created receipt </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created receipt </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -149,15 +150,16 @@ public class ReceiptsApi {
 
     /**
      * Create receipt
-     * 
+     * Creates a billing receipt record for a workspace. Admin only.
      * @param receiptInput  (required)
      * @return Receipt
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created receipt </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created receipt </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -168,15 +170,16 @@ public class ReceiptsApi {
 
     /**
      * Create receipt
-     * 
+     * Creates a billing receipt record for a workspace. Admin only.
      * @param receiptInput  (required)
      * @return ApiResponse&lt;Receipt&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created receipt </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created receipt </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -188,7 +191,7 @@ public class ReceiptsApi {
 
     /**
      * Create receipt (asynchronously)
-     * 
+     * Creates a billing receipt record for a workspace. Admin only.
      * @param receiptInput  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -196,8 +199,9 @@ public class ReceiptsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created receipt </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created receipt </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -219,6 +223,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -280,7 +285,7 @@ public class ReceiptsApi {
 
     /**
      * Delete receipt
-     * 
+     * Permanently deletes a single receipt. Admin only.
      * @param receiptUuid UUID of the receipt. (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -289,6 +294,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -299,7 +305,7 @@ public class ReceiptsApi {
 
     /**
      * Delete receipt
-     * 
+     * Permanently deletes a single receipt. Admin only.
      * @param receiptUuid UUID of the receipt. (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -308,6 +314,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -319,7 +326,7 @@ public class ReceiptsApi {
 
     /**
      * Delete receipt (asynchronously)
-     * 
+     * Permanently deletes a single receipt. Admin only.
      * @param receiptUuid UUID of the receipt. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -329,6 +336,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -350,6 +358,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteReceiptsBulkCall(DeleteReceiptsBulkRequest deleteReceiptsBulkRequest, final ApiCallback _callback) throws ApiException {
@@ -410,7 +419,7 @@ public class ReceiptsApi {
 
     /**
      * Delete receipts (bulk)
-     * 
+     * Permanently deletes one or more receipt records. Admin only.
      * @param deleteReceiptsBulkRequest  (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -419,6 +428,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public Object deleteReceiptsBulk(DeleteReceiptsBulkRequest deleteReceiptsBulkRequest) throws ApiException {
@@ -428,7 +438,7 @@ public class ReceiptsApi {
 
     /**
      * Delete receipts (bulk)
-     * 
+     * Permanently deletes one or more receipt records. Admin only.
      * @param deleteReceiptsBulkRequest  (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -437,6 +447,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> deleteReceiptsBulkWithHttpInfo(DeleteReceiptsBulkRequest deleteReceiptsBulkRequest) throws ApiException {
@@ -447,7 +458,7 @@ public class ReceiptsApi {
 
     /**
      * Delete receipts (bulk) (asynchronously)
-     * 
+     * Permanently deletes one or more receipt records. Admin only.
      * @param deleteReceiptsBulkRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -457,6 +468,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteReceiptsBulkAsync(DeleteReceiptsBulkRequest deleteReceiptsBulkRequest, final ApiCallback<Object> _callback) throws ApiException {
@@ -477,6 +489,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Receipt details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -538,7 +551,7 @@ public class ReceiptsApi {
 
     /**
      * Get receipt
-     * 
+     * Returns a single receipt by UUID. Admin only.
      * @param receiptUuid UUID of the receipt. (required)
      * @return Receipt
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -547,6 +560,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Receipt details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -557,7 +571,7 @@ public class ReceiptsApi {
 
     /**
      * Get receipt
-     * 
+     * Returns a single receipt by UUID. Admin only.
      * @param receiptUuid UUID of the receipt. (required)
      * @return ApiResponse&lt;Receipt&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -566,6 +580,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Receipt details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -577,7 +592,7 @@ public class ReceiptsApi {
 
     /**
      * Get receipt (asynchronously)
-     * 
+     * Returns a single receipt by UUID. Admin only.
      * @param receiptUuid UUID of the receipt. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -587,6 +602,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Receipt details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -601,6 +617,7 @@ public class ReceiptsApi {
      * Build call for listReceipts
      * @param workspaceUuid  (optional)
      * @param invoiceNumber  (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -609,9 +626,10 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of receipts </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReceiptsCall(UUID workspaceUuid, String invoiceNumber, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listReceiptsCall(UUID workspaceUuid, String invoiceNumber, Integer page, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -644,6 +662,10 @@ public class ReceiptsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("invoice_number", invoiceNumber));
         }
 
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -664,16 +686,17 @@ public class ReceiptsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listReceiptsValidateBeforeCall(UUID workspaceUuid, String invoiceNumber, final ApiCallback _callback) throws ApiException {
-        return listReceiptsCall(workspaceUuid, invoiceNumber, _callback);
+    private okhttp3.Call listReceiptsValidateBeforeCall(UUID workspaceUuid, String invoiceNumber, Integer page, final ApiCallback _callback) throws ApiException {
+        return listReceiptsCall(workspaceUuid, invoiceNumber, page, _callback);
 
     }
 
     /**
      * List receipts
-     * 
+     * Returns a paginated list of billing receipts. Filter by workspace UUID or invoice number. Admin only.
      * @param workspaceUuid  (optional)
      * @param invoiceNumber  (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @return ListReceipts200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -681,18 +704,20 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of receipts </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListReceipts200Response listReceipts(UUID workspaceUuid, String invoiceNumber) throws ApiException {
-        ApiResponse<ListReceipts200Response> localVarResp = listReceiptsWithHttpInfo(workspaceUuid, invoiceNumber);
+    public ListReceipts200Response listReceipts(UUID workspaceUuid, String invoiceNumber, Integer page) throws ApiException {
+        ApiResponse<ListReceipts200Response> localVarResp = listReceiptsWithHttpInfo(workspaceUuid, invoiceNumber, page);
         return localVarResp.getData();
     }
 
     /**
      * List receipts
-     * 
+     * Returns a paginated list of billing receipts. Filter by workspace UUID or invoice number. Admin only.
      * @param workspaceUuid  (optional)
      * @param invoiceNumber  (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @return ApiResponse&lt;ListReceipts200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -700,19 +725,21 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of receipts </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListReceipts200Response> listReceiptsWithHttpInfo(UUID workspaceUuid, String invoiceNumber) throws ApiException {
-        okhttp3.Call localVarCall = listReceiptsValidateBeforeCall(workspaceUuid, invoiceNumber, null);
+    public ApiResponse<ListReceipts200Response> listReceiptsWithHttpInfo(UUID workspaceUuid, String invoiceNumber, Integer page) throws ApiException {
+        okhttp3.Call localVarCall = listReceiptsValidateBeforeCall(workspaceUuid, invoiceNumber, page, null);
         Type localVarReturnType = new TypeToken<ListReceipts200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * List receipts (asynchronously)
-     * 
+     * Returns a paginated list of billing receipts. Filter by workspace UUID or invoice number. Admin only.
      * @param workspaceUuid  (optional)
      * @param invoiceNumber  (optional)
+     * @param page Page number (15 items per page). (optional, default to 1)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -721,11 +748,12 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of receipts </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReceiptsAsync(UUID workspaceUuid, String invoiceNumber, final ApiCallback<ListReceipts200Response> _callback) throws ApiException {
+    public okhttp3.Call listReceiptsAsync(UUID workspaceUuid, String invoiceNumber, Integer page, final ApiCallback<ListReceipts200Response> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listReceiptsValidateBeforeCall(workspaceUuid, invoiceNumber, _callback);
+        okhttp3.Call localVarCall = listReceiptsValidateBeforeCall(workspaceUuid, invoiceNumber, page, _callback);
         Type localVarReturnType = new TypeToken<ListReceipts200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -742,6 +770,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -809,7 +838,7 @@ public class ReceiptsApi {
 
     /**
      * Update receipt
-     * 
+     * Updates a receipt&#39;s transaction details, amount, or payment date. Admin only.
      * @param receiptUuid UUID of the receipt. (required)
      * @param receiptUpdateInput  (required)
      * @return Object
@@ -819,6 +848,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -829,7 +859,7 @@ public class ReceiptsApi {
 
     /**
      * Update receipt
-     * 
+     * Updates a receipt&#39;s transaction details, amount, or payment date. Admin only.
      * @param receiptUuid UUID of the receipt. (required)
      * @param receiptUpdateInput  (required)
      * @return ApiResponse&lt;Object&gt;
@@ -839,6 +869,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
@@ -850,7 +881,7 @@ public class ReceiptsApi {
 
     /**
      * Update receipt (asynchronously)
-     * 
+     * Updates a receipt&#39;s transaction details, amount, or payment date. Admin only.
      * @param receiptUuid UUID of the receipt. (required)
      * @param receiptUpdateInput  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -861,6 +892,7 @@ public class ReceiptsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */

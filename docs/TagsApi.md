@@ -17,6 +17,8 @@ All URIs are relative to *https://postboost.co/app/api*
 
 Create tag
 
+Creates a new color-coded tag in the workspace for organizing posts.
+
 ### Example
 ```java
 // Import classes:
@@ -76,7 +78,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Created tag |  -  |
+| **201** | Created tag |  -  |
 | **401** |  |  -  |
 | **422** |  |  -  |
 
@@ -85,6 +87,8 @@ public class Example {
 > Object deleteTag(workspaceUuid, tagUuid)
 
 Delete tag
+
+Permanently deletes a tag. Posts that had this tag attached are unaffected.
 
 ### Example
 ```java
@@ -155,6 +159,8 @@ public class Example {
 
 Get tag
 
+Returns a single tag by UUID.
+
 ### Example
 ```java
 // Import classes:
@@ -224,6 +230,8 @@ public class Example {
 
 List tags
 
+Returns all tags defined in the workspace.
+
 ### Example
 ```java
 // Import classes:
@@ -289,6 +297,8 @@ public class Example {
 > Object updateTag(workspaceUuid, tagUuid, tagInput)
 
 Update tag
+
+Updates a tag&#39;s name or color.
 
 ### Example
 ```java

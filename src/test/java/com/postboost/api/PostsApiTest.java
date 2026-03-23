@@ -87,6 +87,8 @@ public class PostsApiTest {
     /**
      * Delete post
      *
+     * Deletes a post. Use &#x60;delete_mode&#x60; to control whether to also remove the published content from social platforms.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -115,6 +117,8 @@ public class PostsApiTest {
 
     /**
      * Get post
+     *
+     * Returns a single post with all its versions and associated accounts.
      *
      * @throws ApiException if the Api call fails
      */
@@ -159,6 +163,8 @@ public class PostsApiTest {
 
     /**
      * Update post
+     *
+     * Replaces a post&#39;s versions, accounts, tags, and scheduling options. The post must not be in a published state.
      *
      * @throws ApiException if the Api call fails
      */

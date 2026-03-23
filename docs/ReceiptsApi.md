@@ -18,6 +18,8 @@ All URIs are relative to *https://postboost.co/app/api*
 
 Create receipt
 
+Creates a billing receipt record for a workspace. Admin only.
+
 ### Example
 ```java
 // Import classes:
@@ -75,8 +77,9 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Created receipt |  -  |
+| **201** | Created receipt |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **422** |  |  -  |
 
 <a id="deleteReceipt"></a>
@@ -84,6 +87,8 @@ public class Example {
 > Object deleteReceipt(receiptUuid)
 
 Delete receipt
+
+Permanently deletes a single receipt. Admin only.
 
 ### Example
 ```java
@@ -144,6 +149,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 
 <a id="deleteReceiptsBulk"></a>
@@ -151,6 +157,8 @@ public class Example {
 > Object deleteReceiptsBulk(deleteReceiptsBulkRequest)
 
 Delete receipts (bulk)
+
+Permanently deletes one or more receipt records. Admin only.
 
 ### Example
 ```java
@@ -211,12 +219,15 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 
 <a id="getReceipt"></a>
 # **getReceipt**
 > Receipt getReceipt(receiptUuid)
 
 Get receipt
+
+Returns a single receipt by UUID. Admin only.
 
 ### Example
 ```java
@@ -277,13 +288,16 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Receipt details |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 
 <a id="listReceipts"></a>
 # **listReceipts**
-> ListReceipts200Response listReceipts(workspaceUuid, invoiceNumber)
+> ListReceipts200Response listReceipts(workspaceUuid, invoiceNumber, page)
 
 List receipts
+
+Returns a paginated list of billing receipts. Filter by workspace UUID or invoice number. Admin only.
 
 ### Example
 ```java
@@ -307,8 +321,9 @@ public class Example {
     ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
     UUID workspaceUuid = UUID.randomUUID(); // UUID | 
     String invoiceNumber = "invoiceNumber_example"; // String | 
+    Integer page = 1; // Integer | Page number (15 items per page).
     try {
-      ListReceipts200Response result = apiInstance.listReceipts(workspaceUuid, invoiceNumber);
+      ListReceipts200Response result = apiInstance.listReceipts(workspaceUuid, invoiceNumber, page);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReceiptsApi#listReceipts");
@@ -327,6 +342,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **workspaceUuid** | **UUID**|  | [optional] |
 | **invoiceNumber** | **String**|  | [optional] |
+| **page** | **Integer**| Page number (15 items per page). | [optional] [default to 1] |
 
 ### Return type
 
@@ -346,12 +362,15 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Paginated list of receipts |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 
 <a id="updateReceipt"></a>
 # **updateReceipt**
 > Object updateReceipt(receiptUuid, receiptUpdateInput)
 
 Update receipt
+
+Updates a receipt&#39;s transaction details, amount, or payment date. Admin only.
 
 ### Example
 ```java
@@ -414,5 +433,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 

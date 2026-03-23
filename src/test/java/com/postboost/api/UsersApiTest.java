@@ -39,6 +39,8 @@ public class UsersApiTest {
     /**
      * Create user
      *
+     * Creates a new user account on the platform. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -50,6 +52,8 @@ public class UsersApiTest {
 
     /**
      * Delete user
+     *
+     * Permanently deletes a user account. Returns 400 if you attempt to delete your own account. Admin only.
      *
      * @throws ApiException if the Api call fails
      */
@@ -63,6 +67,8 @@ public class UsersApiTest {
     /**
      * Delete users (bulk)
      *
+     * Permanently deletes one or more user accounts. You cannot delete your own account. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -74,6 +80,8 @@ public class UsersApiTest {
 
     /**
      * Get user
+     *
+     * Returns a single user account by ID. Admin only.
      *
      * @throws ApiException if the Api call fails
      */
@@ -87,17 +95,22 @@ public class UsersApiTest {
     /**
      * List users
      *
+     * Returns a paginated list of all users on the platform. Optionally filter by name or email. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void listUsersTest() throws ApiException {
         String keyword = null;
-        ListUsers200Response response = api.listUsers(keyword);
+        Integer page = null;
+        ListUsers200Response response = api.listUsers(keyword, page);
         // TODO: test validations
     }
 
     /**
      * Update user
+     *
+     * Updates a user&#39;s name, email, admin status, or password. Admin only.
      *
      * @throws ApiException if the Api call fails
      */

@@ -46,18 +46,18 @@ import java.util.Set;
 import com.postboost.JSON;
 
 /**
- * UploadChunk200Response
+ * UploadChunk201Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
-public class UploadChunk200Response {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+public class UploadChunk201Response {
   public static final String SERIALIZED_NAME_RECEIVED = "received";
   @SerializedName(SERIALIZED_NAME_RECEIVED)
   private Integer received;
 
-  public UploadChunk200Response() {
+  public UploadChunk201Response() {
   }
 
-  public UploadChunk200Response received(Integer received) {
+  public UploadChunk201Response received(Integer received) {
     this.received = received;
     return this;
   }
@@ -85,8 +85,8 @@ public class UploadChunk200Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UploadChunk200Response uploadChunk200Response = (UploadChunk200Response) o;
-    return Objects.equals(this.received, uploadChunk200Response.received);
+    UploadChunk201Response uploadChunk201Response = (UploadChunk201Response) o;
+    return Objects.equals(this.received, uploadChunk201Response.received);
   }
 
   @Override
@@ -97,7 +97,7 @@ public class UploadChunk200Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UploadChunk200Response {\n");
+    sb.append("class UploadChunk201Response {\n");
     sb.append("    received: ").append(toIndentedString(received)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -131,20 +131,20 @@ public class UploadChunk200Response {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to UploadChunk200Response
+   * @throws IOException if the JSON Element is invalid with respect to UploadChunk201Response
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UploadChunk200Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UploadChunk200Response is not found in the empty JSON string", UploadChunk200Response.openapiRequiredFields.toString()));
+        if (!UploadChunk201Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UploadChunk201Response is not found in the empty JSON string", UploadChunk201Response.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UploadChunk200Response.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UploadChunk200Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!UploadChunk201Response.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UploadChunk201Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -154,22 +154,22 @@ public class UploadChunk200Response {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UploadChunk200Response.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UploadChunk200Response' and its subtypes
+       if (!UploadChunk201Response.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UploadChunk201Response' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UploadChunk200Response> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UploadChunk200Response.class));
+       final TypeAdapter<UploadChunk201Response> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UploadChunk201Response.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UploadChunk200Response>() {
+       return (TypeAdapter<T>) new TypeAdapter<UploadChunk201Response>() {
            @Override
-           public void write(JsonWriter out, UploadChunk200Response value) throws IOException {
+           public void write(JsonWriter out, UploadChunk201Response value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UploadChunk200Response read(JsonReader in) throws IOException {
+           public UploadChunk201Response read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -180,18 +180,18 @@ public class UploadChunk200Response {
   }
 
   /**
-   * Create an instance of UploadChunk200Response given an JSON string
+   * Create an instance of UploadChunk201Response given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of UploadChunk200Response
-   * @throws IOException if the JSON string is invalid with respect to UploadChunk200Response
+   * @return An instance of UploadChunk201Response
+   * @throws IOException if the JSON string is invalid with respect to UploadChunk201Response
    */
-  public static UploadChunk200Response fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UploadChunk200Response.class);
+  public static UploadChunk201Response fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UploadChunk201Response.class);
   }
 
   /**
-   * Convert an instance of UploadChunk200Response to an JSON string
+   * Convert an instance of UploadChunk201Response to an JSON string
    *
    * @return JSON string
    */

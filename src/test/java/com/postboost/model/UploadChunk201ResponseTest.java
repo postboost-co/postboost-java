@@ -24,17 +24,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for UploadChunk200Response
+ * Model tests for UploadChunk201Response
  */
-public class UploadChunk200ResponseTest {
-    private final UploadChunk200Response model = new UploadChunk200Response();
+public class UploadChunk201ResponseTest {
+    private final UploadChunk201Response model = new UploadChunk201Response();
 
     /**
-     * Model tests for UploadChunk200Response
+     * Model tests for UploadChunk201Response
      */
     @Test
-    public void testUploadChunk200Response() {
-        // TODO: test UploadChunk200Response
+    public void testUploadChunk201Response() {
+        // TODO: test UploadChunk201Response
     }
 
     /**

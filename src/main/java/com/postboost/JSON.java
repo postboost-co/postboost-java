@@ -107,10 +107,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.DeleteUsersBulkRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.DeleteWorkspacesBulkRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.GetRemoteUploadStatus200Response.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.InitiateChunkedUpload200Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.InitiateChunkedUpload201Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.InitiateChunkedUploadRequest.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.InitiateRemoteUpload200Response.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.InitiateRemoteUpload200ResponseOneOf.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.InitiateRemoteUpload201Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.InitiateRemoteUpload201ResponseOneOf.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.InitiateRemoteUploadRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.ListAccounts200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.ListMedia200Response.CustomTypeAdapterFactory());
@@ -139,7 +139,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.Tag.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.TagInput.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.UpdateMediaRequest.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.UploadChunk200Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.UploadChunk201Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.User.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.UserInput.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.UserUpdateInput.CustomTypeAdapterFactory());

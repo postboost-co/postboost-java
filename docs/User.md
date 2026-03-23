@@ -7,12 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **Integer** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
-|**email** | **String** |  |  [optional] |
-|**isAdmin** | **Boolean** |  |  [optional] |
+|**id** | **Integer** |  |  |
+|**name** | **String** |  |  |
+|**email** | **String** |  |  |
+|**isAdmin** | **Boolean** |  |  |
 |**emailVerifiedAt** | **OffsetDateTime** |  |  [optional] |
-|**createdAt** | **OffsetDateTime** |  |  [optional] |
+|**createdAt** | **OffsetDateTime** |  |  |
 
 
 

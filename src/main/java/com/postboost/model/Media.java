@@ -51,7 +51,7 @@ import com.postboost.JSON;
 /**
  * Media
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class Media {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -155,7 +155,7 @@ public class Media {
    * Get id
    * @return id
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getId() {
     return id;
   }
@@ -174,7 +174,7 @@ public class Media {
    * Get uuid
    * @return uuid
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getUuid() {
     return uuid;
   }
@@ -193,7 +193,7 @@ public class Media {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -212,7 +212,7 @@ public class Media {
    * Get mimeType
    * @return mimeType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getMimeType() {
     return mimeType;
   }
@@ -231,7 +231,7 @@ public class Media {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
@@ -250,7 +250,7 @@ public class Media {
    * Get url
    * @return url
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public URI getUrl() {
     return url;
   }
@@ -288,7 +288,7 @@ public class Media {
    * Get isVideo
    * @return isVideo
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getIsVideo() {
     return isVideo;
   }
@@ -307,7 +307,7 @@ public class Media {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -390,6 +390,14 @@ public class Media {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("uuid");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("mime_type");
+    openapiRequiredFields.add("type");
+    openapiRequiredFields.add("url");
+    openapiRequiredFields.add("is_video");
+    openapiRequiredFields.add("created_at");
   }
 
   /**
@@ -412,24 +420,29 @@ public class Media {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Media` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Media.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+      if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("mime_type") != null && !jsonObj.get("mime_type").isJsonNull()) && !jsonObj.get("mime_type").isJsonPrimitive()) {
+      if (!jsonObj.get("mime_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `mime_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mime_type").toString()));
       }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+      if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TypeEnum.validateJsonElement(jsonObj.get("type"));
-      }
-      if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
+      if (!jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       if ((jsonObj.get("thumb_url") != null && !jsonObj.get("thumb_url").isJsonNull()) && !jsonObj.get("thumb_url").isJsonPrimitive()) {

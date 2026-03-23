@@ -7,16 +7,16 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **Integer** |  |  [optional] |
-|**uuid** | **UUID** |  |  [optional] |
-|**status** | **PostStatus** |  |  [optional] |
-|**accounts** | [**List&lt;Account&gt;**](Account.md) |  |  [optional] |
-|**versions** | [**List&lt;PostVersion&gt;**](PostVersion.md) |  |  [optional] |
-|**tags** | [**List&lt;Tag&gt;**](Tag.md) |  |  [optional] |
+|**id** | **Integer** |  |  |
+|**uuid** | **UUID** |  |  |
+|**status** | **PostStatus** |  |  |
+|**accounts** | [**List&lt;Account&gt;**](Account.md) |  |  |
+|**versions** | [**List&lt;PostVersion&gt;**](PostVersion.md) |  |  |
+|**tags** | [**List&lt;Tag&gt;**](Tag.md) |  |  |
 |**scheduledAt** | **OffsetDateTime** |  |  [optional] |
 |**publishedAt** | **OffsetDateTime** |  |  [optional] |
-|**createdAt** | **OffsetDateTime** |  |  [optional] |
-|**trashed** | **Boolean** |  |  [optional] |
+|**createdAt** | **OffsetDateTime** |  |  |
+|**trashed** | **Boolean** |  |  |
 
 
 

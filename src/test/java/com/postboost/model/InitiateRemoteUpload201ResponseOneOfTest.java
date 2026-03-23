@@ -20,46 +20,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for InitiateChunkedUpload200Response
+ * Model tests for InitiateRemoteUpload201ResponseOneOf
  */
-public class InitiateChunkedUpload200ResponseTest {
-    private final InitiateChunkedUpload200Response model = new InitiateChunkedUpload200Response();
+public class InitiateRemoteUpload201ResponseOneOfTest {
+    private final InitiateRemoteUpload201ResponseOneOf model = new InitiateRemoteUpload201ResponseOneOf();
 
     /**
-     * Model tests for InitiateChunkedUpload200Response
+     * Model tests for InitiateRemoteUpload201ResponseOneOf
      */
     @Test
-    public void testInitiateChunkedUpload200Response() {
-        // TODO: test InitiateChunkedUpload200Response
+    public void testInitiateRemoteUpload201ResponseOneOf() {
+        // TODO: test InitiateRemoteUpload201ResponseOneOf
     }
 
     /**
-     * Test the property 'uploadUuid'
+     * Test the property 'downloadId'
      */
     @Test
-    public void uploadUuidTest() {
-        // TODO: test uploadUuid
-    }
-
-    /**
-     * Test the property 'chunkSize'
-     */
-    @Test
-    public void chunkSizeTest() {
-        // TODO: test chunkSize
-    }
-
-    /**
-     * Test the property 'totalChunks'
-     */
-    @Test
-    public void totalChunksTest() {
-        // TODO: test totalChunks
+    public void downloadIdTest() {
+        // TODO: test downloadId
     }
 
 }

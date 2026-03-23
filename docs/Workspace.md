@@ -7,12 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**uuid** | **UUID** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
-|**hexColor** | **String** |  |  [optional] |
+|**uuid** | **UUID** |  |  |
+|**name** | **String** |  |  |
+|**hexColor** | **String** |  |  |
 |**owner** | [**User**](User.md) |  |  [optional] |
-|**accessStatus** | [**AccessStatusEnum**](#AccessStatusEnum) |  |  [optional] |
-|**createdAt** | **OffsetDateTime** |  |  [optional] |
+|**accessStatus** | [**AccessStatusEnum**](#AccessStatusEnum) |  |  |
+|**createdAt** | **OffsetDateTime** |  |  |
 
 
 

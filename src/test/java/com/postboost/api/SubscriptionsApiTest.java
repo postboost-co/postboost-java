@@ -41,6 +41,8 @@ public class SubscriptionsApiTest {
     /**
      * Add generic subscription
      *
+     * Assigns a non-Stripe (generic) subscription plan to the workspace, optionally granting a trial period. Used for AppSumo-style lifetime deals. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -54,6 +56,8 @@ public class SubscriptionsApiTest {
     /**
      * Cancel subscription
      *
+     * Cancels the workspace&#39;s Stripe subscription at the end of the current billing period. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -65,6 +69,8 @@ public class SubscriptionsApiTest {
 
     /**
      * Change subscription plan
+     *
+     * Switches the workspace to a different Stripe plan. Optionally prorates the change and bills immediately. Admin only.
      *
      * @throws ApiException if the Api call fails
      */
@@ -94,6 +100,8 @@ public class SubscriptionsApiTest {
     /**
      * Create subscription
      *
+     * Manually creates a subscription record for the workspace (for external billing integrations). Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -107,6 +115,8 @@ public class SubscriptionsApiTest {
     /**
      * Delete subscription
      *
+     * Removes the subscription record from the workspace. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -118,6 +128,8 @@ public class SubscriptionsApiTest {
 
     /**
      * Get subscription
+     *
+     * Returns the active subscription for the workspace, or &#x60;null&#x60; if none exists. Admin only.
      *
      * @throws ApiException if the Api call fails
      */
@@ -131,6 +143,8 @@ public class SubscriptionsApiTest {
     /**
      * Remove generic subscription
      *
+     * Removes the generic (non-Stripe) subscription from the workspace. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -143,6 +157,8 @@ public class SubscriptionsApiTest {
     /**
      * Resume subscription
      *
+     * Resumes a previously canceled subscription before it expires. Admin only.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -154,6 +170,8 @@ public class SubscriptionsApiTest {
 
     /**
      * Update subscription
+     *
+     * Updates the plan ID, status, or trial/pause dates of an existing subscription. Admin only.
      *
      * @throws ApiException if the Api call fails
      */
