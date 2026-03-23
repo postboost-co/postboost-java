@@ -56,7 +56,7 @@ import com.postboost.JSON;
 /**
  * Post
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T03:06:58.029727+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T04:32:57.854067+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class Post {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
