@@ -17,7 +17,7 @@ Official Java client for the [PostBoost API](https://postboost.co/docs/api).
 <dependency>
   <groupId>com.postboost</groupId>
   <artifactId>postboost-java-sdk</artifactId>
-  <version>1.3.0</version>
+  <version>1.4.0</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ repositories {
     maven { url 'https://maven.pkg.github.com/postboost-co/postboost-java' }
 }
 dependencies {
-    implementation 'com.postboost:postboost-java-sdk:1.3.0'
+    implementation 'com.postboost:postboost-java-sdk:1.4.0'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 | **GitHub Packages** | [github.com/postboost-co/postboost-java/packages](https://github.com/postboost-co/postboost-java/packages) |
 | **GitHub** | [postboost-co/postboost-java](https://github.com/postboost-co/postboost-java) |
 | **Docs** | [postboost.co/docs/api](https://postboost.co/docs/api) |
-| **Version** | v1.3.0 |
+| **Version** | v1.4.0 |
 
 ## Quick start
 
@@ -60,6 +60,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**getAccount**](docs/AccountsApi.md#getAccount) | **GET** /{workspaceUuid}/accounts/{accountUuid} | Get account
 *AccountsApi* | [**listAccounts**](docs/AccountsApi.md#listAccounts) | **GET** /{workspaceUuid}/accounts | List accounts
+*AiApi* | [**blogToSocial**](docs/AiApi.md#blogToSocial) | **POST** /{workspaceUuid}/ai/blog-to-social | Generate social media captions from a blog post
 *MediaApi* | [**abortChunkedUpload**](docs/MediaApi.md#abortChunkedUpload) | **DELETE** /{workspaceUuid}/media/chunked/{uploadUuid} | Abort chunked upload
 *MediaApi* | [**completeChunkedUpload**](docs/MediaApi.md#completeChunkedUpload) | **POST** /{workspaceUuid}/media/chunked/{uploadUuid}/complete | Complete chunked upload
 *MediaApi* | [**deleteMediaBulk**](docs/MediaApi.md#deleteMediaBulk) | **DELETE** /{workspaceUuid}/media | Delete media (bulk)

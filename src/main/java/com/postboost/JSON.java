@@ -1,6 +1,6 @@
 /*
  * PostBoost API
- * The PostBoost REST API lets you publish, schedule, and analyze social media posts across 8+ platforms from a single integration. No OAuth apps to maintain — PostBoost handles platform authorization for you.  ## Base URL All workspace-scoped endpoints are prefixed with `/{workspaceUuid}`. Panel/admin endpoints are prefixed with `/panel`.  ## Authentication All requests require a Bearer token in the `Authorization` header. Generate tokens in your PostBoost dashboard under **Settings → Access Tokens**.  ``` Authorization: Bearer YOUR_API_TOKEN ``` 
+ * The PostBoost REST API lets you publish, schedule, and analyze social media posts across 12+ platforms from a single integration. No OAuth apps to maintain — PostBoost handles platform authorization for you.  ## Base URL All workspace-scoped endpoints are prefixed with `/{workspaceUuid}`. Panel/admin endpoints are prefixed with `/panel`.  ## Authentication All requests require a Bearer token in the `Authorization` header. Generate tokens in your PostBoost dashboard under **Settings → Access Tokens**.  ``` Authorization: Bearer YOUR_API_TOKEN ``` 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: hi@postboost.co
@@ -95,6 +95,12 @@ public class JSON {
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.Account.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.AddGenericSubscriptionRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.BlogToSocial200Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.BlogToSocial429Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.BlogToSocialCaption.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.BlogToSocialInput.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.BlogToSocialMedia.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.BlogToSocialResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.ChangeSubscriptionPlanRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.CheckoutSubscription200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.CheckoutSubscriptionRequest.CustomTypeAdapterFactory());

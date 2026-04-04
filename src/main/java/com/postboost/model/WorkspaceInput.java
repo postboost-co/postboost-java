@@ -1,6 +1,6 @@
 /*
  * PostBoost API
- * The PostBoost REST API lets you publish, schedule, and analyze social media posts across 8+ platforms from a single integration. No OAuth apps to maintain — PostBoost handles platform authorization for you.  ## Base URL All workspace-scoped endpoints are prefixed with `/{workspaceUuid}`. Panel/admin endpoints are prefixed with `/panel`.  ## Authentication All requests require a Bearer token in the `Authorization` header. Generate tokens in your PostBoost dashboard under **Settings → Access Tokens**.  ``` Authorization: Bearer YOUR_API_TOKEN ``` 
+ * The PostBoost REST API lets you publish, schedule, and analyze social media posts across 12+ platforms from a single integration. No OAuth apps to maintain — PostBoost handles platform authorization for you.  ## Base URL All workspace-scoped endpoints are prefixed with `/{workspaceUuid}`. Panel/admin endpoints are prefixed with `/panel`.  ## Authentication All requests require a Bearer token in the `Authorization` header. Generate tokens in your PostBoost dashboard under **Settings → Access Tokens**.  ``` Authorization: Bearer YOUR_API_TOKEN ``` 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: hi@postboost.co
@@ -48,7 +48,7 @@ import com.postboost.JSON;
 /**
  * WorkspaceInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:16:25.815267+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-04T04:31:35.296976+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class WorkspaceInput {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
