@@ -30,6 +30,17 @@ import java.io.IOException;
 import com.postboost.model.BlogToSocial200Response;
 import com.postboost.model.BlogToSocial429Response;
 import com.postboost.model.BlogToSocialInput;
+import com.postboost.model.ImageAltText200Response;
+import com.postboost.model.ImageAltTextInput;
+import com.postboost.model.ImageEditInput;
+import com.postboost.model.ImageGenerate200Response;
+import com.postboost.model.ImageGenerate429Response;
+import com.postboost.model.ImageGenerateInput;
+import com.postboost.model.ImagePrompt200Response;
+import com.postboost.model.ImagePrompt429Response;
+import com.postboost.model.ImagePromptInput;
+import com.postboost.model.ImageVariations200Response;
+import com.postboost.model.ImageVariationsInput;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -221,6 +232,731 @@ public class AiApi {
 
         okhttp3.Call localVarCall = blogToSocialValidateBeforeCall(workspaceUuid, blogToSocialInput, _callback);
         Type localVarReturnType = new TypeToken<BlogToSocial200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for imageAltText
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageAltTextInput  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Alt text generated and saved to media record </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imageAltTextCall(UUID workspaceUuid, ImageAltTextInput imageAltTextInput, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = imageAltTextInput;
+
+        // create path and map variables
+        String localVarPath = "/{workspaceUuid}/ai/image-alt-text"
+            .replace("{" + "workspaceUuid" + "}", localVarApiClient.escapeString(workspaceUuid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call imageAltTextValidateBeforeCall(UUID workspaceUuid, ImageAltTextInput imageAltTextInput, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workspaceUuid' is set
+        if (workspaceUuid == null) {
+            throw new ApiException("Missing the required parameter 'workspaceUuid' when calling imageAltText(Async)");
+        }
+
+        // verify the required parameter 'imageAltTextInput' is set
+        if (imageAltTextInput == null) {
+            throw new ApiException("Missing the required parameter 'imageAltTextInput' when calling imageAltText(Async)");
+        }
+
+        return imageAltTextCall(workspaceUuid, imageAltTextInput, _callback);
+
+    }
+
+    /**
+     * Generate alt text for a media image using AI
+     * Analyzes an existing workspace media item and generates accessible alt text. The alt text is saved back to the media record. Costs 1 AI credit per call. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageAltTextInput  (required)
+     * @return ImageAltText200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Alt text generated and saved to media record </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ImageAltText200Response imageAltText(UUID workspaceUuid, ImageAltTextInput imageAltTextInput) throws ApiException {
+        ApiResponse<ImageAltText200Response> localVarResp = imageAltTextWithHttpInfo(workspaceUuid, imageAltTextInput);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Generate alt text for a media image using AI
+     * Analyzes an existing workspace media item and generates accessible alt text. The alt text is saved back to the media record. Costs 1 AI credit per call. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageAltTextInput  (required)
+     * @return ApiResponse&lt;ImageAltText200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Alt text generated and saved to media record </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ImageAltText200Response> imageAltTextWithHttpInfo(UUID workspaceUuid, ImageAltTextInput imageAltTextInput) throws ApiException {
+        okhttp3.Call localVarCall = imageAltTextValidateBeforeCall(workspaceUuid, imageAltTextInput, null);
+        Type localVarReturnType = new TypeToken<ImageAltText200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Generate alt text for a media image using AI (asynchronously)
+     * Analyzes an existing workspace media item and generates accessible alt text. The alt text is saved back to the media record. Costs 1 AI credit per call. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageAltTextInput  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Alt text generated and saved to media record </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imageAltTextAsync(UUID workspaceUuid, ImageAltTextInput imageAltTextInput, final ApiCallback<ImageAltText200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = imageAltTextValidateBeforeCall(workspaceUuid, imageAltTextInput, _callback);
+        Type localVarReturnType = new TypeToken<ImageAltText200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for imageEdit
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageEditInput  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Images edited and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imageEditCall(UUID workspaceUuid, ImageEditInput imageEditInput, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = imageEditInput;
+
+        // create path and map variables
+        String localVarPath = "/{workspaceUuid}/ai/image-edit"
+            .replace("{" + "workspaceUuid" + "}", localVarApiClient.escapeString(workspaceUuid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call imageEditValidateBeforeCall(UUID workspaceUuid, ImageEditInput imageEditInput, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workspaceUuid' is set
+        if (workspaceUuid == null) {
+            throw new ApiException("Missing the required parameter 'workspaceUuid' when calling imageEdit(Async)");
+        }
+
+        // verify the required parameter 'imageEditInput' is set
+        if (imageEditInput == null) {
+            throw new ApiException("Missing the required parameter 'imageEditInput' when calling imageEdit(Async)");
+        }
+
+        return imageEditCall(workspaceUuid, imageEditInput, _callback);
+
+    }
+
+    /**
+     * Edit an existing media image using AI
+     * Edits an existing workspace media item using the source image and a text prompt. Optionally accepts a mask (transparent areas are replaced). Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageEditInput  (required)
+     * @return ImageGenerate200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Images edited and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ImageGenerate200Response imageEdit(UUID workspaceUuid, ImageEditInput imageEditInput) throws ApiException {
+        ApiResponse<ImageGenerate200Response> localVarResp = imageEditWithHttpInfo(workspaceUuid, imageEditInput);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Edit an existing media image using AI
+     * Edits an existing workspace media item using the source image and a text prompt. Optionally accepts a mask (transparent areas are replaced). Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageEditInput  (required)
+     * @return ApiResponse&lt;ImageGenerate200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Images edited and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ImageGenerate200Response> imageEditWithHttpInfo(UUID workspaceUuid, ImageEditInput imageEditInput) throws ApiException {
+        okhttp3.Call localVarCall = imageEditValidateBeforeCall(workspaceUuid, imageEditInput, null);
+        Type localVarReturnType = new TypeToken<ImageGenerate200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Edit an existing media image using AI (asynchronously)
+     * Edits an existing workspace media item using the source image and a text prompt. Optionally accepts a mask (transparent areas are replaced). Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageEditInput  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Images edited and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imageEditAsync(UUID workspaceUuid, ImageEditInput imageEditInput, final ApiCallback<ImageGenerate200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = imageEditValidateBeforeCall(workspaceUuid, imageEditInput, _callback);
+        Type localVarReturnType = new TypeToken<ImageGenerate200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for imageGenerate
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageGenerateInput  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Images generated and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> AI credits exhausted for this billing period </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imageGenerateCall(UUID workspaceUuid, ImageGenerateInput imageGenerateInput, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = imageGenerateInput;
+
+        // create path and map variables
+        String localVarPath = "/{workspaceUuid}/ai/image-generate"
+            .replace("{" + "workspaceUuid" + "}", localVarApiClient.escapeString(workspaceUuid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call imageGenerateValidateBeforeCall(UUID workspaceUuid, ImageGenerateInput imageGenerateInput, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workspaceUuid' is set
+        if (workspaceUuid == null) {
+            throw new ApiException("Missing the required parameter 'workspaceUuid' when calling imageGenerate(Async)");
+        }
+
+        // verify the required parameter 'imageGenerateInput' is set
+        if (imageGenerateInput == null) {
+            throw new ApiException("Missing the required parameter 'imageGenerateInput' when calling imageGenerate(Async)");
+        }
+
+        return imageGenerateCall(workspaceUuid, imageGenerateInput, _callback);
+
+    }
+
+    /**
+     * Generate social media images from a caption
+     * Generates one or more images and saves them immediately to the workspace media library.  **Standard mode** (recommended): provide &#x60;caption&#x60; + &#x60;platform&#x60;. PostBoost builds a professional image prompt internally using platform-specific templates. No prompt engineering required.  **Developer mode**: provide &#x60;prompt&#x60; directly to bypass prompt building. If both &#x60;caption&#x60; and &#x60;prompt&#x60; are sent, standard mode runs.  Credits: &#x60;count x credit_weight&#x60; (default: 5 per image). 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageGenerateInput  (required)
+     * @return ImageGenerate200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Images generated and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> AI credits exhausted for this billing period </td><td>  -  </td></tr>
+     </table>
+     */
+    public ImageGenerate200Response imageGenerate(UUID workspaceUuid, ImageGenerateInput imageGenerateInput) throws ApiException {
+        ApiResponse<ImageGenerate200Response> localVarResp = imageGenerateWithHttpInfo(workspaceUuid, imageGenerateInput);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Generate social media images from a caption
+     * Generates one or more images and saves them immediately to the workspace media library.  **Standard mode** (recommended): provide &#x60;caption&#x60; + &#x60;platform&#x60;. PostBoost builds a professional image prompt internally using platform-specific templates. No prompt engineering required.  **Developer mode**: provide &#x60;prompt&#x60; directly to bypass prompt building. If both &#x60;caption&#x60; and &#x60;prompt&#x60; are sent, standard mode runs.  Credits: &#x60;count x credit_weight&#x60; (default: 5 per image). 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageGenerateInput  (required)
+     * @return ApiResponse&lt;ImageGenerate200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Images generated and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> AI credits exhausted for this billing period </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ImageGenerate200Response> imageGenerateWithHttpInfo(UUID workspaceUuid, ImageGenerateInput imageGenerateInput) throws ApiException {
+        okhttp3.Call localVarCall = imageGenerateValidateBeforeCall(workspaceUuid, imageGenerateInput, null);
+        Type localVarReturnType = new TypeToken<ImageGenerate200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Generate social media images from a caption (asynchronously)
+     * Generates one or more images and saves them immediately to the workspace media library.  **Standard mode** (recommended): provide &#x60;caption&#x60; + &#x60;platform&#x60;. PostBoost builds a professional image prompt internally using platform-specific templates. No prompt engineering required.  **Developer mode**: provide &#x60;prompt&#x60; directly to bypass prompt building. If both &#x60;caption&#x60; and &#x60;prompt&#x60; are sent, standard mode runs.  Credits: &#x60;count x credit_weight&#x60; (default: 5 per image). 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageGenerateInput  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Images generated and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> AI credits exhausted for this billing period </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imageGenerateAsync(UUID workspaceUuid, ImageGenerateInput imageGenerateInput, final ApiCallback<ImageGenerate200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = imageGenerateValidateBeforeCall(workspaceUuid, imageGenerateInput, _callback);
+        Type localVarReturnType = new TypeToken<ImageGenerate200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for imagePrompt
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imagePromptInput  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Prompt built successfully </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> AI credits exhausted for this billing period </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imagePromptCall(UUID workspaceUuid, ImagePromptInput imagePromptInput, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = imagePromptInput;
+
+        // create path and map variables
+        String localVarPath = "/{workspaceUuid}/ai/image-prompt"
+            .replace("{" + "workspaceUuid" + "}", localVarApiClient.escapeString(workspaceUuid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call imagePromptValidateBeforeCall(UUID workspaceUuid, ImagePromptInput imagePromptInput, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workspaceUuid' is set
+        if (workspaceUuid == null) {
+            throw new ApiException("Missing the required parameter 'workspaceUuid' when calling imagePrompt(Async)");
+        }
+
+        // verify the required parameter 'imagePromptInput' is set
+        if (imagePromptInput == null) {
+            throw new ApiException("Missing the required parameter 'imagePromptInput' when calling imagePrompt(Async)");
+        }
+
+        return imagePromptCall(workspaceUuid, imagePromptInput, _callback);
+
+    }
+
+    /**
+     * Build an optimized image prompt from a social media caption
+     * Builds a professional image generation prompt from a caption and platform. No image is generated. Use this to preview the prompt before calling &#x60;image-generate&#x60;. Costs 1 AI credit per call.  When &#x60;image-generate&#x60; builds the prompt internally (standard mode), no credit is charged for the prompt step. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imagePromptInput  (required)
+     * @return ImagePrompt200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Prompt built successfully </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> AI credits exhausted for this billing period </td><td>  -  </td></tr>
+     </table>
+     */
+    public ImagePrompt200Response imagePrompt(UUID workspaceUuid, ImagePromptInput imagePromptInput) throws ApiException {
+        ApiResponse<ImagePrompt200Response> localVarResp = imagePromptWithHttpInfo(workspaceUuid, imagePromptInput);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Build an optimized image prompt from a social media caption
+     * Builds a professional image generation prompt from a caption and platform. No image is generated. Use this to preview the prompt before calling &#x60;image-generate&#x60;. Costs 1 AI credit per call.  When &#x60;image-generate&#x60; builds the prompt internally (standard mode), no credit is charged for the prompt step. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imagePromptInput  (required)
+     * @return ApiResponse&lt;ImagePrompt200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Prompt built successfully </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> AI credits exhausted for this billing period </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ImagePrompt200Response> imagePromptWithHttpInfo(UUID workspaceUuid, ImagePromptInput imagePromptInput) throws ApiException {
+        okhttp3.Call localVarCall = imagePromptValidateBeforeCall(workspaceUuid, imagePromptInput, null);
+        Type localVarReturnType = new TypeToken<ImagePrompt200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Build an optimized image prompt from a social media caption (asynchronously)
+     * Builds a professional image generation prompt from a caption and platform. No image is generated. Use this to preview the prompt before calling &#x60;image-generate&#x60;. Costs 1 AI credit per call.  When &#x60;image-generate&#x60; builds the prompt internally (standard mode), no credit is charged for the prompt step. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imagePromptInput  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Prompt built successfully </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> AI credits exhausted for this billing period </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imagePromptAsync(UUID workspaceUuid, ImagePromptInput imagePromptInput, final ApiCallback<ImagePrompt200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = imagePromptValidateBeforeCall(workspaceUuid, imagePromptInput, _callback);
+        Type localVarReturnType = new TypeToken<ImagePrompt200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for imageVariations
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageVariationsInput  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Variations generated and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imageVariationsCall(UUID workspaceUuid, ImageVariationsInput imageVariationsInput, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = imageVariationsInput;
+
+        // create path and map variables
+        String localVarPath = "/{workspaceUuid}/ai/image-variations"
+            .replace("{" + "workspaceUuid" + "}", localVarApiClient.escapeString(workspaceUuid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call imageVariationsValidateBeforeCall(UUID workspaceUuid, ImageVariationsInput imageVariationsInput, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workspaceUuid' is set
+        if (workspaceUuid == null) {
+            throw new ApiException("Missing the required parameter 'workspaceUuid' when calling imageVariations(Async)");
+        }
+
+        // verify the required parameter 'imageVariationsInput' is set
+        if (imageVariationsInput == null) {
+            throw new ApiException("Missing the required parameter 'imageVariationsInput' when calling imageVariations(Async)");
+        }
+
+        return imageVariationsCall(workspaceUuid, imageVariationsInput, _callback);
+
+    }
+
+    /**
+     * Generate variations of an existing media image
+     * Creates one or more variations of an existing workspace media item. Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageVariationsInput  (required)
+     * @return ImageVariations200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Variations generated and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ImageVariations200Response imageVariations(UUID workspaceUuid, ImageVariationsInput imageVariationsInput) throws ApiException {
+        ApiResponse<ImageVariations200Response> localVarResp = imageVariationsWithHttpInfo(workspaceUuid, imageVariationsInput);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Generate variations of an existing media image
+     * Creates one or more variations of an existing workspace media item. Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageVariationsInput  (required)
+     * @return ApiResponse&lt;ImageVariations200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Variations generated and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ImageVariations200Response> imageVariationsWithHttpInfo(UUID workspaceUuid, ImageVariationsInput imageVariationsInput) throws ApiException {
+        okhttp3.Call localVarCall = imageVariationsValidateBeforeCall(workspaceUuid, imageVariationsInput, null);
+        Type localVarReturnType = new TypeToken<ImageVariations200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Generate variations of an existing media image (asynchronously)
+     * Creates one or more variations of an existing workspace media item. Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+     * @param workspaceUuid UUID of the workspace. (required)
+     * @param imageVariationsInput  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Variations generated and saved to media library </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imageVariationsAsync(UUID workspaceUuid, ImageVariationsInput imageVariationsInput, final ApiCallback<ImageVariations200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = imageVariationsValidateBeforeCall(workspaceUuid, imageVariationsInput, _callback);
+        Type localVarReturnType = new TypeToken<ImageVariations200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

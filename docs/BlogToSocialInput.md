@@ -28,17 +28,18 @@ At least one of `url` or (`title` + `excerpt`) must be provided. If both are giv
 
 | Name | Value |
 |---- | -----|
-| FACEBOOK | &quot;facebook&quot; |
+| TWITTER | &quot;twitter&quot; |
+| FACEBOOK_PAGE | &quot;facebook_page&quot; |
 | INSTAGRAM | &quot;instagram&quot; |
-| X | &quot;x&quot; |
-| LINKEDIN | &quot;linkedin&quot; |
-| PINTEREST | &quot;pinterest&quot; |
-| YOUTUBE | &quot;youtube&quot; |
-| TIKTOK | &quot;tiktok&quot; |
-| MASTODON | &quot;mastodon&quot; |
 | THREADS | &quot;threads&quot; |
+| MASTODON | &quot;mastodon&quot; |
+| YOUTUBE | &quot;youtube&quot; |
+| GBP | &quot;gbp&quot; |
+| PINTEREST | &quot;pinterest&quot; |
+| LINKEDIN | &quot;linkedin&quot; |
+| LINKEDIN_PAGE | &quot;linkedin_page&quot; |
+| TIKTOK | &quot;tiktok&quot; |
 | BLUESKY | &quot;bluesky&quot; |
-| GOOGLE_BUSINESS | &quot;google_business&quot; |
 
 
 

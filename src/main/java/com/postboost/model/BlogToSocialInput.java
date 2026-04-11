@@ -51,7 +51,7 @@ import com.postboost.JSON;
 /**
  * At least one of &#x60;url&#x60; or (&#x60;title&#x60; + &#x60;excerpt&#x60;) must be provided. If both are given, direct values take priority over the scraped URL content. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-04T04:31:35.296976+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-11T16:02:19.469139+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class BlogToSocialInput {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
@@ -74,27 +74,29 @@ public class BlogToSocialInput {
    */
   @JsonAdapter(PlatformsEnum.Adapter.class)
   public enum PlatformsEnum {
-    FACEBOOK("facebook"),
+    TWITTER("twitter"),
+    
+    FACEBOOK_PAGE("facebook_page"),
     
     INSTAGRAM("instagram"),
     
-    X("x"),
-    
-    LINKEDIN("linkedin"),
-    
-    PINTEREST("pinterest"),
-    
-    YOUTUBE("youtube"),
-    
-    TIKTOK("tiktok"),
+    THREADS("threads"),
     
     MASTODON("mastodon"),
     
-    THREADS("threads"),
+    YOUTUBE("youtube"),
     
-    BLUESKY("bluesky"),
+    GBP("gbp"),
     
-    GOOGLE_BUSINESS("google_business");
+    PINTEREST("pinterest"),
+    
+    LINKEDIN("linkedin"),
+    
+    LINKEDIN_PAGE("linkedin_page"),
+    
+    TIKTOK("tiktok"),
+    
+    BLUESKY("bluesky");
 
     private String value;
 

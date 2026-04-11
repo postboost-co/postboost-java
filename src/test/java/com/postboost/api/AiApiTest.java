@@ -17,6 +17,17 @@ import com.postboost.ApiException;
 import com.postboost.model.BlogToSocial200Response;
 import com.postboost.model.BlogToSocial429Response;
 import com.postboost.model.BlogToSocialInput;
+import com.postboost.model.ImageAltText200Response;
+import com.postboost.model.ImageAltTextInput;
+import com.postboost.model.ImageEditInput;
+import com.postboost.model.ImageGenerate200Response;
+import com.postboost.model.ImageGenerate429Response;
+import com.postboost.model.ImageGenerateInput;
+import com.postboost.model.ImagePrompt200Response;
+import com.postboost.model.ImagePrompt429Response;
+import com.postboost.model.ImagePromptInput;
+import com.postboost.model.ImageVariations200Response;
+import com.postboost.model.ImageVariationsInput;
 import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -46,6 +57,81 @@ public class AiApiTest {
         UUID workspaceUuid = null;
         BlogToSocialInput blogToSocialInput = null;
         BlogToSocial200Response response = api.blogToSocial(workspaceUuid, blogToSocialInput);
+        // TODO: test validations
+    }
+
+    /**
+     * Generate alt text for a media image using AI
+     *
+     * Analyzes an existing workspace media item and generates accessible alt text. The alt text is saved back to the media record. Costs 1 AI credit per call. 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void imageAltTextTest() throws ApiException {
+        UUID workspaceUuid = null;
+        ImageAltTextInput imageAltTextInput = null;
+        ImageAltText200Response response = api.imageAltText(workspaceUuid, imageAltTextInput);
+        // TODO: test validations
+    }
+
+    /**
+     * Edit an existing media image using AI
+     *
+     * Edits an existing workspace media item using the source image and a text prompt. Optionally accepts a mask (transparent areas are replaced). Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void imageEditTest() throws ApiException {
+        UUID workspaceUuid = null;
+        ImageEditInput imageEditInput = null;
+        ImageGenerate200Response response = api.imageEdit(workspaceUuid, imageEditInput);
+        // TODO: test validations
+    }
+
+    /**
+     * Generate social media images from a caption
+     *
+     * Generates one or more images and saves them immediately to the workspace media library.  **Standard mode** (recommended): provide &#x60;caption&#x60; + &#x60;platform&#x60;. PostBoost builds a professional image prompt internally using platform-specific templates. No prompt engineering required.  **Developer mode**: provide &#x60;prompt&#x60; directly to bypass prompt building. If both &#x60;caption&#x60; and &#x60;prompt&#x60; are sent, standard mode runs.  Credits: &#x60;count x credit_weight&#x60; (default: 5 per image). 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void imageGenerateTest() throws ApiException {
+        UUID workspaceUuid = null;
+        ImageGenerateInput imageGenerateInput = null;
+        ImageGenerate200Response response = api.imageGenerate(workspaceUuid, imageGenerateInput);
+        // TODO: test validations
+    }
+
+    /**
+     * Build an optimized image prompt from a social media caption
+     *
+     * Builds a professional image generation prompt from a caption and platform. No image is generated. Use this to preview the prompt before calling &#x60;image-generate&#x60;. Costs 1 AI credit per call.  When &#x60;image-generate&#x60; builds the prompt internally (standard mode), no credit is charged for the prompt step. 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void imagePromptTest() throws ApiException {
+        UUID workspaceUuid = null;
+        ImagePromptInput imagePromptInput = null;
+        ImagePrompt200Response response = api.imagePrompt(workspaceUuid, imagePromptInput);
+        // TODO: test validations
+    }
+
+    /**
+     * Generate variations of an existing media image
+     *
+     * Creates one or more variations of an existing workspace media item. Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void imageVariationsTest() throws ApiException {
+        UUID workspaceUuid = null;
+        ImageVariationsInput imageVariationsInput = null;
+        ImageVariations200Response response = api.imageVariations(workspaceUuid, imageVariationsInput);
         // TODO: test validations
     }
 
