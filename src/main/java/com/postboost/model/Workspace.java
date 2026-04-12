@@ -51,7 +51,7 @@ import com.postboost.JSON;
 /**
  * Workspace
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-11T16:02:19.469139+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-12T16:17:39.535152+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class Workspace {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)

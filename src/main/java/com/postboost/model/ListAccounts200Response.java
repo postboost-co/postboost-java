@@ -51,7 +51,7 @@ import com.postboost.JSON;
 /**
  * ListAccounts200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-11T16:02:19.469139+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-12T16:17:39.535152+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class ListAccounts200Response {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

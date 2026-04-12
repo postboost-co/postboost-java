@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**images** | [**List&lt;GeneratedImageItem&gt;**](GeneratedImageItem.md) |  |  |
+|**images** | [**List&lt;Media&gt;**](Media.md) |  |  |
 |**promptUsed** | **String** |  |  |
 |**revisedPrompt** | **String** |  |  [optional] |
 |**aspectRatio** | **String** |  |  |

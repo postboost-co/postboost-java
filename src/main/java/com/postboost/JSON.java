@@ -112,7 +112,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.DeleteUser400Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.DeleteUsersBulkRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.DeleteWorkspacesBulkRequest.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.GeneratedImageItem.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.GetRemoteUploadStatus200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.ImageAltText200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.postboost.model.ImageAltTextInput.CustomTypeAdapterFactory());

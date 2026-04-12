@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.postboost.model.GeneratedImageItem;
+import com.postboost.model.Media;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,11 +51,11 @@ import com.postboost.JSON;
 /**
  * ImageGenerationResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-11T16:02:19.469139+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-12T16:17:39.535152+03:00[Europe/Istanbul]", comments = "Generator version: 7.9.0")
 public class ImageGenerationResponse {
   public static final String SERIALIZED_NAME_IMAGES = "images";
   @SerializedName(SERIALIZED_NAME_IMAGES)
-  private List<GeneratedImageItem> images = new ArrayList<>();
+  private List<Media> images = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PROMPT_USED = "prompt_used";
   @SerializedName(SERIALIZED_NAME_PROMPT_USED)
@@ -84,12 +84,12 @@ public class ImageGenerationResponse {
   public ImageGenerationResponse() {
   }
 
-  public ImageGenerationResponse images(List<GeneratedImageItem> images) {
+  public ImageGenerationResponse images(List<Media> images) {
     this.images = images;
     return this;
   }
 
-  public ImageGenerationResponse addImagesItem(GeneratedImageItem imagesItem) {
+  public ImageGenerationResponse addImagesItem(Media imagesItem) {
     if (this.images == null) {
       this.images = new ArrayList<>();
     }
@@ -102,11 +102,11 @@ public class ImageGenerationResponse {
    * @return images
    */
   @javax.annotation.Nonnull
-  public List<GeneratedImageItem> getImages() {
+  public List<Media> getImages() {
     return images;
   }
 
-  public void setImages(List<GeneratedImageItem> images) {
+  public void setImages(List<Media> images) {
     this.images = images;
   }
 
@@ -335,7 +335,7 @@ public class ImageGenerationResponse {
       JsonArray jsonArrayimages = jsonObj.getAsJsonArray("images");
       // validate the required field `images` (array)
       for (int i = 0; i < jsonArrayimages.size(); i++) {
-        GeneratedImageItem.validateJsonElement(jsonArrayimages.get(i));
+        Media.validateJsonElement(jsonArrayimages.get(i));
       };
       if (!jsonObj.get("prompt_used").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `prompt_used` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prompt_used").toString()));
