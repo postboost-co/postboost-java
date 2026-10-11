@@ -89,11 +89,11 @@ public class Example {
 
 <a id="cancelSubscription"></a>
 # **cancelSubscription**
-> Object cancelSubscription(workspaceUuid)
+> Object cancelSubscription(workspaceUuid, cancelSubscriptionRequest)
 
 Cancel subscription
 
-Cancels the workspace&#39;s Stripe subscription at the end of the current billing period. Admin only.
+Cancels the workspace&#39;s Stripe subscription at the end of the current billing period, or right away with &#x60;immediately: true&#x60;. Works for active and past-due subscriptions. Admin only. 
 
 ### Example
 ```java
@@ -116,8 +116,9 @@ public class Example {
 
     SubscriptionsApi apiInstance = new SubscriptionsApi(defaultClient);
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    CancelSubscriptionRequest cancelSubscriptionRequest = new CancelSubscriptionRequest(); // CancelSubscriptionRequest | 
     try {
-      Object result = apiInstance.cancelSubscription(workspaceUuid);
+      Object result = apiInstance.cancelSubscription(workspaceUuid, cancelSubscriptionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SubscriptionsApi#cancelSubscription");
@@ -135,6 +136,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **workspaceUuid** | **UUID**| UUID of the workspace. | |
+| **cancelSubscriptionRequest** | [**CancelSubscriptionRequest**](CancelSubscriptionRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -146,7 +148,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -155,6 +157,7 @@ public class Example {
 | **200** |  |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |
+| **422** | The workspace has no active or past-due subscription, or the billing provider rejected the cancellation. |  -  |
 
 <a id="changeSubscriptionPlan"></a>
 # **changeSubscriptionPlan**
@@ -514,7 +517,7 @@ public class Example {
 
 Remove generic subscription
 
-Removes the generic (non-Stripe) subscription from the workspace. Admin only.
+Removes the generic (non-Stripe) subscription from the workspace. Returns &#x60;422&#x60; when the workspace has no generic subscription. Admin only.
 
 ### Example
 ```java
@@ -576,6 +579,7 @@ public class Example {
 | **200** |  |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |
+| **422** | The workspace has no generic subscription. |  -  |
 
 <a id="resumeSubscription"></a>
 # **resumeSubscription**

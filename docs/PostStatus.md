@@ -11,5 +11,11 @@
 
 * `PUBLISHED` (value: `"published"`)
 
+* `FAILED` (value: `"failed"`)
+
+* `NEEDS_APPROVAL` (value: `"needs_approval"`)
+
+* `PUBLISHING` (value: `"publishing"`)
+
 
 

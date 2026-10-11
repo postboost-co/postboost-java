@@ -9,6 +9,8 @@ All URIs are relative to *https://postboost.co/app/api*
 | [**deleteWorkspace**](WorkspacesApi.md#deleteWorkspace) | **DELETE** /panel/workspaces/{workspaceUuid} | Delete workspace |
 | [**deleteWorkspacesBulk**](WorkspacesApi.md#deleteWorkspacesBulk) | **DELETE** /panel/workspaces | Delete workspaces (bulk) |
 | [**getWorkspace**](WorkspacesApi.md#getWorkspace) | **GET** /panel/workspaces/{workspaceUuid} | Get workspace |
+| [**getWorkspaceAICredits**](WorkspacesApi.md#getWorkspaceAICredits) | **GET** /panel/workspaces/{workspaceUuid}/ai-credits | Get workspace AI credits |
+| [**listMyWorkspaces**](WorkspacesApi.md#listMyWorkspaces) | **GET** /workspaces | List my workspaces |
 | [**listWorkspaces**](WorkspacesApi.md#listWorkspaces) | **GET** /panel/workspaces | List workspaces |
 | [**removeUserFromWorkspace**](WorkspacesApi.md#removeUserFromWorkspace) | **DELETE** /panel/workspaces/{workspaceUuid}/users | Remove user from workspace |
 | [**updateWorkspace**](WorkspacesApi.md#updateWorkspace) | **PUT** /panel/workspaces/{workspaceUuid} | Update workspace |
@@ -366,6 +368,140 @@ public class Example {
 | **403** |  |  -  |
 | **404** |  |  -  |
 
+<a id="getWorkspaceAICredits"></a>
+# **getWorkspaceAICredits**
+> AICredits getWorkspaceAICredits(workspaceUuid)
+
+Get workspace AI credits
+
+Returns whether the workspace can use AI credits, its remaining balance, and whether the balance is low. Admin only.
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.WorkspacesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    WorkspacesApi apiInstance = new WorkspacesApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    try {
+      AICredits result = apiInstance.getWorkspaceAICredits(workspaceUuid);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorkspacesApi#getWorkspaceAICredits");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+
+### Return type
+
+[**AICredits**](AICredits.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | AI credit status |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+| **404** |  |  -  |
+
+<a id="listMyWorkspaces"></a>
+# **listMyWorkspaces**
+> ListMyWorkspaces200Response listMyWorkspaces()
+
+List my workspaces
+
+Returns the workspaces the authenticated user belongs to, most recently updated first, with the caller&#39;s role in each. Use a returned &#x60;uuid&#x60; as &#x60;workspaceUuid&#x60;.
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.WorkspacesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    WorkspacesApi apiInstance = new WorkspacesApi(defaultClient);
+    try {
+      ListMyWorkspaces200Response result = apiInstance.listMyWorkspaces();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorkspacesApi#listMyWorkspaces");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ListMyWorkspaces200Response**](ListMyWorkspaces200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The caller&#39;s workspaces |  -  |
+| **401** |  |  -  |
+
 <a id="listWorkspaces"></a>
 # **listWorkspaces**
 > ListWorkspaces200Response listWorkspaces(keyword, subscriptionStatus, accessStatus, page)
@@ -518,7 +654,7 @@ public class Example {
 
 Update workspace
 
-Updates a workspace&#39;s name, color, or access status. Admin only.
+Updates a workspace&#39;s name, owner, or access status. Admin only. &#x60;hex_color&#x60; is accepted but ignored.
 
 ### Example
 ```java

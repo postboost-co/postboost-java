@@ -10,6 +10,7 @@
 |**id** | **Integer** |  |  |
 |**uuid** | **UUID** |  |  |
 |**status** | **PostStatus** |  |  |
+|**publishProgress** | [**PublishProgress**](PublishProgress.md) | Only present while the post is publishing. |  [optional] |
 |**accounts** | [**List&lt;Account&gt;**](Account.md) |  |  |
 |**versions** | [**List&lt;PostVersion&gt;**](PostVersion.md) |  |  |
 |**tags** | [**List&lt;Tag&gt;**](Tag.md) |  |  |

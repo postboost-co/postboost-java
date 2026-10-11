@@ -17,7 +17,7 @@ Official Java client for the [PostBoost API](https://postboost.co/docs/api).
 <dependency>
   <groupId>com.postboost</groupId>
   <artifactId>postboost-java-sdk</artifactId>
-  <version>1.6.0</version>
+  <version>1.8.0</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ repositories {
     maven { url 'https://maven.pkg.github.com/postboost-co/postboost-java' }
 }
 dependencies {
-    implementation 'com.postboost:postboost-java-sdk:1.6.0'
+    implementation 'com.postboost:postboost-java-sdk:1.8.0'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 | **GitHub Packages** | [github.com/postboost-co/postboost-java/packages](https://github.com/postboost-co/postboost-java/packages) |
 | **GitHub** | [postboost-co/postboost-java](https://github.com/postboost-co/postboost-java) |
 | **Docs** | [postboost.co/docs/api](https://postboost.co/docs/api) |
-| **Version** | v1.6.0 |
+| **Version** | v1.8.0 |
 
 ## Quick start
 
@@ -66,24 +66,40 @@ Class | Method | HTTP request | Description
 *AiApi* | [**imageGenerate**](docs/AiApi.md#imageGenerate) | **POST** /{workspaceUuid}/ai/image-generate | Generate social media images from a caption
 *AiApi* | [**imagePrompt**](docs/AiApi.md#imagePrompt) | **POST** /{workspaceUuid}/ai/image-prompt | Build an optimized image prompt from a social media caption
 *AiApi* | [**imageVariations**](docs/AiApi.md#imageVariations) | **POST** /{workspaceUuid}/ai/image-variations | Generate variations of an existing media image
+*AnalyticsApi* | [**getAccountAnalytics**](docs/AnalyticsApi.md#getAccountAnalytics) | **GET** /{workspaceUuid}/analytics/accounts/{accountUuid} | Get account analytics
+*AnalyticsApi* | [**getAnalyticsSummary**](docs/AnalyticsApi.md#getAnalyticsSummary) | **GET** /{workspaceUuid}/analytics | Get analytics summary
+*AnalyticsApi* | [**getBestPostingTimes**](docs/AnalyticsApi.md#getBestPostingTimes) | **GET** /{workspaceUuid}/analytics/best-times | Get best posting times
+*AnalyticsApi* | [**getPostAnalytics_0**](docs/AnalyticsApi.md#getPostAnalytics_0) | **GET** /{workspaceUuid}/posts/{postUuid}/analytics | Get post analytics
+*AnalyticsApi* | [**getPostingTimes**](docs/AnalyticsApi.md#getPostingTimes) | **GET** /{workspaceUuid}/analytics/posting-times | Get posting times heatmap
 *MediaApi* | [**abortChunkedUpload**](docs/MediaApi.md#abortChunkedUpload) | **DELETE** /{workspaceUuid}/media/chunked/{uploadUuid} | Abort chunked upload
 *MediaApi* | [**completeChunkedUpload**](docs/MediaApi.md#completeChunkedUpload) | **POST** /{workspaceUuid}/media/chunked/{uploadUuid}/complete | Complete chunked upload
+*MediaApi* | [**createMediaFolder**](docs/MediaApi.md#createMediaFolder) | **POST** /{workspaceUuid}/media/folders | Create media folder
 *MediaApi* | [**deleteMediaBulk**](docs/MediaApi.md#deleteMediaBulk) | **DELETE** /{workspaceUuid}/media | Delete media (bulk)
+*MediaApi* | [**deleteMediaFolder**](docs/MediaApi.md#deleteMediaFolder) | **DELETE** /{workspaceUuid}/media/folders/{folderUuid} | Delete media folder
 *MediaApi* | [**getMedia**](docs/MediaApi.md#getMedia) | **GET** /{workspaceUuid}/media/{mediaUuid} | Get media
 *MediaApi* | [**getRemoteUploadStatus**](docs/MediaApi.md#getRemoteUploadStatus) | **GET** /{workspaceUuid}/media/remote/{downloadId}/status | Get remote upload status
 *MediaApi* | [**initiateChunkedUpload**](docs/MediaApi.md#initiateChunkedUpload) | **POST** /{workspaceUuid}/media/chunked/initiate | Initiate chunked upload
 *MediaApi* | [**initiateRemoteUpload**](docs/MediaApi.md#initiateRemoteUpload) | **POST** /{workspaceUuid}/media/remote/initiate | Initiate remote upload
 *MediaApi* | [**listMedia**](docs/MediaApi.md#listMedia) | **GET** /{workspaceUuid}/media | List media
+*MediaApi* | [**listMediaFolders**](docs/MediaApi.md#listMediaFolders) | **GET** /{workspaceUuid}/media/folders | List media folders
 *MediaApi* | [**updateMedia**](docs/MediaApi.md#updateMedia) | **PUT** /{workspaceUuid}/media/{mediaUuid} | Update media
+*MediaApi* | [**updateMediaFolder**](docs/MediaApi.md#updateMediaFolder) | **PUT** /{workspaceUuid}/media/folders/{folderUuid} | Update media folder
 *MediaApi* | [**uploadChunk**](docs/MediaApi.md#uploadChunk) | **POST** /{workspaceUuid}/media/chunked/{uploadUuid}/upload | Upload a chunk
 *MediaApi* | [**uploadMedia**](docs/MediaApi.md#uploadMedia) | **POST** /{workspaceUuid}/media | Upload media (binary)
+*MentionsApi* | [**createMention**](docs/MentionsApi.md#createMention) | **POST** /{workspaceUuid}/mentions | Create mention
+*MentionsApi* | [**deleteMention**](docs/MentionsApi.md#deleteMention) | **DELETE** /{workspaceUuid}/mentions/{mentionId} | Delete mention
+*MentionsApi* | [**getMention**](docs/MentionsApi.md#getMention) | **GET** /{workspaceUuid}/mentions/{mentionId} | Get mention
+*MentionsApi* | [**listMentions**](docs/MentionsApi.md#listMentions) | **GET** /{workspaceUuid}/mentions | List mentions
+*MentionsApi* | [**updateMention**](docs/MentionsApi.md#updateMention) | **PUT** /{workspaceUuid}/mentions/{mentionId} | Update mention
 *PostsApi* | [**addPostToQueue**](docs/PostsApi.md#addPostToQueue) | **POST** /{workspaceUuid}/posts/add-to-queue/{postUuid} | Add post to queue
 *PostsApi* | [**approvePost**](docs/PostsApi.md#approvePost) | **POST** /{workspaceUuid}/posts/approve/{postUuid} | Approve post
 *PostsApi* | [**createPost**](docs/PostsApi.md#createPost) | **POST** /{workspaceUuid}/posts | Create post
 *PostsApi* | [**deletePost**](docs/PostsApi.md#deletePost) | **DELETE** /{workspaceUuid}/posts/{postUuid} | Delete post
 *PostsApi* | [**deletePostsBulk**](docs/PostsApi.md#deletePostsBulk) | **DELETE** /{workspaceUuid}/posts | Delete posts (bulk)
 *PostsApi* | [**getPost**](docs/PostsApi.md#getPost) | **GET** /{workspaceUuid}/posts/{postUuid} | Get post
+*PostsApi* | [**getPostAnalytics**](docs/PostsApi.md#getPostAnalytics) | **GET** /{workspaceUuid}/posts/{postUuid}/analytics | Get post analytics
 *PostsApi* | [**listPosts**](docs/PostsApi.md#listPosts) | **GET** /{workspaceUuid}/posts | List posts
+*PostsApi* | [**retryPostAccount**](docs/PostsApi.md#retryPostAccount) | **POST** /{workspaceUuid}/posts/retry/{postUuid}/{accountUuid} | Retry publishing to one account
 *PostsApi* | [**schedulePost**](docs/PostsApi.md#schedulePost) | **POST** /{workspaceUuid}/posts/schedule/{postUuid} | Schedule post
 *PostsApi* | [**updatePost**](docs/PostsApi.md#updatePost) | **PUT** /{workspaceUuid}/posts/{postUuid} | Update post
 *ReceiptsApi* | [**createReceipt**](docs/ReceiptsApi.md#createReceipt) | **POST** /panel/receipts | Create receipt
@@ -118,6 +134,8 @@ Class | Method | HTTP request | Description
 *WorkspacesApi* | [**deleteWorkspace**](docs/WorkspacesApi.md#deleteWorkspace) | **DELETE** /panel/workspaces/{workspaceUuid} | Delete workspace
 *WorkspacesApi* | [**deleteWorkspacesBulk**](docs/WorkspacesApi.md#deleteWorkspacesBulk) | **DELETE** /panel/workspaces | Delete workspaces (bulk)
 *WorkspacesApi* | [**getWorkspace**](docs/WorkspacesApi.md#getWorkspace) | **GET** /panel/workspaces/{workspaceUuid} | Get workspace
+*WorkspacesApi* | [**getWorkspaceAICredits**](docs/WorkspacesApi.md#getWorkspaceAICredits) | **GET** /panel/workspaces/{workspaceUuid}/ai-credits | Get workspace AI credits
+*WorkspacesApi* | [**listMyWorkspaces**](docs/WorkspacesApi.md#listMyWorkspaces) | **GET** /workspaces | List my workspaces
 *WorkspacesApi* | [**listWorkspaces**](docs/WorkspacesApi.md#listWorkspaces) | **GET** /panel/workspaces | List workspaces
 *WorkspacesApi* | [**removeUserFromWorkspace**](docs/WorkspacesApi.md#removeUserFromWorkspace) | **DELETE** /panel/workspaces/{workspaceUuid}/users | Remove user from workspace
 *WorkspacesApi* | [**updateWorkspace**](docs/WorkspacesApi.md#updateWorkspace) | **PUT** /panel/workspaces/{workspaceUuid} | Update workspace

@@ -15,6 +15,13 @@
 |**url** | **URI** |  |  |
 |**thumbUrl** | **URI** |  |  [optional] |
 |**isVideo** | **Boolean** |  |  |
+|**isProcessing** | **Boolean** | True while an uploaded video is still being converted. |  [optional] |
+|**width** | **Integer** | Width in pixels, when stored. |  [optional] |
+|**height** | **Integer** | Height in pixels, when stored. |  [optional] |
+|**durationMs** | **Integer** | Video duration in milliseconds; null for images or videos not read yet. |  [optional] |
+|**size** | **Integer** | File size in bytes. |  [optional] |
+|**altText** | **String** |  |  [optional] |
+|**folder** | [**MediaFolderRef**](MediaFolderRef.md) |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |
 
 

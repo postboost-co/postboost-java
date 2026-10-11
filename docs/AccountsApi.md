@@ -82,11 +82,11 @@ public class Example {
 
 <a id="listAccounts"></a>
 # **listAccounts**
-> ListAccounts200Response listAccounts(workspaceUuid)
+> ListAccounts200Response listAccounts(workspaceUuid, keyword, group, providers, unauthorized)
 
 List accounts
 
-Returns all social media accounts connected to the workspace.
+Returns all social media accounts connected to the workspace, newest first. Optional filters narrow the list.
 
 ### Example
 ```java
@@ -109,8 +109,12 @@ public class Example {
 
     AccountsApi apiInstance = new AccountsApi(defaultClient);
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    String keyword = "keyword_example"; // String | Match the account name or username.
+    String group = "group_example"; // String | Only accounts in this account group.
+    List<String> providers = Arrays.asList(); // List<String> | Only accounts of these providers (for example `instagram`, `linkedin`).
+    Boolean unauthorized = true; // Boolean | When `true`, only accounts that need to be reconnected.
     try {
-      ListAccounts200Response result = apiInstance.listAccounts(workspaceUuid);
+      ListAccounts200Response result = apiInstance.listAccounts(workspaceUuid, keyword, group, providers, unauthorized);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountsApi#listAccounts");
@@ -128,6 +132,10 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **workspaceUuid** | **UUID**| UUID of the workspace. | |
+| **keyword** | **String**| Match the account name or username. | [optional] |
+| **group** | **String**| Only accounts in this account group. | [optional] |
+| **providers** | [**List&lt;String&gt;**](String.md)| Only accounts of these providers (for example &#x60;instagram&#x60;, &#x60;linkedin&#x60;). | [optional] |
+| **unauthorized** | **Boolean**| When &#x60;true&#x60;, only accounts that need to be reconnected. | [optional] |
 
 ### Return type
 

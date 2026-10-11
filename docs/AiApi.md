@@ -154,6 +154,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Alt text generated and saved to media record |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **422** |  |  -  |
 | **429** |  |  -  |
 
@@ -226,6 +227,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Images edited and saved to media library |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **422** |  |  -  |
 | **429** |  |  -  |
 
@@ -298,6 +300,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Images generated and saved to media library |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **422** |  |  -  |
 | **429** | AI credits exhausted for this billing period |  -  |
 
@@ -370,6 +373,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Prompt built successfully |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **422** |  |  -  |
 | **429** | AI credits exhausted for this billing period |  -  |
 
@@ -442,6 +446,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Variations generated and saved to media library |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **422** |  |  -  |
 | **429** |  |  -  |
 

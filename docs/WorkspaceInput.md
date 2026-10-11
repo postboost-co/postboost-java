@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  |
-|**hexColor** | **String** |  |  |
+|**hexColor** | **String** | Ignored since v2.0; kept for backward compatibility |  [optional] |
 |**ownerId** | **Integer** |  |  [optional] |
 |**accessStatus** | [**AccessStatusEnum**](#AccessStatusEnum) |  |  |
 
