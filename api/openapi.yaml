@@ -48,7 +48,7 @@ info:
     name: Commercial
     url: https://postboost.co/pages/terms
   title: PostBoost API
-  version: 1.14.0
+  version: 1.15.0
 servers:
 - description: Production
   url: https://postboost.co/app/api
@@ -6997,6 +6997,7 @@ components:
         uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         external_url: external_url
         provider: instagram
+        provider_post_id: provider_post_id
         authorized: true
         name: My Instagram
         id: 0
@@ -7059,6 +7060,12 @@ components:
         external_url:
           description: "Only present when the account is embedded in a post. URL of\
             \ the published post on the network, null until it is live."
+          nullable: true
+          type: string
+        provider_post_id:
+          description: "Only present when the account is embedded in a post. The network's\
+            \ own ID of the published post (for example a LinkedIn share URN or a\
+            \ tweet ID), null until it is live."
           nullable: true
           type: string
         errors:
@@ -7939,6 +7946,7 @@ components:
           uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           external_url: external_url
           provider: instagram
+          provider_post_id: provider_post_id
           authorized: true
           name: My Instagram
           id: 0
@@ -7955,6 +7963,7 @@ components:
           uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           external_url: external_url
           provider: instagram
+          provider_post_id: provider_post_id
           authorized: true
           name: My Instagram
           id: 0
@@ -8573,6 +8582,7 @@ components:
           uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           external_url: external_url
           provider: instagram
+          provider_post_id: provider_post_id
           authorized: true
           name: My Instagram
           id: 0
@@ -12259,6 +12269,7 @@ components:
           uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           external_url: external_url
           provider: instagram
+          provider_post_id: provider_post_id
           authorized: true
           name: My Instagram
           id: 0
@@ -12275,6 +12286,7 @@ components:
           uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           external_url: external_url
           provider: instagram
+          provider_post_id: provider_post_id
           authorized: true
           name: My Instagram
           id: 0
@@ -12766,6 +12778,7 @@ components:
             uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             external_url: external_url
             provider: instagram
+            provider_post_id: provider_post_id
             authorized: true
             name: My Instagram
             id: 0
@@ -12782,6 +12795,7 @@ components:
             uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             external_url: external_url
             provider: instagram
+            provider_post_id: provider_post_id
             authorized: true
             name: My Instagram
             id: 0
@@ -12935,6 +12949,7 @@ components:
             uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             external_url: external_url
             provider: instagram
+            provider_post_id: provider_post_id
             authorized: true
             name: My Instagram
             id: 0
@@ -12951,6 +12966,7 @@ components:
             uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             external_url: external_url
             provider: instagram
+            provider_post_id: provider_post_id
             authorized: true
             name: My Instagram
             id: 0
