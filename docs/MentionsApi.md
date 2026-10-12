@@ -13,7 +13,7 @@ All URIs are relative to *https://postboost.co/app/api*
 
 <a id="createMention"></a>
 # **createMention**
-> CreateMention201Response createMention(workspaceUuid, mentionInput)
+> CreateMention201Response createMention(workspaceUuid, mentionInput, idempotencyKey)
 
 Create mention
 
@@ -41,8 +41,9 @@ public class Example {
     MentionsApi apiInstance = new MentionsApi(defaultClient);
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
     MentionInput mentionInput = new MentionInput(); // MentionInput | 
+    String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
     try {
-      CreateMention201Response result = apiInstance.createMention(workspaceUuid, mentionInput);
+      CreateMention201Response result = apiInstance.createMention(workspaceUuid, mentionInput, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MentionsApi#createMention");
@@ -61,6 +62,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **workspaceUuid** | **UUID**| UUID of the workspace. | |
 | **mentionInput** | [**MentionInput**](MentionInput.md)|  | |
+| **idempotencyKey** | **String**| Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  | [optional] |
 
 ### Return type
 

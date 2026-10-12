@@ -19,6 +19,7 @@ All URIs are relative to *https://postboost.co/app/api*
 | [**updateMediaFolder**](MediaApi.md#updateMediaFolder) | **PUT** /{workspaceUuid}/media/folders/{folderUuid} | Update media folder |
 | [**uploadChunk**](MediaApi.md#uploadChunk) | **POST** /{workspaceUuid}/media/chunked/{uploadUuid}/upload | Upload a chunk |
 | [**uploadMedia**](MediaApi.md#uploadMedia) | **POST** /{workspaceUuid}/media | Upload media (binary) |
+| [**uploadMediaBase64**](MediaApi.md#uploadMediaBase64) | **POST** /{workspaceUuid}/media/base64 | Upload media (base64 JSON) |
 
 
 <a id="abortChunkedUpload"></a>
@@ -167,7 +168,7 @@ public class Example {
 
 <a id="createMediaFolder"></a>
 # **createMediaFolder**
-> MediaFolder createMediaFolder(workspaceUuid, createMediaFolderRequest)
+> MediaFolder createMediaFolder(workspaceUuid, createMediaFolderRequest, idempotencyKey)
 
 Create media folder
 
@@ -195,8 +196,9 @@ public class Example {
     MediaApi apiInstance = new MediaApi(defaultClient);
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
     CreateMediaFolderRequest createMediaFolderRequest = new CreateMediaFolderRequest(); // CreateMediaFolderRequest | 
+    String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
     try {
-      MediaFolder result = apiInstance.createMediaFolder(workspaceUuid, createMediaFolderRequest);
+      MediaFolder result = apiInstance.createMediaFolder(workspaceUuid, createMediaFolderRequest, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MediaApi#createMediaFolder");
@@ -215,6 +217,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **workspaceUuid** | **UUID**| UUID of the workspace. | |
 | **createMediaFolderRequest** | [**CreateMediaFolderRequest**](CreateMediaFolderRequest.md)|  | |
+| **idempotencyKey** | **String**| Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  | [optional] |
 
 ### Return type
 
@@ -529,7 +532,7 @@ public class Example {
 
 <a id="initiateChunkedUpload"></a>
 # **initiateChunkedUpload**
-> InitiateChunkedUpload201Response initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest)
+> InitiateChunkedUpload201Response initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest, idempotencyKey)
 
 Initiate chunked upload
 
@@ -557,8 +560,9 @@ public class Example {
     MediaApi apiInstance = new MediaApi(defaultClient);
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
     InitiateChunkedUploadRequest initiateChunkedUploadRequest = new InitiateChunkedUploadRequest(); // InitiateChunkedUploadRequest | 
+    String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
     try {
-      InitiateChunkedUpload201Response result = apiInstance.initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest);
+      InitiateChunkedUpload201Response result = apiInstance.initiateChunkedUpload(workspaceUuid, initiateChunkedUploadRequest, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MediaApi#initiateChunkedUpload");
@@ -577,6 +581,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **workspaceUuid** | **UUID**| UUID of the workspace. | |
 | **initiateChunkedUploadRequest** | [**InitiateChunkedUploadRequest**](InitiateChunkedUploadRequest.md)|  | |
+| **idempotencyKey** | **String**| Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  | [optional] |
 
 ### Return type
 
@@ -601,7 +606,7 @@ public class Example {
 
 <a id="initiateRemoteUpload"></a>
 # **initiateRemoteUpload**
-> InitiateRemoteUpload201Response initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest)
+> InitiateRemoteUpload201Response initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest, idempotencyKey)
 
 Initiate remote upload
 
@@ -629,8 +634,9 @@ public class Example {
     MediaApi apiInstance = new MediaApi(defaultClient);
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
     InitiateRemoteUploadRequest initiateRemoteUploadRequest = new InitiateRemoteUploadRequest(); // InitiateRemoteUploadRequest | 
+    String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
     try {
-      InitiateRemoteUpload201Response result = apiInstance.initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest);
+      InitiateRemoteUpload201Response result = apiInstance.initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MediaApi#initiateRemoteUpload");
@@ -649,6 +655,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **workspaceUuid** | **UUID**| UUID of the workspace. | |
 | **initiateRemoteUploadRequest** | [**InitiateRemoteUploadRequest**](InitiateRemoteUploadRequest.md)|  | |
+| **idempotencyKey** | **String**| Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  | [optional] |
 
 ### Return type
 
@@ -1055,11 +1062,11 @@ public class Example {
 
 <a id="uploadMedia"></a>
 # **uploadMedia**
-> Media uploadMedia(workspaceUuid, _file, altText, folder)
+> Media uploadMedia(workspaceUuid, _file, idempotencyKey, altText, folder)
 
 Upload media (binary)
 
-Upload a file directly as multipart form data.
+Upload a file directly as multipart form data. Images and videos, plus a PDF (up to 100 MB) for LinkedIn document posts: a post that attaches a PDF must have it as the only media item and may only go to LinkedIn profiles and pages. 
 
 ### Example
 ```java
@@ -1083,10 +1090,11 @@ public class Example {
     MediaApi apiInstance = new MediaApi(defaultClient);
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
     File _file = new File("/path/to/file"); // File | The file to upload.
+    String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
     String altText = "altText_example"; // String | Alternative text for accessibility.
     UUID folder = UUID.randomUUID(); // UUID | UUID of the media folder to file the upload in. Omit or null for the library root.
     try {
-      Media result = apiInstance.uploadMedia(workspaceUuid, _file, altText, folder);
+      Media result = apiInstance.uploadMedia(workspaceUuid, _file, idempotencyKey, altText, folder);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MediaApi#uploadMedia");
@@ -1105,6 +1113,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **workspaceUuid** | **UUID**| UUID of the workspace. | |
 | **_file** | **File**| The file to upload. | |
+| **idempotencyKey** | **String**| Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  | [optional] |
 | **altText** | **String**| Alternative text for accessibility. | [optional] |
 | **folder** | **UUID**| UUID of the media folder to file the upload in. Omit or null for the library root. | [optional] |
 
@@ -1128,4 +1137,75 @@ public class Example {
 | **401** |  |  -  |
 | **403** |  |  -  |
 | **422** |  |  -  |
+
+<a id="uploadMediaBase64"></a>
+# **uploadMediaBase64**
+> Media uploadMediaBase64(workspaceUuid, mediaBase64Input, idempotencyKey)
+
+Upload media (base64 JSON)
+
+Upload a file as base64 inside a JSON body, for agents and tools that cannot send multipart form data. The decoded file is checked exactly like &#x60;POST media&#x60; (allowed types and size limits; a PDF is accepted for LinkedIn document posts). Decoded size is capped at 20 MB; for larger files use remote upload by URL or chunked upload. 
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.MediaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    MediaApi apiInstance = new MediaApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    MediaBase64Input mediaBase64Input = new MediaBase64Input(); // MediaBase64Input | 
+    String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
+    try {
+      Media result = apiInstance.uploadMediaBase64(workspaceUuid, mediaBase64Input, idempotencyKey);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MediaApi#uploadMediaBase64");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+| **mediaBase64Input** | [**MediaBase64Input**](MediaBase64Input.md)|  | |
+| **idempotencyKey** | **String**| Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  | [optional] |
+
+### Return type
+
+[**Media**](Media.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Uploaded media object |  -  |
 

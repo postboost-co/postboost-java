@@ -5,11 +5,17 @@ All URIs are relative to *https://postboost.co/app/api*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**blogToSocial**](AiApi.md#blogToSocial) | **POST** /{workspaceUuid}/ai/blog-to-social | Generate social media captions from a blog post |
+| [**deleteBrandVoice**](AiApi.md#deleteBrandVoice) | **DELETE** /{workspaceUuid}/brand-voice | Delete the brand voice |
+| [**getAIUsage**](AiApi.md#getAIUsage) | **GET** /{workspaceUuid}/usage/ai | AI credit usage |
+| [**getBrandVoice**](AiApi.md#getBrandVoice) | **GET** /{workspaceUuid}/brand-voice | Get the brand voice |
 | [**imageAltText**](AiApi.md#imageAltText) | **POST** /{workspaceUuid}/ai/image-alt-text | Generate alt text for a media image using AI |
 | [**imageEdit**](AiApi.md#imageEdit) | **POST** /{workspaceUuid}/ai/image-edit | Edit an existing media image using AI |
 | [**imageGenerate**](AiApi.md#imageGenerate) | **POST** /{workspaceUuid}/ai/image-generate | Generate social media images from a caption |
 | [**imagePrompt**](AiApi.md#imagePrompt) | **POST** /{workspaceUuid}/ai/image-prompt | Build an optimized image prompt from a social media caption |
 | [**imageVariations**](AiApi.md#imageVariations) | **POST** /{workspaceUuid}/ai/image-variations | Generate variations of an existing media image |
+| [**learnBrandVoice**](AiApi.md#learnBrandVoice) | **POST** /{workspaceUuid}/brand-voice/learn | Learn a brand voice from past posts |
+| [**repurposeContent**](AiApi.md#repurposeContent) | **POST** /{workspaceUuid}/ai/repurpose | Repurpose long-form content into a draft post set with a carousel |
+| [**updateBrandVoice**](AiApi.md#updateBrandVoice) | **PUT** /{workspaceUuid}/brand-voice | Create or update the brand voice |
 
 
 <a id="blogToSocial"></a>
@@ -84,6 +90,213 @@ public class Example {
 | **403** |  |  -  |
 | **422** |  |  -  |
 | **429** | AI credits exhausted for this billing period |  -  |
+
+<a id="deleteBrandVoice"></a>
+# **deleteBrandVoice**
+> Object deleteBrandVoice(workspaceUuid)
+
+Delete the brand voice
+
+Removes the workspace&#39;s brand voice. AI endpoints then run without one. Admins and members only.
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.AiApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    AiApi apiInstance = new AiApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    try {
+      Object result = apiInstance.deleteBrandVoice(workspaceUuid);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiApi#deleteBrandVoice");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+
+<a id="getAIUsage"></a>
+# **getAIUsage**
+> AIUsage getAIUsage(workspaceUuid)
+
+AI credit usage
+
+The workspace&#39;s AI credits: text credits (captions, rewrites, outlines, alt text; counted per billing cycle) and image credits (one per generated, edited or varied image, and one per repurpose carousel; counted per calendar month, UTC). &#x60;limit&#x60; and &#x60;remaining&#x60; are &#x60;null&#x60; when the workspace has no limit. Readable when credits are used up; costs nothing.  When image credits run out, the image endpoints and carousels answer &#x60;429&#x60; with &#x60;code: image_credits_exhausted&#x60;; when text credits run out, the AI endpoints answer &#x60;429&#x60; with &#x60;code: ai_credits_exhausted&#x60;. Image endpoint responses also carry &#x60;image_credits_used&#x60; and &#x60;image_credits_remaining&#x60;; their &#x60;credits_used&#x60; counts text credits only. If the image pool is switched off (&#x60;image.enabled: false&#x60;), images cost text credits as before. 
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.AiApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    AiApi apiInstance = new AiApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    try {
+      AIUsage result = apiInstance.getAIUsage(workspaceUuid);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiApi#getAIUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+
+### Return type
+
+[**AIUsage**](AIUsage.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Credit usage |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+
+<a id="getBrandVoice"></a>
+# **getBrandVoice**
+> GetBrandVoice200Response getBrandVoice(workspaceUuid)
+
+Get the brand voice
+
+The workspace&#39;s brand voice: identity, audience, tone sliders, style rules and example posts. It is the same profile as the Brand Voice page in the app (one per workspace). &#x60;data&#x60; is &#x60;null&#x60; when no voice is set. Any workspace member may read it; reading costs no AI credits.  The AI endpoints apply it automatically: &#x60;blog-to-social&#x60; adds it to the caption instructions, &#x60;image-prompt&#x60; and &#x60;image-generate&#x60; turn it into a short visual tone line, and &#x60;image-edit&#x60; applies it when you send &#x60;use_brand_voice: true&#x60;. &#x60;image-variations&#x60; and &#x60;image-alt-text&#x60; never use it (alt text must describe the image literally). Send &#x60;use_brand_voice: false&#x60; to skip it on a call; responses report &#x60;meta.brand_voice_applied&#x60;. 
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.AiApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    AiApi apiInstance = new AiApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    try {
+      GetBrandVoice200Response result = apiInstance.getBrandVoice(workspaceUuid);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiApi#getBrandVoice");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+
+### Return type
+
+[**GetBrandVoice200Response**](GetBrandVoice200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The brand voice, or &#x60;null&#x60; when none is set |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
 
 <a id="imageAltText"></a>
 # **imageAltText**
@@ -449,4 +662,225 @@ public class Example {
 | **403** |  |  -  |
 | **422** |  |  -  |
 | **429** |  |  -  |
+
+<a id="learnBrandVoice"></a>
+# **learnBrandVoice**
+> LearnBrandVoiceResponse learnBrandVoice(workspaceUuid, learnBrandVoiceInput)
+
+Learn a brand voice from past posts
+
+Reads the workspace&#39;s latest published posts (original text) and proposes a brand voice in the same shape as &#x60;GET /brand-voice&#x60;. Returns a draft and saves nothing unless &#x60;apply: true&#x60;.  Without &#x60;overwrite&#x60;, learned values only fill fields that are empty (tone sliders and styles still at their defaults count as empty); with &#x60;overwrite: true&#x60; they replace them. The first five sampled posts become &#x60;example_posts&#x60;. Needs at least 3 published posts (&#x60;422&#x60;, &#x60;code: not_enough_posts&#x60;). Costs one AI text credit per AI call (one retry when the reply is not usable). Admins and members only. A key limited to some accounts must send &#x60;account_ids&#x60;; only posts whose accounts are all among them are read. &#x60;apply&#x60; also needs the &#x60;write&#x60; ability. 
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.AiApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    AiApi apiInstance = new AiApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    LearnBrandVoiceInput learnBrandVoiceInput = new LearnBrandVoiceInput(); // LearnBrandVoiceInput | 
+    try {
+      LearnBrandVoiceResponse result = apiInstance.learnBrandVoice(workspaceUuid, learnBrandVoiceInput);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiApi#learnBrandVoice");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+| **learnBrandVoiceInput** | [**LearnBrandVoiceInput**](LearnBrandVoiceInput.md)|  | [optional] |
+
+### Return type
+
+[**LearnBrandVoiceResponse**](LearnBrandVoiceResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Proposed (or saved) brand voice |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+| **422** | Validation error, AI disabled, or fewer than 3 published posts (&#x60;code: not_enough_posts&#x60;) |  -  |
+| **429** | AI text credits used up (&#x60;code: ai_credits_exhausted&#x60;) |  -  |
+| **502** | The AI reply was not a usable profile (&#x60;code: ai_unusable_response&#x60;) |  -  |
+
+<a id="repurposeContent"></a>
+# **repurposeContent**
+> RepurposeContent200Response repurposeContent(workspaceUuid, repurposeInput, idempotencyKey)
+
+Repurpose long-form content into a draft post set with a carousel
+
+Turns an article URL, a YouTube video, a PDF or pasted text into one **draft** post with a caption for every target account, plus a carousel of rendered slide images (hook, 1 to 6 idea slides, call to action; 1080×1350 PNG). Nothing is published or scheduled.  **Sources** (&#x60;source_type&#x60;): - &#x60;url&#x60;: the article is fetched and its main text extracted. - &#x60;youtube&#x60;: title, description and chapters come from YouTube; send the transcript in   &#x60;transcript&#x60; for better results (required when the description is short). - &#x60;pdf&#x60;: &#x60;pdf_url&#x60; must be a public PDF of at most 20 MB; the first 30 pages are read. - &#x60;text&#x60;: send &#x60;title&#x60; and &#x60;text&#x60;.  **Carousel per network**: Instagram, Facebook, Threads up to 10 slides; LinkedIn up to 9; X and Bluesky up to 4; other networks get the cover slide; YouTube and TikTok get none (listed in &#x60;warnings&#x60;). Without a carousel, the source image (article image or video thumbnail) is attached when available.  **AI credits**: one per target account plus one for the carousel outline. Slides are drawn without AI and cost nothing. The workspace brand voice applies unless &#x60;use_brand_voice&#x60; is &#x60;false&#x60;. Send an &#x60;Idempotency-Key&#x60; so a retried call does not create a second draft. Limited to 10 calls per minute. 
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.AiApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    AiApi apiInstance = new AiApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    RepurposeInput repurposeInput = new RepurposeInput(); // RepurposeInput | 
+    String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
+    try {
+      RepurposeContent200Response result = apiInstance.repurposeContent(workspaceUuid, repurposeInput, idempotencyKey);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiApi#repurposeContent");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+| **repurposeInput** | [**RepurposeInput**](RepurposeInput.md)|  | |
+| **idempotencyKey** | **String**| Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  | [optional] |
+
+### Return type
+
+[**RepurposeContent200Response**](RepurposeContent200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Draft post set created |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+| **422** |  |  -  |
+| **429** |  |  -  |
+
+<a id="updateBrandVoice"></a>
+# **updateBrandVoice**
+> GetBrandVoice200Response updateBrandVoice(workspaceUuid, brandVoiceInput)
+
+Create or update the brand voice
+
+Creates the workspace&#39;s brand voice or updates it. Fields you leave out keep their current value. Admins and members only (not viewers); the workspace must have AI enabled. 
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.AiApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    AiApi apiInstance = new AiApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    BrandVoiceInput brandVoiceInput = new BrandVoiceInput(); // BrandVoiceInput | 
+    try {
+      GetBrandVoice200Response result = apiInstance.updateBrandVoice(workspaceUuid, brandVoiceInput);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiApi#updateBrandVoice");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+| **brandVoiceInput** | [**BrandVoiceInput**](BrandVoiceInput.md)|  | |
+
+### Return type
+
+[**GetBrandVoice200Response**](GetBrandVoice200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The saved brand voice |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+| **422** |  |  -  |
 

@@ -13,7 +13,7 @@ All URIs are relative to *https://postboost.co/app/api*
 
 <a id="createTag"></a>
 # **createTag**
-> Tag createTag(workspaceUuid, tagInput)
+> Tag createTag(workspaceUuid, tagInput, idempotencyKey)
 
 Create tag
 
@@ -41,8 +41,9 @@ public class Example {
     TagsApi apiInstance = new TagsApi(defaultClient);
     UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
     TagInput tagInput = new TagInput(); // TagInput | 
+    String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
     try {
-      Tag result = apiInstance.createTag(workspaceUuid, tagInput);
+      Tag result = apiInstance.createTag(workspaceUuid, tagInput, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TagsApi#createTag");
@@ -61,6 +62,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **workspaceUuid** | **UUID**| UUID of the workspace. | |
 | **tagInput** | [**TagInput**](TagInput.md)|  | |
+| **idempotencyKey** | **String**| Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  | [optional] |
 
 ### Return type
 

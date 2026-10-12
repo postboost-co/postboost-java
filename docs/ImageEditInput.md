@@ -10,6 +10,7 @@
 |**mediaUuid** | **UUID** | UUID of the source media item to edit |  |
 |**prompt** | **String** | Describe what to change in the image |  |
 |**maskUuid** | **UUID** | UUID of a mask image. Transparent areas will be edited. |  [optional] |
+|**useBrandVoice** | **Boolean** | Append the workspace brand voice&#39;s visual tone to the edit prompt. Off by default because edits are literal instructions. |  [optional] |
 |**aspectRatio** | [**AspectRatioEnum**](#AspectRatioEnum) |  |  [optional] |
 |**count** | **Integer** |  |  [optional] |
 |**quality** | [**QualityEnum**](#QualityEnum) |  |  [optional] |
