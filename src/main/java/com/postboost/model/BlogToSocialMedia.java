@@ -49,7 +49,7 @@ import com.postboost.JSON;
 /**
  * The imported featured image. Only present when &#x60;create_post&#x60; was &#x60;true&#x60; and an image was available.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T20:21:28.364425066Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T22:40:32.059752460Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class BlogToSocialMedia {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

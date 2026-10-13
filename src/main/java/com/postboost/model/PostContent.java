@@ -51,7 +51,7 @@ import com.postboost.JSON;
 /**
  * One item of a version&#39;s &#x60;content&#x60; array. The first item is always the post itself. What a second item means depends on the network:  - **Facebook Page, Instagram, LinkedIn** (profile and page): the second item&#39;s &#x60;body&#x60; is   published as the **first comment** under the post, right after the post goes live.   Only one comment is supported; further items are ignored. Facebook Stories take no comment. - **X, Threads, Bluesky, Mastodon, Pixelfed**: every additional item is published as the   next post of a **thread**, in order. - **All other networks** (YouTube, TikTok, Pinterest, Google Business Profile): only the   first item is published; additional items are ignored. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T20:21:28.364425066Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T22:40:32.059752460Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class PostContent {
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)

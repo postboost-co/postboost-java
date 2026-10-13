@@ -51,7 +51,7 @@ import com.postboost.JSON;
 /**
  * At least one of &#x60;url&#x60; or (&#x60;title&#x60; + &#x60;excerpt&#x60;) must be provided. If both are given, direct values take priority over the scraped URL content. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T20:21:28.364425066Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T22:40:32.059752460Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class BlogToSocialInput {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)

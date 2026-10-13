@@ -50,7 +50,7 @@ import com.postboost.JSON;
 /**
  * Connection health of an account (todo 27). Never contains token values.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T20:21:28.364425066Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T22:40:32.059752460Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class AccountConnectionHealth {
   /**
    * &#x60;expired&#x60;: must be reconnected now. &#x60;expiring&#x60;: the connection hits its hard expiry within 7 days. &#x60;failing&#x60;: the latest publish attempt failed. &#x60;healthy&#x60;: none of these. 

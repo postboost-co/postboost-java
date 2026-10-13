@@ -48,7 +48,7 @@ import com.postboost.JSON;
 /**
  * YouTube options. The video title is required.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T20:21:28.364425066Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T22:40:32.059752460Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class PostOptionsYoutube {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
