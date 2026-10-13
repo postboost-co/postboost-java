@@ -114,7 +114,9 @@ public class PostsApi {
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addPostToQueueCall(UUID workspaceUuid, UUID postUuid, String idempotencyKey, AddPostToQueueRequest addPostToQueueRequest, final ApiCallback _callback) throws ApiException {
@@ -186,7 +188,7 @@ public class PostsApi {
 
     /**
      * Add post to queue
-     * Add an existing post to the smart publishing queue. Each account of the post gets its own next free queue slot. Returns &#x60;422&#x60; when the post has no accounts, the posting schedule has no available times, or provider requirements are not met. 
+     * Add an existing post to the smart publishing queue. Each account of the post gets its own next free queue slot. Returns &#x60;422&#x60; when the post has no accounts, the posting schedule has no available times, or provider requirements are not met. The guardrails check the saved post as publishing today (UTC), as on create: &#x60;409&#x60; duplicate (override with &#x60;X-Allow-Duplicate: true&#x60;), &#x60;422&#x60; account cannot publish, &#x60;429&#x60; daily or X cap. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param idempotencyKey Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  (optional)
@@ -200,7 +202,9 @@ public class PostsApi {
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ScheduleResult addPostToQueue(UUID workspaceUuid, UUID postUuid, String idempotencyKey, AddPostToQueueRequest addPostToQueueRequest) throws ApiException {
@@ -210,7 +214,7 @@ public class PostsApi {
 
     /**
      * Add post to queue
-     * Add an existing post to the smart publishing queue. Each account of the post gets its own next free queue slot. Returns &#x60;422&#x60; when the post has no accounts, the posting schedule has no available times, or provider requirements are not met. 
+     * Add an existing post to the smart publishing queue. Each account of the post gets its own next free queue slot. Returns &#x60;422&#x60; when the post has no accounts, the posting schedule has no available times, or provider requirements are not met. The guardrails check the saved post as publishing today (UTC), as on create: &#x60;409&#x60; duplicate (override with &#x60;X-Allow-Duplicate: true&#x60;), &#x60;422&#x60; account cannot publish, &#x60;429&#x60; daily or X cap. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param idempotencyKey Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  (optional)
@@ -224,7 +228,9 @@ public class PostsApi {
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ScheduleResult> addPostToQueueWithHttpInfo(UUID workspaceUuid, UUID postUuid, String idempotencyKey, AddPostToQueueRequest addPostToQueueRequest) throws ApiException {
@@ -235,7 +241,7 @@ public class PostsApi {
 
     /**
      * Add post to queue (asynchronously)
-     * Add an existing post to the smart publishing queue. Each account of the post gets its own next free queue slot. Returns &#x60;422&#x60; when the post has no accounts, the posting schedule has no available times, or provider requirements are not met. 
+     * Add an existing post to the smart publishing queue. Each account of the post gets its own next free queue slot. Returns &#x60;422&#x60; when the post has no accounts, the posting schedule has no available times, or provider requirements are not met. The guardrails check the saved post as publishing today (UTC), as on create: &#x60;409&#x60; duplicate (override with &#x60;X-Allow-Duplicate: true&#x60;), &#x60;422&#x60; account cannot publish, &#x60;429&#x60; daily or X cap. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param idempotencyKey Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with &#x60;Idempotent-Replayed: true&#x60; and has no further effect. Keys are scoped to your user, the workspace, the method and the path.  (optional)
@@ -250,7 +256,9 @@ public class PostsApi {
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addPostToQueueAsync(UUID workspaceUuid, UUID postUuid, String idempotencyKey, AddPostToQueueRequest addPostToQueueRequest, final ApiCallback<ScheduleResult> _callback) throws ApiException {
@@ -3071,7 +3079,9 @@ public class PostsApi {
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call schedulePostCall(UUID workspaceUuid, UUID postUuid, SchedulePostRequest schedulePostRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
@@ -3148,7 +3158,7 @@ public class PostsApi {
 
     /**
      * Schedule post
-     * Schedule an existing post. Optionally move it with &#x60;date&#x60;/&#x60;time&#x60; (read in &#x60;timezone&#x60;) and give accounts their own times with &#x60;accounts_schedule&#x60;. Set &#x60;postNow: true&#x60; to publish immediately; publishing starts within the request and any per-account times are dropped. Provider requirements are validated and reported as &#x60;422&#x60;. 
+     * Schedule an existing post. Optionally move it with &#x60;date&#x60;/&#x60;time&#x60; (read in &#x60;timezone&#x60;) and give accounts their own times with &#x60;accounts_schedule&#x60;. Set &#x60;postNow: true&#x60; to publish immediately; publishing starts within the request and any per-account times are dropped. Provider requirements are validated and reported as &#x60;422&#x60;. The guardrails check the saved post at the time it would publish, as on create: &#x60;409&#x60; duplicate (override with &#x60;X-Allow-Duplicate: true&#x60;), &#x60;422&#x60; account cannot publish, &#x60;429&#x60; daily or X cap. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param schedulePostRequest  (required)
@@ -3162,7 +3172,9 @@ public class PostsApi {
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ScheduleResult schedulePost(UUID workspaceUuid, UUID postUuid, SchedulePostRequest schedulePostRequest, String idempotencyKey) throws ApiException {
@@ -3172,7 +3184,7 @@ public class PostsApi {
 
     /**
      * Schedule post
-     * Schedule an existing post. Optionally move it with &#x60;date&#x60;/&#x60;time&#x60; (read in &#x60;timezone&#x60;) and give accounts their own times with &#x60;accounts_schedule&#x60;. Set &#x60;postNow: true&#x60; to publish immediately; publishing starts within the request and any per-account times are dropped. Provider requirements are validated and reported as &#x60;422&#x60;. 
+     * Schedule an existing post. Optionally move it with &#x60;date&#x60;/&#x60;time&#x60; (read in &#x60;timezone&#x60;) and give accounts their own times with &#x60;accounts_schedule&#x60;. Set &#x60;postNow: true&#x60; to publish immediately; publishing starts within the request and any per-account times are dropped. Provider requirements are validated and reported as &#x60;422&#x60;. The guardrails check the saved post at the time it would publish, as on create: &#x60;409&#x60; duplicate (override with &#x60;X-Allow-Duplicate: true&#x60;), &#x60;422&#x60; account cannot publish, &#x60;429&#x60; daily or X cap. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param schedulePostRequest  (required)
@@ -3186,7 +3198,9 @@ public class PostsApi {
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ScheduleResult> schedulePostWithHttpInfo(UUID workspaceUuid, UUID postUuid, SchedulePostRequest schedulePostRequest, String idempotencyKey) throws ApiException {
@@ -3197,7 +3211,7 @@ public class PostsApi {
 
     /**
      * Schedule post (asynchronously)
-     * Schedule an existing post. Optionally move it with &#x60;date&#x60;/&#x60;time&#x60; (read in &#x60;timezone&#x60;) and give accounts their own times with &#x60;accounts_schedule&#x60;. Set &#x60;postNow: true&#x60; to publish immediately; publishing starts within the request and any per-account times are dropped. Provider requirements are validated and reported as &#x60;422&#x60;. 
+     * Schedule an existing post. Optionally move it with &#x60;date&#x60;/&#x60;time&#x60; (read in &#x60;timezone&#x60;) and give accounts their own times with &#x60;accounts_schedule&#x60;. Set &#x60;postNow: true&#x60; to publish immediately; publishing starts within the request and any per-account times are dropped. Provider requirements are validated and reported as &#x60;422&#x60;. The guardrails check the saved post at the time it would publish, as on create: &#x60;409&#x60; duplicate (override with &#x60;X-Allow-Duplicate: true&#x60;), &#x60;422&#x60; account cannot publish, &#x60;429&#x60; daily or X cap. 
      * @param workspaceUuid UUID of the workspace. (required)
      * @param postUuid UUID of the post. (required)
      * @param schedulePostRequest  (required)
@@ -3212,7 +3226,9 @@ public class PostsApi {
         <tr><td> 401 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 403 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 422 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call schedulePostAsync(UUID workspaceUuid, UUID postUuid, SchedulePostRequest schedulePostRequest, String idempotencyKey, final ApiCallback<ScheduleResult> _callback) throws ApiException {

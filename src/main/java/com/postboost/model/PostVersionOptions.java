@@ -51,7 +51,7 @@ import com.postboost.JSON;
 /**
  * Platform-specific publishing options, keyed by network (&#x60;tiktok&#x60;, &#x60;youtube&#x60;, &#x60;instagram&#x60;, &#x60;mastodon&#x60;, …). Options of networks the post does not publish to are ignored. To label a post as AI-generated on every network that supports it, send &#x60;ai_generated&#x60; on the post instead of setting &#x60;tiktok.is_aigc&#x60;, &#x60;youtube.contains_synthetic_media&#x60; or &#x60;instagram.ai_generated&#x60; yourself. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-12T22:14:57.846468424Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T20:21:28.364425066Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class PostVersionOptions {
   public static final String SERIALIZED_NAME_TIKTOK = "tiktok";
   @SerializedName(SERIALIZED_NAME_TIKTOK)

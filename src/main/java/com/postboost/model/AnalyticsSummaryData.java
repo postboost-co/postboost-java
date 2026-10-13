@@ -52,7 +52,7 @@ import com.postboost.JSON;
 /**
  * Cross-platform summary over every account that supports analytics. Chart series are lists of &#x60;{date, value}&#x60; points (or &#x60;{label, value}&#x60; when the axis is not a date). 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-12T22:14:57.846468424Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T20:21:28.364425066Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class AnalyticsSummaryData {
   public static final String SERIALIZED_NAME_TOTAL_FOLLOWERS = "total_followers";
   @SerializedName(SERIALIZED_NAME_TOTAL_FOLLOWERS)

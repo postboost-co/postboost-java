@@ -50,7 +50,7 @@ import com.postboost.JSON;
 /**
  * Instagram options (&#x60;instagram&#x60; for accounts connected through Facebook, &#x60;instagram_standalone&#x60; for Instagram Login).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-12T22:14:57.846468424Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T20:21:28.364425066Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class PostOptionsInstagram {
   /**
    * Gets or Sets type
