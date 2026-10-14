@@ -2,7 +2,7 @@
 
 # WorkspaceAgentSettings
 
-Pre-publish checker settings.
+Agent settings; each type reads its own keys. Pre-publish checker: `horizon_hours`, `check_links`, `banned_phrases`, `ai_review`, `max_ai_reviews_per_run`. Failed-post fixer: `lookback_hours`. 
 
 ## Properties
 
@@ -13,6 +13,7 @@ Pre-publish checker settings.
 |**bannedPhrases** | **List&lt;String&gt;** | Phrases to propose removing from captions. |  [optional] |
 |**aiReview** | **Boolean** | Ask AI to review captions (one AI credit per reviewed post). |  [optional] |
 |**maxAiReviewsPerRun** | **Integer** |  |  [optional] |
+|**lookbackHours** | **Integer** | Look at posts that failed within this many hours. |  [optional] |
 
 
 

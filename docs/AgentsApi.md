@@ -22,7 +22,7 @@ All URIs are relative to *https://postboost.co/app/api*
 
 Approve and apply an agent proposal
 
-Applies the proposal at once: &#x60;hold_post&#x60; moves the post back to draft, &#x60;edit_caption&#x60; replaces the caption. When the post was edited, deleted or left the schedule since the proposal was made, nothing changes and the proposal becomes &#x60;stale&#x60;. Admins and members only. 
+Applies the proposal at once: &#x60;hold_post&#x60; moves the post back to draft, &#x60;edit_caption&#x60; replaces the caption, &#x60;retry_account&#x60; saves the shortened caption (if any) on that account&#39;s version and publishes that account again, &#x60;reconnect_account&#x60; only records the decision. When the post was edited, deleted or left the schedule since the proposal was made (for &#x60;retry_account&#x60;: the account is no longer failed, the post is publishing, or the plan does not allow scheduling), nothing changes and the proposal becomes &#x60;stale&#x60;. Admins and members only. 
 
 ### Example
 ```java
@@ -97,7 +97,7 @@ public class Example {
 
 Switch on a background agent
 
-Creates an agent (one per type per workspace). It first runs within five minutes, then on its &#x60;schedule&#x60;. **Pre-publish checker** looks at posts scheduled in the next &#x60;horizon_hours&#x60; and proposes holding (back to draft) posts that would fail: disconnected accounts, network requirements, daily caps, the X allowance and links that answer an error. It proposes caption edits that drop &#x60;banned_phrases&#x60;. With &#x60;ai_review: true&#x60; it also asks AI to review up to &#x60;max_ai_reviews_per_run&#x60; posts per run (one AI credit each). Admins and members only. 
+Creates an agent (one per type per workspace). It first runs within five minutes, then on its &#x60;schedule&#x60;. **Pre-publish checker** looks at posts scheduled in the next &#x60;horizon_hours&#x60; and proposes holding (back to draft) posts that would fail: disconnected accounts, network requirements, daily caps, the X allowance and links that answer an error. It proposes caption edits that drop &#x60;banned_phrases&#x60;. With &#x60;ai_review: true&#x60; it also asks AI to review up to &#x60;max_ai_reviews_per_run&#x60; posts per run (one AI credit each). **Failed-post fixer** looks at posts that failed on an account in the last &#x60;lookback_hours&#x60; and proposes, per post and account, &#x60;reconnect_account&#x60; (the account&#39;s token expired), or &#x60;retry_account&#x60;, with a caption trimmed to the network limit when the text is over it. One open proposal per post and account. It uses no AI. Admins and members only. 
 
 ### Example
 ```java
@@ -463,7 +463,7 @@ public class Example {
 
 List background agents
 
-Background agents switched on for the workspace. Agents run on a schedule, record every run and never change a post themselves: each change is a proposal that a workspace admin or member approves. Available type: &#x60;pre_publish_checker&#x60;. 
+Background agents switched on for the workspace. Agents run on a schedule, record every run and never change a post themselves: each change is a proposal that a workspace admin or member approves. Available types: &#x60;pre_publish_checker&#x60;, &#x60;failed_post_fixer&#x60;. 
 
 ### Example
 ```java

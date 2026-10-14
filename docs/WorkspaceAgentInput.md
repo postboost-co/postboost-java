@@ -20,6 +20,7 @@
 | Name | Value |
 |---- | -----|
 | PRE_PUBLISH_CHECKER | &quot;pre_publish_checker&quot; |
+| FAILED_POST_FIXER | &quot;failed_post_fixer&quot; |
 
 
 
