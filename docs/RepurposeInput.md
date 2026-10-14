@@ -26,6 +26,7 @@
 |**theme** | [**RepurposeInputTheme**](RepurposeInputTheme.md) |  |  [optional] |
 |**createPost** | **Boolean** | Create the draft post. &#x60;false&#x60; returns captions and slides only. |  [optional] |
 |**useBrandVoice** | **Boolean** |  |  [optional] |
+|**async** | **Boolean** | Answer &#x60;202&#x60; with a run id right away instead of waiting up to 20 seconds for the result. |  [optional] |
 
 
 

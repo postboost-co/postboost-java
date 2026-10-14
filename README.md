@@ -17,7 +17,7 @@ Official Java client for the [PostBoost API](https://postboost.co/docs/api).
 <dependency>
   <groupId>com.postboost</groupId>
   <artifactId>postboost-java-sdk</artifactId>
-  <version>1.18.0</version>
+  <version>1.19.0</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ repositories {
     maven { url 'https://maven.pkg.github.com/postboost-co/postboost-java' }
 }
 dependencies {
-    implementation 'com.postboost:postboost-java-sdk:1.18.0'
+    implementation 'com.postboost:postboost-java-sdk:1.19.0'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 | **GitHub Packages** | [github.com/postboost-co/postboost-java/packages](https://github.com/postboost-co/postboost-java/packages) |
 | **GitHub** | [postboost-co/postboost-java](https://github.com/postboost-co/postboost-java) |
 | **Docs** | [postboost.co/docs/api](https://postboost.co/docs/api) |
-| **Version** | v1.18.0 |
+| **Version** | v1.19.0 |
 
 ## Quick start
 
@@ -83,6 +83,7 @@ Class | Method | HTTP request | Description
 *AiApi* | [**deleteBrandVoice**](docs/AiApi.md#deleteBrandVoice) | **DELETE** /{workspaceUuid}/brand-voice | Delete the brand voice
 *AiApi* | [**getAIUsage**](docs/AiApi.md#getAIUsage) | **GET** /{workspaceUuid}/usage/ai | AI credit usage
 *AiApi* | [**getBrandVoice**](docs/AiApi.md#getBrandVoice) | **GET** /{workspaceUuid}/brand-voice | Get the brand voice
+*AiApi* | [**getRepurposeRun**](docs/AiApi.md#getRepurposeRun) | **GET** /{workspaceUuid}/ai/repurpose/runs/{runId} | Get a repurpose run
 *AiApi* | [**imageAltText**](docs/AiApi.md#imageAltText) | **POST** /{workspaceUuid}/ai/image-alt-text | Generate alt text for a media image using AI
 *AiApi* | [**imageEdit**](docs/AiApi.md#imageEdit) | **POST** /{workspaceUuid}/ai/image-edit | Edit an existing media image using AI
 *AiApi* | [**imageGenerate**](docs/AiApi.md#imageGenerate) | **POST** /{workspaceUuid}/ai/image-generate | Generate social media images from a caption

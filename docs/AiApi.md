@@ -8,6 +8,7 @@ All URIs are relative to *https://postboost.co/app/api*
 | [**deleteBrandVoice**](AiApi.md#deleteBrandVoice) | **DELETE** /{workspaceUuid}/brand-voice | Delete the brand voice |
 | [**getAIUsage**](AiApi.md#getAIUsage) | **GET** /{workspaceUuid}/usage/ai | AI credit usage |
 | [**getBrandVoice**](AiApi.md#getBrandVoice) | **GET** /{workspaceUuid}/brand-voice | Get the brand voice |
+| [**getRepurposeRun**](AiApi.md#getRepurposeRun) | **GET** /{workspaceUuid}/ai/repurpose/runs/{runId} | Get a repurpose run |
 | [**imageAltText**](AiApi.md#imageAltText) | **POST** /{workspaceUuid}/ai/image-alt-text | Generate alt text for a media image using AI |
 | [**imageEdit**](AiApi.md#imageEdit) | **POST** /{workspaceUuid}/ai/image-edit | Edit an existing media image using AI |
 | [**imageGenerate**](AiApi.md#imageGenerate) | **POST** /{workspaceUuid}/ai/image-generate | Generate social media images from a caption |
@@ -297,6 +298,78 @@ public class Example {
 | **200** | The brand voice, or &#x60;null&#x60; when none is set |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |
+
+<a id="getRepurposeRun"></a>
+# **getRepurposeRun**
+> GetRepurposeRun200Response getRepurposeRun(workspaceUuid, runId)
+
+Get a repurpose run
+
+Status of a run started by &#x60;repurposeContent&#x60;. &#x60;queued&#x60; and &#x60;running&#x60; mean it is still going; poll again in a few seconds. A run that has not finished after 10 minutes reports &#x60;failed&#x60;. &#x60;result&#x60; holds the same &#x60;data&#x60; body a &#x60;200&#x60; from &#x60;repurposeContent&#x60; returns, for one hour after the run ended with &#x60;ok&#x60; or &#x60;partial&#x60;; after that it is &#x60;null&#x60; (the draft post stays). Limited to 60 calls per minute. 
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.AiApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    AiApi apiInstance = new AiApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    Integer runId = 56; // Integer | The `run_id` from `repurposeContent`.
+    try {
+      GetRepurposeRun200Response result = apiInstance.getRepurposeRun(workspaceUuid, runId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiApi#getRepurposeRun");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+| **runId** | **Integer**| The &#x60;run_id&#x60; from &#x60;repurposeContent&#x60;. | |
+
+### Return type
+
+[**GetRepurposeRun200Response**](GetRepurposeRun200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Run status |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+| **404** |  |  -  |
 
 <a id="imageAltText"></a>
 # **imageAltText**
@@ -743,7 +816,7 @@ public class Example {
 
 Repurpose long-form content into a draft post set with a carousel
 
-Turns an article URL, a YouTube video, a PDF or pasted text into one **draft** post with a caption for every target account, plus a carousel of rendered slide images (hook, 1 to 6 idea slides, call to action; 1080×1350 PNG). Nothing is published or scheduled.  **Sources** (&#x60;source_type&#x60;): - &#x60;url&#x60;: the article is fetched and its main text extracted. - &#x60;youtube&#x60;: title, description and chapters come from YouTube; send the transcript in   &#x60;transcript&#x60; for better results (required when the description is short). - &#x60;pdf&#x60;: &#x60;pdf_url&#x60; must be a public PDF of at most 20 MB; the first 30 pages are read. - &#x60;text&#x60;: send &#x60;title&#x60; and &#x60;text&#x60;.  **Carousel per network**: Instagram, Facebook, Threads up to 10 slides; LinkedIn up to 9; X and Bluesky up to 4; other networks get the cover slide; YouTube and TikTok get none (listed in &#x60;warnings&#x60;). Without a carousel, the source image (article image or video thumbnail) is attached when available.  **AI credits**: one per target account plus one for the carousel outline. Slides are drawn without AI and cost nothing. The workspace brand voice applies unless &#x60;use_brand_voice&#x60; is &#x60;false&#x60;. Send an &#x60;Idempotency-Key&#x60; so a retried call does not create a second draft. Limited to 10 calls per minute. 
+Turns an article URL, a YouTube video, a PDF or pasted text into one **draft** post with a caption for every target account, plus a carousel of rendered slide images (hook, 1 to 6 idea slides, call to action; 1080×1350 PNG). Nothing is published or scheduled.  **Sources** (&#x60;source_type&#x60;): - &#x60;url&#x60;: the article is fetched and its main text extracted. - &#x60;youtube&#x60;: title, description and chapters come from YouTube; send the transcript in   &#x60;transcript&#x60; for better results (required when the description is short). - &#x60;pdf&#x60;: &#x60;pdf_url&#x60; must be a public PDF of at most 20 MB; the first 30 pages are read. - &#x60;text&#x60;: send &#x60;title&#x60; and &#x60;text&#x60;.  **Carousel per network**: Instagram, Facebook, Threads up to 10 slides; LinkedIn up to 9; X and Bluesky up to 4; other networks get the cover slide; YouTube and TikTok get none (listed in &#x60;warnings&#x60;). Without a carousel, the source image (article image or video thumbnail) is attached when available.  **AI credits**: one per target account plus one for the carousel outline. Slides are drawn without AI and cost nothing. The workspace brand voice applies unless &#x60;use_brand_voice&#x60; is &#x60;false&#x60;. Send an &#x60;Idempotency-Key&#x60; so a retried call does not create a second draft. Limited to 10 calls per minute.  **Long runs**: the run is queued. The call waits up to 20 seconds and answers &#x60;200&#x60; with the result when the run finished by then. Otherwise it answers &#x60;202&#x60; with a &#x60;run_id&#x60;; poll &#x60;getRepurposeRun&#x60; (&#x60;status_url&#x60;) every few seconds until the status is &#x60;ok&#x60;, &#x60;partial&#x60; or &#x60;failed&#x60;. Send &#x60;async: true&#x60; to get the &#x60;202&#x60; right away. Validation, account and credit errors are answered before anything is queued. 
 
 ### Example
 ```java
@@ -807,10 +880,12 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Draft post set created |  -  |
+| **202** | The run is still going (or &#x60;async&#x60; was set); poll &#x60;status_url&#x60;. |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |
 | **422** |  |  -  |
 | **429** |  |  -  |
+| **500** | The run failed while the call waited. &#x60;getRepurposeRun&#x60; shows the error. |  -  |
 
 <a id="updateBrandVoice"></a>
 # **updateBrandVoice**
