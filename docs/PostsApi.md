@@ -37,7 +37,7 @@ All URIs are relative to *https://postboost.co/app/api*
 
 Add post to queue
 
-Add an existing post to the smart publishing queue. Each account of the post gets its own next free queue slot. Returns &#x60;422&#x60; when the post has no accounts, the posting schedule has no available times, or provider requirements are not met. The guardrails check the saved post as publishing today (UTC), as on create: &#x60;409&#x60; duplicate (override with &#x60;X-Allow-Duplicate: true&#x60;), &#x60;422&#x60; account cannot publish, &#x60;429&#x60; daily or X cap. 
+Add an existing post to the smart publishing queue. Each account of the post gets its own next free queue slot. Returns &#x60;422&#x60; when the post has no accounts, the posting schedule has no available times, or provider requirements are not met. The guardrails check the saved post as publishing at the queue slot it will get (the earliest next free slot of its accounts), as on create: &#x60;409&#x60; duplicate (override with &#x60;X-Allow-Duplicate: true&#x60;), &#x60;422&#x60; account cannot publish, &#x60;429&#x60; daily cap on that slot&#39;s UTC day or X cap. 
 
 ### Example
 ```java
