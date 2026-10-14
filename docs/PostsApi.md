@@ -189,7 +189,7 @@ public class Example {
 
 <a id="createPost"></a>
 # **createPost**
-> Post createPost(workspaceUuid, postInput, idempotencyKey)
+> CreatePost201Response createPost(workspaceUuid, postInput, idempotencyKey)
 
 Create post
 
@@ -219,7 +219,7 @@ public class Example {
     PostInput postInput = new PostInput(); // PostInput | 
     String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
     try {
-      Post result = apiInstance.createPost(workspaceUuid, postInput, idempotencyKey);
+      CreatePost201Response result = apiInstance.createPost(workspaceUuid, postInput, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PostsApi#createPost");
@@ -242,7 +242,7 @@ public class Example {
 
 ### Return type
 
-[**Post**](Post.md)
+[**CreatePost201Response**](CreatePost201Response.md)
 
 ### Authorization
 
@@ -256,7 +256,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Created post |  * Idempotent-Replayed -  <br>  |
+| **201** | Created post. &#x60;warnings&#x60; lists non-blocking problems (see PostWarning); the key is absent when there are none. |  * Idempotent-Replayed -  <br>  |
 | **400** |  |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |
@@ -1567,7 +1567,7 @@ public class Example {
 
 <a id="updatePost"></a>
 # **updatePost**
-> Object updatePost(workspaceUuid, postUuid, postInput)
+> UpdatePost200Response updatePost(workspaceUuid, postUuid, postInput)
 
 Update post
 
@@ -1597,7 +1597,7 @@ public class Example {
     UUID postUuid = UUID.randomUUID(); // UUID | UUID of the post.
     PostInput postInput = new PostInput(); // PostInput | 
     try {
-      Object result = apiInstance.updatePost(workspaceUuid, postUuid, postInput);
+      UpdatePost200Response result = apiInstance.updatePost(workspaceUuid, postUuid, postInput);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PostsApi#updatePost");
@@ -1620,7 +1620,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**UpdatePost200Response**](UpdatePost200Response.md)
 
 ### Authorization
 
@@ -1634,7 +1634,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **200** | Post updated. &#x60;warnings&#x60; lists non-blocking problems (see PostWarning); the key is absent when there are none. |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |
 | **404** |  |  -  |
