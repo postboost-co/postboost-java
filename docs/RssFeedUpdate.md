@@ -23,6 +23,7 @@
 |---- | -----|
 | DRAFT | &quot;draft&quot; |
 | QUEUE | &quot;queue&quot; |
+| NEEDS_APPROVAL | &quot;needs_approval&quot; |
 
 
 

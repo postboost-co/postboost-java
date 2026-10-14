@@ -342,7 +342,7 @@ public class Example {
 
 Add an RSS feed
 
-Checks the feed every 30 minutes and turns each item published after the feed was added into a post for &#x60;account_ids&#x60;: a draft (&#x60;mode: draft&#x60;, default) or a queued post (&#x60;mode: queue&#x60;). The text comes from &#x60;template&#x60; with &#x60;{title}&#x60;, &#x60;{link}&#x60; and &#x60;{summary}&#x60; placeholders. Each item becomes at most one post, at most &#x60;max_items_per_run&#x60; per check and 20 per workspace per day. Posts pass the same guardrails as API-created posts. Only public http(s) URLs are accepted. Admins and members only. 
+Checks the feed every 30 minutes and turns each item published after the feed was added into a post for &#x60;account_ids&#x60;: a draft (&#x60;mode: draft&#x60;, default), a queued post (&#x60;mode: queue&#x60;), or a queued post awaiting approval (&#x60;mode: needs_approval&#x60;: it gets the next free queue slot and publishes only after someone approves it). The text comes from &#x60;template&#x60; with &#x60;{title}&#x60;, &#x60;{link}&#x60; and &#x60;{summary}&#x60; placeholders. Each item becomes at most one post, at most &#x60;max_items_per_run&#x60; per check and 20 per workspace per day. Posts pass the same guardrails as API-created posts. Only public http(s) URLs are accepted. Admins and members only. 
 
 ### Example
 ```java
