@@ -76,7 +76,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
 | **401** |  |  -  |
-| **413** | The request body is larger than 64 KB. |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
 | **422** |  |  -  |
 | **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
 
@@ -142,7 +142,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
 | **401** |  |  -  |
-| **413** | The request body is larger than 64 KB. |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
 | **422** |  |  -  |
 | **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
 
@@ -208,7 +208,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
 | **401** |  |  -  |
-| **413** | The request body is larger than 64 KB. |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
 | **422** |  |  -  |
 | **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
 
@@ -274,7 +274,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
 | **401** |  |  -  |
-| **413** | The request body is larger than 64 KB. |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
 | **422** |  |  -  |
 | **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
 
@@ -340,7 +340,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
 | **401** |  |  -  |
-| **413** | The request body is larger than 64 KB. |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
 | **422** |  |  -  |
 | **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
 
@@ -406,7 +406,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
 | **401** |  |  -  |
-| **413** | The request body is larger than 64 KB. |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
 | **422** |  |  -  |
 | **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
 
@@ -532,7 +532,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
 | **401** |  |  -  |
-| **413** | The request body is larger than 64 KB. |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
 | **422** |  |  -  |
 | **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
 
