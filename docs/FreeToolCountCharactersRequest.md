@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**text** | **String** | The post text, up to 10,000 characters (twice the longest network limit). |  [optional] |
+|**text** | **String** | The post text, up to 10,000 characters (twice the longest network limit); 5,000 without an API token. |  [optional] |
 |**network** | [**NetworkEnum**](#NetworkEnum) | Count for one network only; all networks when omitted. |  [optional] |
 
 
