@@ -17,7 +17,7 @@ Official Java client for the [PostBoost API](https://postboost.co/docs/api).
 <dependency>
   <groupId>com.postboost</groupId>
   <artifactId>postboost-java-sdk</artifactId>
-  <version>1.23.0</version>
+  <version>1.24.0</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ repositories {
     maven { url 'https://maven.pkg.github.com/postboost-co/postboost-java' }
 }
 dependencies {
-    implementation 'com.postboost:postboost-java-sdk:1.23.0'
+    implementation 'com.postboost:postboost-java-sdk:1.24.0'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 | **GitHub Packages** | [github.com/postboost-co/postboost-java/packages](https://github.com/postboost-co/postboost-java/packages) |
 | **GitHub** | [postboost-co/postboost-java](https://github.com/postboost-co/postboost-java) |
 | **Docs** | [postboost.co/docs/api](https://postboost.co/docs/api) |
-| **Version** | v1.23.0 |
+| **Version** | v1.24.0 |
 
 ## Quick start
 
@@ -64,6 +64,7 @@ Class | Method | HTTP request | Description
 *AccountGroupsApi* | [**listAccountGroups**](docs/AccountGroupsApi.md#listAccountGroups) | **GET** /{workspaceUuid}/account-groups | List account groups
 *AccountGroupsApi* | [**updateAccountGroup**](docs/AccountGroupsApi.md#updateAccountGroup) | **PUT** /{workspaceUuid}/account-groups/{accountGroupUuid} | Update an account group
 *AccountsApi* | [**connectChannel**](docs/AccountsApi.md#connectChannel) | **POST** /{workspaceUuid}/accounts/connect/{provider} | Connect a Telegram, Discord or Slack channel
+*AccountsApi* | [**createConnectLink**](docs/AccountsApi.md#createConnectLink) | **POST** /{workspaceUuid}/accounts/connect-links | Create a connect link
 *AccountsApi* | [**createReconnectLink**](docs/AccountsApi.md#createReconnectLink) | **POST** /{workspaceUuid}/accounts/{accountUuid}/reconnect-links | Create a reconnect link
 *AccountsApi* | [**getAccount**](docs/AccountsApi.md#getAccount) | **GET** /{workspaceUuid}/accounts/{accountUuid} | Get account
 *AccountsApi* | [**getAccountHealth**](docs/AccountsApi.md#getAccountHealth) | **GET** /{workspaceUuid}/account-health | Account health

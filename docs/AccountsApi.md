@@ -5,6 +5,7 @@ All URIs are relative to *https://postboost.co/app/api*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**connectChannel**](AccountsApi.md#connectChannel) | **POST** /{workspaceUuid}/accounts/connect/{provider} | Connect a Telegram, Discord or Slack channel |
+| [**createConnectLink**](AccountsApi.md#createConnectLink) | **POST** /{workspaceUuid}/accounts/connect-links | Create a connect link |
 | [**createReconnectLink**](AccountsApi.md#createReconnectLink) | **POST** /{workspaceUuid}/accounts/{accountUuid}/reconnect-links | Create a reconnect link |
 | [**getAccount**](AccountsApi.md#getAccount) | **GET** /{workspaceUuid}/accounts/{accountUuid} | Get account |
 | [**getAccountHealth**](AccountsApi.md#getAccountHealth) | **GET** /{workspaceUuid}/account-health | Account health |
@@ -86,6 +87,79 @@ public class Example {
 | **403** | The caller is not a workspace admin, or the plan&#39;s social account limit is reached. |  -  |
 | **404** | Unknown provider, or the channel is switched off on this instance. |  -  |
 | **422** |  |  -  |
+
+<a id="createConnectLink"></a>
+# **createConnectLink**
+> ConnectLink createConnectLink(workspaceUuid, createConnectLinkRequest)
+
+Create a connect link
+
+Creates a single-use link (valid 15 minutes) that lets the user connect a new account on an OAuth network to this workspace. Ask the user to open this link in their browser while logged in to PostBoost, wait until they confirm, then call &#x60;list-accounts&#x60; to get the new account id. The link signs no one in: only the user who created it, while a workspace admin, can use it. Telegram, Discord and Slack need no browser: connect them with &#x60;connectChannel&#x60;. Mastodon, Pixelfed and Bluesky ask for a server or handle first, so the user connects them in the app. Workspace admins only; at most 10 links per minute. 
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.auth.*;
+import com.postboost.models.*;
+import com.postboost.api.AccountsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+    
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
+    AccountsApi apiInstance = new AccountsApi(defaultClient);
+    UUID workspaceUuid = UUID.randomUUID(); // UUID | UUID of the workspace.
+    CreateConnectLinkRequest createConnectLinkRequest = new CreateConnectLinkRequest(); // CreateConnectLinkRequest | 
+    try {
+      ConnectLink result = apiInstance.createConnectLink(workspaceUuid, createConnectLinkRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountsApi#createConnectLink");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **workspaceUuid** | **UUID**| UUID of the workspace. | |
+| **createConnectLinkRequest** | [**CreateConnectLinkRequest**](CreateConnectLinkRequest.md)|  | |
+
+### Return type
+
+[**ConnectLink**](ConnectLink.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Link created. The URL is shown only once. |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+| **422** |  |  -  |
+| **429** | Too many connect links in the last minute. |  -  |
 
 <a id="createReconnectLink"></a>
 # **createReconnectLink**
