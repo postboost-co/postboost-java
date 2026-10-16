@@ -450,7 +450,7 @@ public class Example {
 
 Edit an existing media image using AI
 
-Edits an existing workspace media item using the source image and a text prompt. Optionally accepts a mask (transparent areas are replaced). Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+Edits an existing workspace media item using the source image and a text prompt. Optionally accepts a mask (transparent areas are replaced). Saves results to the media library. Credits: 1 image credit per image (&#x60;429 image_credits_exhausted&#x60; when the monthly pool is empty). If the image pool is switched off, &#x60;count × credit_weight&#x60; text credits instead. 
 
 ### Example
 ```java
@@ -523,7 +523,7 @@ public class Example {
 
 Generate social media images from a caption
 
-Generates one or more images and saves them immediately to the workspace media library.  **Standard mode** (recommended): provide &#x60;caption&#x60; + &#x60;platform&#x60;. PostBoost builds a professional image prompt internally using platform-specific templates. No prompt engineering required.  **Developer mode**: provide &#x60;prompt&#x60; directly to bypass prompt building. If both &#x60;caption&#x60; and &#x60;prompt&#x60; are sent, standard mode runs.  Credits: &#x60;count x credit_weight&#x60; (default: 5 per image). 
+Generates one or more images and saves them immediately to the workspace media library.  **Standard mode** (recommended): provide &#x60;caption&#x60; + &#x60;platform&#x60;. PostBoost builds a professional image prompt internally using platform-specific templates. No prompt engineering required.  **Developer mode**: provide &#x60;prompt&#x60; directly to bypass prompt building. If both &#x60;caption&#x60; and &#x60;prompt&#x60; are sent, standard mode runs.  Credits: 1 image credit per image (&#x60;429 image_credits_exhausted&#x60; when the monthly pool is empty). If the image pool is switched off, &#x60;count × credit_weight&#x60; text credits instead. 
 
 ### Example
 ```java
@@ -669,7 +669,7 @@ public class Example {
 
 Generate variations of an existing media image
 
-Creates one or more variations of an existing workspace media item. Saves results to the media library. Credits: &#x60;count × credit_weight&#x60;. 
+Creates one or more variations of an existing workspace media item. Saves results to the media library. Credits: 1 image credit per image (&#x60;429 image_credits_exhausted&#x60; when the monthly pool is empty). If the image pool is switched off, &#x60;count × credit_weight&#x60; text credits instead. 
 
 ### Example
 ```java
