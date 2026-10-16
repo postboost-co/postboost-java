@@ -17,7 +17,7 @@ Official Java client for the [PostBoost API](https://postboost.co/docs/api).
 <dependency>
   <groupId>com.postboost</groupId>
   <artifactId>postboost-java-sdk</artifactId>
-  <version>1.32.0</version>
+  <version>1.33.0</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ repositories {
     maven { url 'https://maven.pkg.github.com/postboost-co/postboost-java' }
 }
 dependencies {
-    implementation 'com.postboost:postboost-java-sdk:1.32.0'
+    implementation 'com.postboost:postboost-java-sdk:1.33.0'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 | **GitHub Packages** | [github.com/postboost-co/postboost-java/packages](https://github.com/postboost-co/postboost-java/packages) |
 | **GitHub** | [postboost-co/postboost-java](https://github.com/postboost-co/postboost-java) |
 | **Docs** | [postboost.co/docs/api](https://postboost.co/docs/api) |
-| **Version** | v1.32.0 |
+| **Version** | v1.33.0 |
 
 ## Quick start
 
@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
 *CompetitorsApi* | [**getCompetitor**](docs/CompetitorsApi.md#getCompetitor) | **GET** /{workspaceUuid}/competitors/{competitorId} | Get a competitor
 *CompetitorsApi* | [**listCompetitors**](docs/CompetitorsApi.md#listCompetitors) | **GET** /{workspaceUuid}/competitors | List competitors
 *FreeToolsApi* | [**buildUtmUrl**](docs/FreeToolsApi.md#buildUtmUrl) | **POST** /tools/utm-builder | Build a UTM-tagged campaign URL
+*FreeToolsApi* | [**calculateAspectRatio**](docs/FreeToolsApi.md#calculateAspectRatio) | **POST** /tools/aspect-ratio-calculator | Calculate an aspect ratio, or the missing side of an image at a given ratio
 *FreeToolsApi* | [**calculateCrop**](docs/FreeToolsApi.md#calculateCrop) | **POST** /tools/social-media-image-sizes/crop | Calculate the crop box that fits an image to a social media size
 *FreeToolsApi* | [**calculateEngagementRate**](docs/FreeToolsApi.md#calculateEngagementRate) | **POST** /tools/engagement-rate-calculator | Calculate an engagement rate
 *FreeToolsApi* | [**checkPost**](docs/FreeToolsApi.md#checkPost) | **POST** /tools/social-media-post-checker | Check a post against each network&#39;s publishing rules
