@@ -12,9 +12,9 @@
 |**platformPlanId** | **String** |  |  |
 |**status** | **SubscriptionStatus** |  |  |
 |**recurring** | **Boolean** |  |  |
-|**trialEndsAt** | **OffsetDateTime** |  |  [optional] |
-|**pausedFrom** | **OffsetDateTime** |  |  [optional] |
-|**endsAt** | **OffsetDateTime** |  |  [optional] |
+|**trialEndsAt** | **String** | Display date in the configured timezone, &#x60;M j, Y&#x60; (not RFC 3339). |  [optional] |
+|**pausedFrom** | **String** | Display date in the configured timezone, &#x60;M j, Y&#x60; (not RFC 3339). |  [optional] |
+|**endsAt** | **String** | Display date in the configured timezone, &#x60;M j, Y&#x60; (not RFC 3339). |  [optional] |
 
 
 

@@ -15,8 +15,8 @@
 |**currency** | **String** |  |  |
 |**receiptUrl** | **URI** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**paidAt** | **OffsetDateTime** |  |  |
-|**createdAt** | **OffsetDateTime** |  |  |
+|**paidAt** | **String** | Display date in the configured timezone, &#x60;M j, Y&#x60; (not RFC 3339). |  |
+|**createdAt** | **String** | Display date in the configured timezone, &#x60;M j, Y&#x60; (not RFC 3339). |  |
 
 
 
