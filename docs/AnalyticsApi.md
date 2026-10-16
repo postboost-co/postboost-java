@@ -764,7 +764,7 @@ public class Example {
 
 Update the report branding
 
-Name, colour and footer of PDF reports. Fields you leave out keep their value. Upload the logo with &#x60;uploadReportBrandingLogo&#x60;. Admins and members only.
+Name, colour and footer of PDF reports. Fields you leave out keep their value. Upload the logo with &#x60;uploadReportBrandingLogo&#x60; (a multipart file upload, so it is not an MCP tool). Admins and members only.
 
 ### Example
 ```java
