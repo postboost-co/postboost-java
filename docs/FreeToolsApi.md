@@ -9,8 +9,10 @@ All URIs are relative to *https://postboost.co/app/api*
 | [**calculateCrop**](FreeToolsApi.md#calculateCrop) | **POST** /tools/social-media-image-sizes/crop | Calculate the crop box that fits an image to a social media size |
 | [**calculateEngagementRate**](FreeToolsApi.md#calculateEngagementRate) | **POST** /tools/engagement-rate-calculator | Calculate an engagement rate |
 | [**calculateSocialRoi**](FreeToolsApi.md#calculateSocialRoi) | **POST** /tools/social-media-roi-calculator | Calculate social media ROI |
+| [**calculateXApiCost**](FreeToolsApi.md#calculateXApiCost) | **POST** /tools/x-api-cost-calculator | Calculate the monthly X API cost |
 | [**checkLinkPreview**](FreeToolsApi.md#checkLinkPreview) | **POST** /tools/link-preview-checker | Check how a link previews on X, LinkedIn, Facebook and chat apps (Open Graph and Twitter card tags) |
 | [**checkPost**](FreeToolsApi.md#checkPost) | **POST** /tools/social-media-post-checker | Check a post against each network&#39;s publishing rules |
+| [**checkReadability**](FreeToolsApi.md#checkReadability) | **POST** /tools/post-readability-checker | Check the readability of a post: Flesch scores, long sentences and passive hints |
 | [**checkYoutubeThumbnail**](FreeToolsApi.md#checkYoutubeThumbnail) | **POST** /tools/youtube-thumbnail-size-checker | Check a YouTube thumbnail&#39;s ratio, width, file size and format against YouTube&#39;s requirements |
 | [**cleanText**](FreeToolsApi.md#cleanText) | **POST** /tools/ai-text-cleaner | Clean AI-written text: dashes, quotes, invisible characters, markdown |
 | [**countCharacters**](FreeToolsApi.md#countCharacters) | **POST** /tools/social-media-character-counter | Count characters as each network counts them |
@@ -29,6 +31,7 @@ All URIs are relative to *https://postboost.co/app/api*
 | [**listFreeTools**](FreeToolsApi.md#listFreeTools) | **GET** /tools | List the free tools |
 | [**planContentCalendar**](FreeToolsApi.md#planContentCalendar) | **POST** /tools/social-media-content-calendar-generator | Plan a social media content calendar and get it as CSV and ICS |
 | [**previewPost**](FreeToolsApi.md#previewPost) | **POST** /tools/social-media-post-preview | Preview where a post folds and when its image is cropped on Instagram, X, LinkedIn and Facebook |
+| [**searchEmoji**](FreeToolsApi.md#searchEmoji) | **POST** /tools/social-media-emoji-picker | Search emoji by name or keyword, to copy and paste into a post |
 | [**splitThread**](FreeToolsApi.md#splitThread) | **POST** /tools/x-thread-maker | Split long text into a thread |
 
 
@@ -362,6 +365,72 @@ No authorization required
 | **422** |  |  -  |
 | **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
 
+<a id="calculateXApiCost"></a>
+# **calculateXApiCost**
+> FreeToolCalculateXApiCostResponse calculateXApiCost(freeToolCalculateXApiCostRequest)
+
+Calculate the monthly X API cost
+
+Calculate the monthly X API cost. The same logic as the free web tool at https://postboost.co/tools/x-api-cost-calculator. No account needed: call it without a token, or with any API token.
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.models.*;
+import com.postboost.api.FreeToolsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+
+    FreeToolsApi apiInstance = new FreeToolsApi(defaultClient);
+    FreeToolCalculateXApiCostRequest freeToolCalculateXApiCostRequest = new FreeToolCalculateXApiCostRequest(); // FreeToolCalculateXApiCostRequest | 
+    try {
+      FreeToolCalculateXApiCostResponse result = apiInstance.calculateXApiCost(freeToolCalculateXApiCostRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FreeToolsApi#calculateXApiCost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **freeToolCalculateXApiCostRequest** | [**FreeToolCalculateXApiCostRequest**](FreeToolCalculateXApiCostRequest.md)|  | |
+
+### Return type
+
+[**FreeToolCalculateXApiCostResponse**](FreeToolCalculateXApiCostResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
+| **401** |  |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
+| **422** |  |  -  |
+| **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
+
 <a id="checkLinkPreview"></a>
 # **checkLinkPreview**
 > FreeToolCheckLinkPreviewResponse checkLinkPreview(freeToolCheckLinkPreviewRequest)
@@ -476,6 +545,72 @@ public class Example {
 ### Return type
 
 [**FreeToolCheckPostResponse**](FreeToolCheckPostResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
+| **401** |  |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
+| **422** |  |  -  |
+| **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
+
+<a id="checkReadability"></a>
+# **checkReadability**
+> FreeToolCheckReadabilityResponse checkReadability(freeToolCheckReadabilityRequest)
+
+Check the readability of a post: Flesch scores, long sentences and passive hints
+
+Check the readability of a post: Flesch scores, long sentences and passive hints. The same logic as the free web tool at https://postboost.co/tools/post-readability-checker. No account needed: call it without a token, or with any API token.
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.models.*;
+import com.postboost.api.FreeToolsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+
+    FreeToolsApi apiInstance = new FreeToolsApi(defaultClient);
+    FreeToolCheckReadabilityRequest freeToolCheckReadabilityRequest = new FreeToolCheckReadabilityRequest(); // FreeToolCheckReadabilityRequest | 
+    try {
+      FreeToolCheckReadabilityResponse result = apiInstance.checkReadability(freeToolCheckReadabilityRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FreeToolsApi#checkReadability");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **freeToolCheckReadabilityRequest** | [**FreeToolCheckReadabilityRequest**](FreeToolCheckReadabilityRequest.md)|  | |
+
+### Return type
+
+[**FreeToolCheckReadabilityResponse**](FreeToolCheckReadabilityResponse.md)
 
 ### Authorization
 
@@ -1692,6 +1827,72 @@ public class Example {
 ### Return type
 
 [**FreeToolPreviewPostResponse**](FreeToolPreviewPostResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
+| **401** |  |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
+| **422** |  |  -  |
+| **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
+
+<a id="searchEmoji"></a>
+# **searchEmoji**
+> FreeToolSearchEmojiResponse searchEmoji(freeToolSearchEmojiRequest)
+
+Search emoji by name or keyword, to copy and paste into a post
+
+Search emoji by name or keyword, to copy and paste into a post. The same logic as the free web tool at https://postboost.co/tools/social-media-emoji-picker. No account needed: call it without a token, or with any API token.
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.models.*;
+import com.postboost.api.FreeToolsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+
+    FreeToolsApi apiInstance = new FreeToolsApi(defaultClient);
+    FreeToolSearchEmojiRequest freeToolSearchEmojiRequest = new FreeToolSearchEmojiRequest(); // FreeToolSearchEmojiRequest | 
+    try {
+      FreeToolSearchEmojiResponse result = apiInstance.searchEmoji(freeToolSearchEmojiRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FreeToolsApi#searchEmoji");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **freeToolSearchEmojiRequest** | [**FreeToolSearchEmojiRequest**](FreeToolSearchEmojiRequest.md)|  | |
+
+### Return type
+
+[**FreeToolSearchEmojiResponse**](FreeToolSearchEmojiResponse.md)
 
 ### Authorization
 

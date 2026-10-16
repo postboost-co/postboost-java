@@ -17,7 +17,7 @@ Official Java client for the [PostBoost API](https://postboost.co/docs/api).
 <dependency>
   <groupId>com.postboost</groupId>
   <artifactId>postboost-java-sdk</artifactId>
-  <version>1.46.0</version>
+  <version>1.49.0</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ repositories {
     maven { url 'https://maven.pkg.github.com/postboost-co/postboost-java' }
 }
 dependencies {
-    implementation 'com.postboost:postboost-java-sdk:1.46.0'
+    implementation 'com.postboost:postboost-java-sdk:1.49.0'
 }
 ```
 
@@ -37,17 +37,22 @@ dependencies {
 | **GitHub Packages** | [github.com/postboost-co/postboost-java/packages](https://github.com/postboost-co/postboost-java/packages) |
 | **GitHub** | [postboost-co/postboost-java](https://github.com/postboost-co/postboost-java) |
 | **Docs** | [postboost.co/docs/api](https://postboost.co/docs/api) |
-| **Version** | v1.46.0 |
+| **Version** | v1.49.0 |
 
 ## Quick start
 
 ```java
+import com.postboost.ApiClient;
+import com.postboost.api.PostsApi;
+import com.postboost.model.ListPosts200Response;
+import java.util.UUID;
+
 ApiClient client = new ApiClient();
 client.setBearerToken(apiToken);
 
 PostsApi api = new PostsApi(client);
-List<Post> posts = api.listPosts("YOUR_WORKSPACE_UUID");
-posts.forEach(p -> System.out.println(p.getUuid()));
+ListPosts200Response resp = api.listPosts(UUID.fromString("YOUR_WORKSPACE_UUID"), null);
+resp.getData().forEach(p -> System.out.println(p.getUuid()));
 ```
 
 ---
@@ -114,8 +119,10 @@ Class | Method | HTTP request | Description
 *FreeToolsApi* | [**calculateCrop**](docs/FreeToolsApi.md#calculateCrop) | **POST** /tools/social-media-image-sizes/crop | Calculate the crop box that fits an image to a social media size
 *FreeToolsApi* | [**calculateEngagementRate**](docs/FreeToolsApi.md#calculateEngagementRate) | **POST** /tools/engagement-rate-calculator | Calculate an engagement rate
 *FreeToolsApi* | [**calculateSocialRoi**](docs/FreeToolsApi.md#calculateSocialRoi) | **POST** /tools/social-media-roi-calculator | Calculate social media ROI
+*FreeToolsApi* | [**calculateXApiCost**](docs/FreeToolsApi.md#calculateXApiCost) | **POST** /tools/x-api-cost-calculator | Calculate the monthly X API cost
 *FreeToolsApi* | [**checkLinkPreview**](docs/FreeToolsApi.md#checkLinkPreview) | **POST** /tools/link-preview-checker | Check how a link previews on X, LinkedIn, Facebook and chat apps (Open Graph and Twitter card tags)
 *FreeToolsApi* | [**checkPost**](docs/FreeToolsApi.md#checkPost) | **POST** /tools/social-media-post-checker | Check a post against each network&#39;s publishing rules
+*FreeToolsApi* | [**checkReadability**](docs/FreeToolsApi.md#checkReadability) | **POST** /tools/post-readability-checker | Check the readability of a post: Flesch scores, long sentences and passive hints
 *FreeToolsApi* | [**checkYoutubeThumbnail**](docs/FreeToolsApi.md#checkYoutubeThumbnail) | **POST** /tools/youtube-thumbnail-size-checker | Check a YouTube thumbnail&#39;s ratio, width, file size and format against YouTube&#39;s requirements
 *FreeToolsApi* | [**cleanText**](docs/FreeToolsApi.md#cleanText) | **POST** /tools/ai-text-cleaner | Clean AI-written text: dashes, quotes, invisible characters, markdown
 *FreeToolsApi* | [**countCharacters**](docs/FreeToolsApi.md#countCharacters) | **POST** /tools/social-media-character-counter | Count characters as each network counts them
@@ -134,6 +141,7 @@ Class | Method | HTTP request | Description
 *FreeToolsApi* | [**listFreeTools**](docs/FreeToolsApi.md#listFreeTools) | **GET** /tools | List the free tools
 *FreeToolsApi* | [**planContentCalendar**](docs/FreeToolsApi.md#planContentCalendar) | **POST** /tools/social-media-content-calendar-generator | Plan a social media content calendar and get it as CSV and ICS
 *FreeToolsApi* | [**previewPost**](docs/FreeToolsApi.md#previewPost) | **POST** /tools/social-media-post-preview | Preview where a post folds and when its image is cropped on Instagram, X, LinkedIn and Facebook
+*FreeToolsApi* | [**searchEmoji**](docs/FreeToolsApi.md#searchEmoji) | **POST** /tools/social-media-emoji-picker | Search emoji by name or keyword, to copy and paste into a post
 *FreeToolsApi* | [**splitThread**](docs/FreeToolsApi.md#splitThread) | **POST** /tools/x-thread-maker | Split long text into a thread
 *HashtagGroupsApi* | [**createHashtagGroup**](docs/HashtagGroupsApi.md#createHashtagGroup) | **POST** /{workspaceUuid}/hashtag-groups | Create a hashtag group
 *HashtagGroupsApi* | [**deleteHashtagGroup**](docs/HashtagGroupsApi.md#deleteHashtagGroup) | **DELETE** /{workspaceUuid}/hashtag-groups/{hashtagGroupId} | Delete a hashtag group
