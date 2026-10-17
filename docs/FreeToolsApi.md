@@ -31,10 +31,12 @@ All URIs are relative to *https://postboost.co/app/api*
 | [**getImageSizes**](FreeToolsApi.md#getImageSizes) | **GET** /tools/social-media-image-sizes | Get social media image sizes per network, each with its source |
 | [**getSafeZones**](FreeToolsApi.md#getSafeZones) | **POST** /tools/safe-zone-checker | Get the TikTok, Instagram Reels or YouTube Shorts safe zones for a vertical frame |
 | [**getVideoSpecs**](FreeToolsApi.md#getVideoSpecs) | **GET** /tools/social-media-video-specs | Get social media video ratios, resolutions, lengths and file size limits per network, with sources |
+| [**listAwarenessDays**](FreeToolsApi.md#listAwarenessDays) | **GET** /tools/social-media-holiday-calendar | List public holidays, awareness days and social media days by date, country, type and topic, with sources |
 | [**listFreeTools**](FreeToolsApi.md#listFreeTools) | **GET** /tools | List the free tools |
 | [**planContentCalendar**](FreeToolsApi.md#planContentCalendar) | **POST** /tools/social-media-content-calendar-generator | Plan a social media content calendar and get it as CSV and ICS |
 | [**planPostingFrequency**](FreeToolsApi.md#planPostingFrequency) | **POST** /tools/posting-frequency-planner | Plan how often to post on each network |
 | [**previewPost**](FreeToolsApi.md#previewPost) | **POST** /tools/social-media-post-preview | Preview where a post folds and when its image is cropped on Instagram, X, LinkedIn and Facebook |
+| [**scoreSocialAudit**](FreeToolsApi.md#scoreSocialAudit) | **POST** /tools/social-media-audit-template | Score a social media audit checklist and get the top fixes |
 | [**searchEmoji**](FreeToolsApi.md#searchEmoji) | **POST** /tools/social-media-emoji-picker | Search emoji by name or keyword, to copy and paste into a post |
 | [**splitThread**](FreeToolsApi.md#splitThread) | **POST** /tools/x-thread-maker | Split long text into a thread |
 
@@ -1856,6 +1858,79 @@ No authorization required
 | **422** |  |  -  |
 | **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
 
+<a id="listAwarenessDays"></a>
+# **listAwarenessDays**
+> FreeToolListAwarenessDaysResponse listAwarenessDays(from, to, country, type, topic)
+
+List public holidays, awareness days and social media days by date, country, type and topic, with sources
+
+List public holidays, awareness days and social media days by date, country, type and topic, with sources. The same logic as the free web tool at https://postboost.co/tools/social-media-holiday-calendar. No account needed: call it without a token, or with any API token.
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.models.*;
+import com.postboost.api.FreeToolsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+
+    FreeToolsApi apiInstance = new FreeToolsApi(defaultClient);
+    String from = "from_example"; // String | 
+    String to = "to_example"; // String | 
+    String country = "US"; // String | 
+    String type = "public-holiday"; // String | 
+    String topic = "business"; // String | 
+    try {
+      FreeToolListAwarenessDaysResponse result = apiInstance.listAwarenessDays(from, to, country, type, topic);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FreeToolsApi#listAwarenessDays");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**|  | [optional] |
+| **to** | **String**|  | [optional] |
+| **country** | **String**|  | [optional] [enum: US, GB, CA, AU, IN, DE, FR, TR] |
+| **type** | **String**|  | [optional] [enum: public-holiday, awareness-day, awareness-week, awareness-month, social-media-day] |
+| **topic** | **String**|  | [optional] [enum: business, health, environment, food, tech, culture, social-media, family, sport] |
+
+### Return type
+
+[**FreeToolListAwarenessDaysResponse**](FreeToolListAwarenessDaysResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
+| **401** |  |  -  |
+| **422** |  |  -  |
+| **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
+
 <a id="listFreeTools"></a>
 # **listFreeTools**
 > FreeToolList listFreeTools()
@@ -2095,6 +2170,72 @@ public class Example {
 ### Return type
 
 [**FreeToolPreviewPostResponse**](FreeToolPreviewPostResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The tool output. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  |
+| **401** |  |  -  |
+| **413** | The request body is larger than 128 KB. |  -  |
+| **422** |  |  -  |
+| **429** | Rate limit reached. Without a token: 30 calls per minute and 500 per UTC day per IP address (IPv6 per /64). With a token: 300 per minute per user; the Free plan also has 1,000 calls per UTC day, paid plans have no daily cap. |  * X-RateLimit-Limit - Calls allowed in the limit window closest to running out. <br>  * X-RateLimit-Remaining - Calls left in that window. <br>  * Retry-After - Seconds until the limit resets. <br>  |
+
+<a id="scoreSocialAudit"></a>
+# **scoreSocialAudit**
+> FreeToolScoreSocialAuditResponse scoreSocialAudit(freeToolScoreSocialAuditRequest)
+
+Score a social media audit checklist and get the top fixes
+
+Score a social media audit checklist and get the top fixes. The same logic as the free web tool at https://postboost.co/tools/social-media-audit-template. No account needed: call it without a token, or with any API token.
+
+### Example
+```java
+// Import classes:
+import com.postboost.ApiClient;
+import com.postboost.ApiException;
+import com.postboost.Configuration;
+import com.postboost.models.*;
+import com.postboost.api.FreeToolsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://postboost.co/app/api");
+
+    FreeToolsApi apiInstance = new FreeToolsApi(defaultClient);
+    FreeToolScoreSocialAuditRequest freeToolScoreSocialAuditRequest = new FreeToolScoreSocialAuditRequest(); // FreeToolScoreSocialAuditRequest | 
+    try {
+      FreeToolScoreSocialAuditResponse result = apiInstance.scoreSocialAudit(freeToolScoreSocialAuditRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FreeToolsApi#scoreSocialAudit");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **freeToolScoreSocialAuditRequest** | [**FreeToolScoreSocialAuditRequest**](FreeToolScoreSocialAuditRequest.md)|  | |
+
+### Return type
+
+[**FreeToolScoreSocialAuditResponse**](FreeToolScoreSocialAuditResponse.md)
 
 ### Authorization
 

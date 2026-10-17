@@ -17,7 +17,7 @@ Official Java client for the [PostBoost API](https://postboost.co/docs/api).
 <dependency>
   <groupId>com.postboost</groupId>
   <artifactId>postboost-java-sdk</artifactId>
-  <version>1.53.1</version>
+  <version>1.56.0</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ repositories {
     maven { url 'https://maven.pkg.github.com/postboost-co/postboost-java' }
 }
 dependencies {
-    implementation 'com.postboost:postboost-java-sdk:1.53.1'
+    implementation 'com.postboost:postboost-java-sdk:1.56.0'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 | **GitHub Packages** | [github.com/postboost-co/postboost-java/packages](https://github.com/postboost-co/postboost-java/packages) |
 | **GitHub** | [postboost-co/postboost-java](https://github.com/postboost-co/postboost-java) |
 | **Docs** | [postboost.co/docs/api](https://postboost.co/docs/api) |
-| **Version** | v1.53.1 |
+| **Version** | v1.56.0 |
 
 ## Quick start
 
@@ -141,10 +141,12 @@ Class | Method | HTTP request | Description
 *FreeToolsApi* | [**getImageSizes**](docs/FreeToolsApi.md#getImageSizes) | **GET** /tools/social-media-image-sizes | Get social media image sizes per network, each with its source
 *FreeToolsApi* | [**getSafeZones**](docs/FreeToolsApi.md#getSafeZones) | **POST** /tools/safe-zone-checker | Get the TikTok, Instagram Reels or YouTube Shorts safe zones for a vertical frame
 *FreeToolsApi* | [**getVideoSpecs**](docs/FreeToolsApi.md#getVideoSpecs) | **GET** /tools/social-media-video-specs | Get social media video ratios, resolutions, lengths and file size limits per network, with sources
+*FreeToolsApi* | [**listAwarenessDays**](docs/FreeToolsApi.md#listAwarenessDays) | **GET** /tools/social-media-holiday-calendar | List public holidays, awareness days and social media days by date, country, type and topic, with sources
 *FreeToolsApi* | [**listFreeTools**](docs/FreeToolsApi.md#listFreeTools) | **GET** /tools | List the free tools
 *FreeToolsApi* | [**planContentCalendar**](docs/FreeToolsApi.md#planContentCalendar) | **POST** /tools/social-media-content-calendar-generator | Plan a social media content calendar and get it as CSV and ICS
 *FreeToolsApi* | [**planPostingFrequency**](docs/FreeToolsApi.md#planPostingFrequency) | **POST** /tools/posting-frequency-planner | Plan how often to post on each network
 *FreeToolsApi* | [**previewPost**](docs/FreeToolsApi.md#previewPost) | **POST** /tools/social-media-post-preview | Preview where a post folds and when its image is cropped on Instagram, X, LinkedIn and Facebook
+*FreeToolsApi* | [**scoreSocialAudit**](docs/FreeToolsApi.md#scoreSocialAudit) | **POST** /tools/social-media-audit-template | Score a social media audit checklist and get the top fixes
 *FreeToolsApi* | [**searchEmoji**](docs/FreeToolsApi.md#searchEmoji) | **POST** /tools/social-media-emoji-picker | Search emoji by name or keyword, to copy and paste into a post
 *FreeToolsApi* | [**splitThread**](docs/FreeToolsApi.md#splitThread) | **POST** /tools/x-thread-maker | Split long text into a thread
 *HashtagGroupsApi* | [**createHashtagGroup**](docs/HashtagGroupsApi.md#createHashtagGroup) | **POST** /{workspaceUuid}/hashtag-groups | Create a hashtag group

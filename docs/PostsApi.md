@@ -1798,7 +1798,7 @@ public class Example {
 
 Validate post (dry run)
 
-Runs everything create-post checks without creating anything: request validation, network requirements (text length, media count and type, links) for every given account, whether or not the post is scheduled, and the guardrails (duplicate content, daily caps, account health). Always answers &#x60;200&#x60;; read &#x60;valid&#x60;. Any workspace member, including viewers, may call it. Recommended agent loop: account health, validate, then create. 
+Runs everything create-post checks without creating anything: request validation, network requirements (text length, media count and type, links) for every given account, whether or not the post is scheduled, and the guardrails (duplicate content, daily caps, account health). Always answers &#x60;200&#x60;; read &#x60;valid&#x60;. &#x60;warnings&#x60; lists what create-post would return as warnings: what the network will reject or ignore at publish (for example a Threads post over 500 characters as Threads counts them). &#x60;valid&#x60; stays true for them; fix them before scheduling. Any workspace member, including viewers, may call it. Recommended agent loop: account health, validate, then create. 
 
 ### Example
 ```java
