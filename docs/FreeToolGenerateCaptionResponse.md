@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**captions** | **List&lt;String&gt;** | Three different captions, each within the network&#39;s text limit (at most 2,200 characters). TikTok captions open with a short hook line. |  [optional] |
+|**captions** | **List&lt;String&gt;** | Three different captions, each within the network&#39;s text limit (at most 2,200 characters). TikTok captions open with a short hook line. With format post: three long-form LinkedIn posts. |  [optional] |
 |**creditsSpent** | **Integer** | AI credits this call took from the workspace: 1, or 0 for a cached result. |  [optional] |
 |**cached** | **Boolean** | True when the same request was answered before (free). |  [optional] |
 

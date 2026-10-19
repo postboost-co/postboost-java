@@ -465,7 +465,7 @@ public class Example {
 
 Get remote upload status
 
-Poll the status of an in-progress remote media download.
+Poll a background download started by &#x60;initiateRemoteUpload&#x60; until &#x60;status&#x60; is &#x60;completed&#x60; or &#x60;failed&#x60;. &#x60;status&#x60; moves from &#x60;pending&#x60; to &#x60;downloading&#x60; and &#x60;processing&#x60;, and ends as &#x60;completed&#x60; (with &#x60;media&#x60;) or &#x60;failed&#x60; (with &#x60;error&#x60;). The final result is returned once: after a &#x60;completed&#x60; or &#x60;failed&#x60; response the download id is forgotten and later polls return &#x60;404&#x60;, as do ids older than one hour. 
 
 ### Example
 ```java
@@ -529,6 +529,7 @@ public class Example {
 | **200** | Download status |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |
+| **404** | Unknown download id, one from another workspace, one older than an hour, or one whose final result was already returned |  -  |
 
 <a id="initiateChunkedUpload"></a>
 # **initiateChunkedUpload**
@@ -606,11 +607,11 @@ public class Example {
 
 <a id="initiateRemoteUpload"></a>
 # **initiateRemoteUpload**
-> InitiateRemoteUpload201Response initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest, idempotencyKey)
+> InitiateRemoteUpload200Response initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest, idempotencyKey)
 
 Initiate remote upload
 
-Download a file from a remote URL into the media library. For small files the media object is returned immediately. For large files a &#x60;download_id&#x60; is returned — poll the status endpoint. 
+Download a file from a remote URL into the media library. A file under 10 MB (or one whose server does not send its size) is downloaded during the request: the response has &#x60;status: completed&#x60; and the &#x60;media&#x60; object, or &#x60;status: failed&#x60; and an &#x60;error&#x60;. A larger file downloads in the background: the response has &#x60;status: pending&#x60; and a &#x60;download_id&#x60;; poll &#x60;getRemoteUploadStatus&#x60; with it until &#x60;status&#x60; is &#x60;completed&#x60; or &#x60;failed&#x60;. 
 
 ### Example
 ```java
@@ -636,7 +637,7 @@ public class Example {
     InitiateRemoteUploadRequest initiateRemoteUploadRequest = new InitiateRemoteUploadRequest(); // InitiateRemoteUploadRequest | 
     String idempotencyKey = "idempotencyKey_example"; // String | Unique key (for example a UUID) that makes the request safe to retry. A repeat with the same key and body within 24 hours returns the stored response with `Idempotent-Replayed: true` and has no further effect. Keys are scoped to your user, the workspace, the method and the path. 
     try {
-      InitiateRemoteUpload201Response result = apiInstance.initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest, idempotencyKey);
+      InitiateRemoteUpload200Response result = apiInstance.initiateRemoteUpload(workspaceUuid, initiateRemoteUploadRequest, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MediaApi#initiateRemoteUpload");
@@ -659,7 +660,7 @@ public class Example {
 
 ### Return type
 
-[**InitiateRemoteUpload201Response**](InitiateRemoteUpload201Response.md)
+[**InitiateRemoteUpload200Response**](InitiateRemoteUpload200Response.md)
 
 ### Authorization
 
@@ -673,7 +674,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Media object or download job |  -  |
+| **200** | The imported media, the download failure, or a background download to poll |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |
 | **422** |  |  -  |

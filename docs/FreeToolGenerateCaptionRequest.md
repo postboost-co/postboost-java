@@ -14,6 +14,7 @@
 |**hashtags** | **Boolean** | End each caption with 3-5 relevant hashtags. |  [optional] |
 |**network** | [**NetworkEnum**](#NetworkEnum) | The network the text is written for. |  [optional] |
 |**workspace** | **String** | UUID of the workspace whose AI credits pay for the call. Default: your active workspace (a scoped API key: its own workspace). |  [optional] |
+|**format** | [**FormatEnum**](#FormatEnum) | caption: short captions (default). post: long-form posts of 300-600, 600-1,300 or 1,300-2,000 characters by &#x60;length&#x60;, with at most 3 hashtags; network linkedin only. |  [optional] |
 
 
 
@@ -49,6 +50,15 @@
 | X | &quot;x&quot; |
 | THREADS | &quot;threads&quot; |
 | FACEBOOK | &quot;facebook&quot; |
+
+
+
+## Enum: FormatEnum
+
+| Name | Value |
+|---- | -----|
+| CAPTION | &quot;caption&quot; |
+| POST | &quot;post&quot; |
 
 
 

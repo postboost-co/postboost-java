@@ -9,7 +9,7 @@ One item of a version's `content` array. The first item is always the post itsel
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**body** | **String** | Post text/caption. For a second item on Facebook Page, Instagram or LinkedIn this is the first comment. |  [optional] |
-|**url** | **URI** |  |  [optional] |
+|**url** | **URI** | Link shown as a preview card on LinkedIn, Bluesky and Facebook Pages (Facebook builds the card from the page&#39;s own Open Graph tags). If omitted and the item has no media, the first link in &#x60;body&#x60; is used. |  [optional] |
 |**media** | **List&lt;Integer&gt;** | Array of media IDs from the media library. |  [optional] |
 |**videoThumbs** | **List&lt;Object&gt;** |  |  [optional] |
 
