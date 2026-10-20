@@ -667,7 +667,7 @@ public class Example {
 
 X (Twitter) usage
 
-The workspace&#39;s X posts this calendar month (UTC) against its monthly X allowance. Every thread part is one X post; a part with a link also counts as a link post. When the allowance is used up, scheduling to X is refused (&#x60;429&#x60;, &#x60;code: x_monthly_cap_reached&#x60;) and X posts that come due fail with \&quot;Monthly X allowance reached\&quot;. Other networks are not affected. See the X policy in the developer docs. 
+The workspace&#39;s X posts this calendar month (UTC) against its monthly X allowance. Every thread part is one X post; a part with a link also counts as a link post. Once enforcement is switched on (&#x60;enforced: true&#x60;), scheduling to X is refused when the allowance is used up (&#x60;429&#x60;, &#x60;code: x_monthly_cap_reached&#x60;) and X posts that come due fail with \&quot;Monthly X allowance reached\&quot;. Until then usage is tracked only. Other networks are not affected. See the X policy in the developer docs. 
 
 ### Example
 ```java
