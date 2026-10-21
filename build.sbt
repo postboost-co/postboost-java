@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.postboost",
     name := "postboost-java-sdk",
-    version := "1.57.8",
+    version := "1.61.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),
