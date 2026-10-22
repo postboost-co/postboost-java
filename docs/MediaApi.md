@@ -246,7 +246,7 @@ public class Example {
 
 Delete media (bulk)
 
-Delete one or more media items by their numeric IDs or UUIDs (both may be mixed, up to 500 per request).
+Delete one or more media items by their numeric IDs or UUIDs (both may be mixed, up to 500 per request). Deleting a media item also removes it from every post that uses it, including scheduled posts; those posts publish without it (or fail where the network requires media).
 
 ### Example
 ```java
@@ -318,7 +318,7 @@ public class Example {
 
 Delete media folder
 
-Deletes a folder. By default its media and sub-folders move up to the folder&#39;s parent; with &#x60;delete_media&#x60; set to true every media item below the folder is deleted as well.
+Deletes a folder. By default its media and sub-folders move up to the folder&#39;s parent; with &#x60;delete_media&#x60; set to true every media item below the folder is deleted as well. Deleting a media item also removes it from every post that uses it, including scheduled posts; those posts publish without it (or fail where the network requires media).
 
 ### Example
 ```java

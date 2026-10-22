@@ -5,7 +5,7 @@
     <artifactId>postboost-java-sdk</artifactId>
     <packaging>jar</packaging>
     <name>postboost-java-sdk</name>
-    <version>1.64.1</version>
+    <version>1.64.2</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
