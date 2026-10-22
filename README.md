@@ -17,7 +17,7 @@ Official Java client for the [PostBoost API](https://postboost.co/docs/api).
 <dependency>
   <groupId>com.postboost</groupId>
   <artifactId>postboost-java-sdk</artifactId>
-  <version>1.62.0</version>
+  <version>1.64.1</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ repositories {
     maven { url 'https://maven.pkg.github.com/postboost-co/postboost-java' }
 }
 dependencies {
-    implementation 'com.postboost:postboost-java-sdk:1.62.0'
+    implementation 'com.postboost:postboost-java-sdk:1.64.1'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 | **GitHub Packages** | [github.com/postboost-co/postboost-java/packages](https://github.com/postboost-co/postboost-java/packages) |
 | **GitHub** | [postboost-co/postboost-java](https://github.com/postboost-co/postboost-java) |
 | **Docs** | [postboost.co/docs/api](https://postboost.co/docs/api) |
-| **Version** | v1.62.0 |
+| **Version** | v1.64.1 |
 
 ## Quick start
 
@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
 *CompetitorsApi* | [**listCompetitors**](docs/CompetitorsApi.md#listCompetitors) | **GET** /{workspaceUuid}/competitors | List competitors
 *FreeToolsApi* | [**buildAgentSkill**](docs/FreeToolsApi.md#buildAgentSkill) | **POST** /tools/social-media-agent-skill-builder | Build a SKILL.md, AGENTS.md or system prompt for a social media agent
 *FreeToolsApi* | [**buildHashtagGroups**](docs/FreeToolsApi.md#buildHashtagGroups) | **POST** /tools/hashtag-group-builder | Clean, dedupe and split hashtags into groups that fit a network&#39;s hashtag cap
+*FreeToolsApi* | [**buildLinkedinCarousel**](docs/FreeToolsApi.md#buildLinkedinCarousel) | **POST** /tools/linkedin-carousel-maker | Turn text into LinkedIn carousel (PDF document) slides
 *FreeToolsApi* | [**buildUtmUrl**](docs/FreeToolsApi.md#buildUtmUrl) | **POST** /tools/utm-builder | Build a UTM-tagged campaign URL
 *FreeToolsApi* | [**calculateAspectRatio**](docs/FreeToolsApi.md#calculateAspectRatio) | **POST** /tools/aspect-ratio-calculator | Calculate an aspect ratio, or the missing side of an image at a given ratio
 *FreeToolsApi* | [**calculateCarouselSlices**](docs/FreeToolsApi.md#calculateCarouselSlices) | **POST** /tools/instagram-carousel-splitter | Split a wide image into seamless Instagram carousel slides
@@ -144,6 +145,7 @@ Class | Method | HTTP request | Description
 *FreeToolsApi* | [**generateLinkedInHeadline**](docs/FreeToolsApi.md#generateLinkedInHeadline) | **POST** /tools/linkedin-headline-generator | Write five LinkedIn profile headlines with AI (needs a token, spends AI credits)
 *FreeToolsApi* | [**generateQrCode**](docs/FreeToolsApi.md#generateQrCode) | **POST** /tools/qr-code-generator | Generate a QR code (SVG) for a link or text, with optional UTM tags
 *FreeToolsApi* | [**generateSocialPostsFromBlog**](docs/FreeToolsApi.md#generateSocialPostsFromBlog) | **POST** /tools/blog-to-social-media | Turn a blog post (URL or text) into one social post per network with AI (needs a token, spends AI credits)
+*FreeToolsApi* | [**generateSocialPostsFromVideo**](docs/FreeToolsApi.md#generateSocialPostsFromVideo) | **POST** /tools/youtube-to-social-posts | Turn a YouTube video&#39;s captions into an X thread and social captions with AI (needs a token, spends AI credits)
 *FreeToolsApi* | [**generateUsernames**](docs/FreeToolsApi.md#generateUsernames) | **POST** /tools/social-media-username-generator | Generate social media usernames
 *FreeToolsApi* | [**generateYoutubeDescription**](docs/FreeToolsApi.md#generateYoutubeDescription) | **POST** /tools/youtube-description-generator | Write three YouTube video descriptions with AI (needs a token, spends AI credits)
 *FreeToolsApi* | [**generateYoutubeTitles**](docs/FreeToolsApi.md#generateYoutubeTitles) | **POST** /tools/youtube-title-generator | Write five YouTube video titles with AI (needs a token, spends AI credits)
