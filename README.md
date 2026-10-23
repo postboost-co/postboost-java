@@ -17,7 +17,7 @@ Official Java client for the [PostBoost API](https://postboost.co/docs/api).
 <dependency>
   <groupId>com.postboost</groupId>
   <artifactId>postboost-java-sdk</artifactId>
-  <version>1.64.2</version>
+  <version>1.66.1</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ repositories {
     maven { url 'https://maven.pkg.github.com/postboost-co/postboost-java' }
 }
 dependencies {
-    implementation 'com.postboost:postboost-java-sdk:1.64.2'
+    implementation 'com.postboost:postboost-java-sdk:1.66.1'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 | **GitHub Packages** | [github.com/postboost-co/postboost-java/packages](https://github.com/postboost-co/postboost-java/packages) |
 | **GitHub** | [postboost-co/postboost-java](https://github.com/postboost-co/postboost-java) |
 | **Docs** | [postboost.co/docs/api](https://postboost.co/docs/api) |
-| **Version** | v1.64.2 |
+| **Version** | v1.66.1 |
 
 ## Quick start
 
@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
 *FreeToolsApi* | [**formatLinkedInPost**](docs/FreeToolsApi.md#formatLinkedInPost) | **POST** /tools/linkedin-post-formatter | Format a LinkedIn post with bold, italic and lists
 *FreeToolsApi* | [**generateAltText**](docs/FreeToolsApi.md#generateAltText) | **POST** /tools/alt-text-generator | Write alt text for an image with AI (needs a token, spends AI credits)
 *FreeToolsApi* | [**generateBio**](docs/FreeToolsApi.md#generateBio) | **POST** /tools/instagram-bio-generator | Write five profile bios with AI (needs a token, spends AI credits)
+*FreeToolsApi* | [**generateBrandVoice**](docs/FreeToolsApi.md#generateBrandVoice) | **POST** /tools/brand-voice-generator | Derive a brand voice from 3 to 10 of your posts with AI: traits with quoted evidence, a guide, an AI system prompt and PostBoost brand voice JSON (needs a token, spends AI credits)
 *FreeToolsApi* | [**generateCaption**](docs/FreeToolsApi.md#generateCaption) | **POST** /tools/instagram-caption-generator | Write three post captions for a topic with AI (needs a token, spends AI credits)
 *FreeToolsApi* | [**generateFancyText**](docs/FreeToolsApi.md#generateFancyText) | **POST** /tools/fancy-text-generator | Convert text to fancy Unicode styles
 *FreeToolsApi* | [**generateHashtags**](docs/FreeToolsApi.md#generateHashtags) | **POST** /tools/instagram-hashtag-generator | Generate hashtags for a post topic with AI (needs a token, spends AI credits)
